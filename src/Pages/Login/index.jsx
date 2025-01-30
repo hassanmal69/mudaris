@@ -1,6 +1,6 @@
-import React from "react";
-import { useFormik } from "formik";
-import { Link, useNavigate } from "react-router-dom";
+import React from 'react';
+import { useFormik } from 'formik';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Button,
   InputAdornment,
@@ -11,24 +11,24 @@ import {
   DialogContent,
   DialogActions,
   IconButton,
-} from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-import { styled } from "@mui/material/styles";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Google from "../../assets/Icons/google.svg";
-import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import { FacebookRounded } from "@mui/icons-material";
-import { SigninSchema } from "../../Schema/signUpSchema";
+} from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import { styled } from '@mui/material/styles';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Google from '../../assets/Icons/google.svg';
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import { FacebookRounded } from '@mui/icons-material';
+import { SigninSchema } from '../../Schema/signUpSchema';
 
 const Signin = ({ open, handleClose, toggle }) => {
   const formik = useFormik({
     initialValues: {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
     validationSchema: SigninSchema,
     onSubmit: (values) => {
-      console.log("Form Data", values);
+      console.log('Form Data', values);
       if (!values.email || !values.password) {
         return;
       }
@@ -54,7 +54,7 @@ const Signin = ({ open, handleClose, toggle }) => {
           aria-label="close"
           onClick={handleClose}
           sx={(theme) => ({
-            position: "absolute",
+            position: 'absolute',
             right: 8,
             top: 8,
             color: theme.palette.grey[500],
@@ -120,21 +120,21 @@ const Signin = ({ open, handleClose, toggle }) => {
                     formik.touched[field.name] && formik.errors[field.name]
                   }
                   sx={{
-                    width: "400px",
+                    width: '400px',
 
-                    "& .MuiOutlinedInput-root": {
-                      borderRadius: "40px",
-                      "& fieldset": {
-                        borderColor: "white",
+                    '& .MuiOutlinedInput-root': {
+                      borderRadius: '40px',
+                      '& fieldset': {
+                        borderColor: 'white',
                       },
-                      "&:hover fieldset": {
-                        borderColor: "white",
+                      '&:hover fieldset': {
+                        borderColor: 'white',
                       },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "white",
+                      '&.Mui-focused fieldset': {
+                        borderColor: 'white',
                       },
                     },
-                    input: { color: "white" }, // Optional: change text color to white
+                    input: { color: 'white' }, // Optional: change text color to white
                   }}
                 />
               </div>
@@ -156,12 +156,12 @@ const Signin = ({ open, handleClose, toggle }) => {
               type="submit"
               className="signup-btn signup-btn-group dm-sans "
             >
-              Sign In{" "}
+              Sign In{' '}
             </Button>
           </div>
 
           <p className="clr-white dm-sans center">
-            Don't have any account?{" "}
+            Don't have any account?{' '}
             <Button className="link-btn" onClick={toggle}>
               Sign up now
             </Button>
@@ -175,26 +175,26 @@ const Signin = ({ open, handleClose, toggle }) => {
 export default Signin;
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  "& .MuiDialogContent-root": {
+  '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
   },
-  "& .MuiDialogActions-root": {
+  '& .MuiDialogActions-root': {
     padding: theme.spacing(1),
   },
 }));
 const fields = [
   {
-    name: "email",
-    type: "email",
-    label: "Email",
-    placeholder: "yourname@mail.co",
+    name: 'email',
+    type: 'email',
+    label: 'Email',
+    placeholder: 'yourname@mail.co',
     icon: <VisibilityOutlinedIcon />,
   },
   {
-    name: "password",
-    type: "password",
-    label: "Password",
-    placeholder: "enter your password",
+    name: 'password',
+    type: 'password',
+    label: 'Password',
+    placeholder: 'enter your password',
     icon: <LockOutlinedIcon />,
   },
 ];

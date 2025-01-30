@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import "./CourseCardMenu.css";
-import { useLanguage } from "../../../../../globalContext/GlobalProvider";
-import Box from "@mui/material/Box"; // Assuming you're using MUI's Box component
-import IconButton from "@mui/material/IconButton"; // For the dropdown button
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore"; // Dropdown icon
+import React, { useState } from 'react';
+import './CourseCardMenu.css';
+import { useLanguage } from '../../../../globalContext/GlobalProvider';
+import Box from '@mui/material/Box'; // Assuming you're using MUI's Box component
+import IconButton from '@mui/material/IconButton'; // For the dropdown button
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'; // Dropdown icon
 
 export const MenuSide = () => {
   const { language, data } = useLanguage();
@@ -27,7 +27,7 @@ export const MenuSide = () => {
               <p className="menu-title dm-sans">{menu.title}</p>
               <IconButton size="small">
                 <ExpandMoreIcon
-                  className={openMenu[index] ? "rotate-icon" : ""}
+                  className={openMenu[index] ? 'rotate-icon' : ''}
                 />
               </IconButton>
             </div>
@@ -36,13 +36,13 @@ export const MenuSide = () => {
           {openMenu[index] || !menu.title ? (
             <div className="menu-items">
               {Object.keys(menu).map((key) => {
-                if (key === "title") return null; // Skip 'title' key
+                if (key === 'title') return null; // Skip 'title' key
                 return (
                   <label key={key} className="menu-item">
                     <input type="checkbox" /> {/* Add your checkbox */}
                     <span className="menu-bar-CoursesCardSection dm-sans">
                       {menu[key]}
-                    </span>{" "}
+                    </span>{' '}
                     {/* Display the option text */}
                   </label>
                 );

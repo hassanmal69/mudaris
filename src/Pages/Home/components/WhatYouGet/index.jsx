@@ -1,12 +1,12 @@
-import React, { useRef } from "react";
-import "./whatyouget.css";
-import { Box } from "@mui/material";
-import { useLanguage } from "../../../../globalContext/GlobalProvider";
-import blueverifiedbadge from "../../../../assets/Icons/blueverifiedbadge.png";
-import AgencyNavigatorMale from "../../../../assets/LandingPageVideo.mp4";
-import AgencyNavigatorFemale from "../../../../assets/LandingPageVideo.mp4";
-import SixFigureSalesRep from "../../../../assets/LandingPageVideo.mp4";
-import playbuttonimg from "../../../../assets/Images/playbuttonimg.png";
+import React, { useRef } from 'react';
+import './whatyouget.css';
+import { Box } from '@mui/material';
+import { useLanguage } from '../../../../globalContext/GlobalProvider';
+import blueverifiedbadge from '../../../../assets/Icons/blueverifiedbadge.png';
+import AgencyNavigatorMale from '../../../../assets/LandingPageVideo.mp4';
+import AgencyNavigatorFemale from '../../../../assets/LandingPageVideo.mp4';
+import SixFigureSalesRep from '../../../../assets/LandingPageVideo.mp4';
+import playbuttonimg from '../../../../assets/Images/playbuttonimg.png';
 
 const wygImages = [
   AgencyNavigatorMale,
@@ -30,18 +30,18 @@ const WhatYouGet = () => {
     if (currentVideo.paused) {
       // Play the current video and hide its play button
       currentVideo.play();
-      currentPlayButton.classList.add("hidden");
+      currentPlayButton.classList.add('hidden');
     } else {
       // Pause the current video and show its play button
       currentVideo.pause();
-      currentPlayButton.classList.remove("hidden");
+      currentPlayButton.classList.remove('hidden');
     }
 
     // Pause all other videos
     videoRefs.current.forEach((video, idx) => {
       if (idx !== index && video) {
         video.pause();
-        playButtonRefs.current[idx].classList.remove("hidden");
+        playButtonRefs.current[idx].classList.remove('hidden');
       }
     });
   };
@@ -49,7 +49,7 @@ const WhatYouGet = () => {
   const pickData = data.whatyouget;
 
   // Dynamically choose the font based on the language
-  const fontClass = language === "persian" ? "rubik" : "inter"; // Use your default font class
+  const fontClass = language === 'persian' ? 'rubik' : 'inter'; // Use your default font class
 
   return (
     <section className={`whatyouget-container ${fontClass}`}>

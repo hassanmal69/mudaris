@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
-import AddIcon from "@mui/icons-material/Add";
-import CloseIcon from "@mui/icons-material/Close";
-import { Box } from "@mui/material";
-import { useLanguage } from "../../../../globalContext/GlobalProvider";
-import "./faq.css";
+import React, { useState } from 'react';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import AddIcon from '@mui/icons-material/Add';
+import CloseIcon from '@mui/icons-material/Close';
+import { Box } from '@mui/material';
+import { useLanguage } from '../../../../globalContext/GlobalProvider';
+import './faq.css';
 
 export default function FAQ() {
   const [expanded, setExpanded] = useState(false);
@@ -24,11 +24,15 @@ export default function FAQ() {
   return (
     <section className="width-90 faq-section">
       <Box component="div" className="faq-title-container column">
-
-        <Typography variant="h6" className={`${language === "persian" ? "clr-white faq-title rubik" : "clr-white faq-title inter"}`}>
+        <Typography
+          variant="h6"
+          className={`${language === 'persian' ? 'clr-white faq-title rubik' : 'clr-white faq-title inter'}`}
+        >
           {data.faqTitle.title}
         </Typography>
-        <Typography className={`${language === "persian" ? "clr-white faq-subtitle rubik" : "clr-white faq-subtitle inter"}`}>
+        <Typography
+          className={`${language === 'persian' ? 'clr-white faq-subtitle rubik' : 'clr-white faq-subtitle inter'}`}
+        >
           {data.faqTitle.description}
         </Typography>
       </Box>
@@ -51,28 +55,32 @@ export default function FAQ() {
               aria-controls={`panel${index}-content`}
               id={`panel${index}-header`}
               className={`faq-question flex flex-center ${
-                expanded === index ? "purple" : "clr-white"
+                expanded === index ? 'purple' : 'clr-white'
               }`}
             >
               <span className="faq-number-container flex flex-center">
                 <Typography
-    className={`faq-number ${expanded === index ? "purple" : "clr-white"} ${
-      language === "persian" ? "rubik" : "inter"
-    }`}
+                  className={`faq-number ${expanded === index ? 'purple' : 'clr-white'} ${
+                    language === 'persian' ? 'rubik' : 'inter'
+                  }`}
                 >
                   {faq.index}
                 </Typography>
               </span>
               <Typography
-  className={`faq-question flex flex-center ${
-    expanded === index ? "purple" : "clr-white"
-  } ${language === "persian" ? "rubik" : "inter"}`}
+                className={`faq-question flex flex-center ${
+                  expanded === index ? 'purple' : 'clr-white'
+                } ${language === 'persian' ? 'rubik' : 'inter'}`}
               >
                 {faq.question}
               </Typography>
             </AccordionSummary>
             <AccordionDetails className="faq-answer-wrapper">
-              <Typography className={`${language === "persian" ? "gray rubik" : "gray inter"}`}>{faq.answer}</Typography>
+              <Typography
+                className={`${language === 'persian' ? 'gray rubik' : 'gray inter'}`}
+              >
+                {faq.answer}
+              </Typography>
             </AccordionDetails>
           </Accordion>
         ))}

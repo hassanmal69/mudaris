@@ -6,7 +6,7 @@
   border-radius: 24px;
   background: linear-gradient(107.08deg, #190d2e 0.54%, #020103 99.46%);
 }
-.row-reverse{
+.row-reverse {
   flex-direction: row-reverse;
 }
 .why_card_wrapper {
