@@ -5,9 +5,12 @@ import LandingPageVideo from "@assets/LandingPageVideo.mp4";
 import BlurGlow from "@assets/Images/Blur2.png";
 import Play from "@assets/Icons/play.svg";
 import { useLanguage } from "../../../../globalContext/GlobalProvider";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
   const { language, data } = useLanguage();
+  const { t, i18n } = useTranslation("home");
+
   const [video, setVideo] = useState(false);
   const videoRef = useRef(null);
 
@@ -36,14 +39,15 @@ const Hero = () => {
             variant="h1"
             className={`  ${language === "persian" ? "persianHeading clr-white rubik" : "mainHeading inter"}`}
           >
-            {data.Introduction.title}
+            {/* {data.Introduction.title} */}
+            {t("Introduction.title")}
           </Typography>
 
           <Typography
             variant="body1"
             className={` ${language === "persian" ? "persianDescription clr-white rubik" : "mainDescription inter"}`}
           >
-            {data.Introduction.description}
+            {t("Introduction.description")}
           </Typography>
           <span className="hero-bg-lines">
             <img src={BlurGlow} className="BlurGlow" />

@@ -12,8 +12,6 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Logo from "../../assets/Icons/Nav/Frame 1.png";
 import { useLanguage } from "../../globalContext/GlobalProvider";
 import "./nav.css";
-import Signup from "../../Pages/Signup";
-import Signin from "../../Pages/Login";
 
 function ResponsiveAppBar() {
   const [openLogin, setOpenLogin] = useState(false);
@@ -198,7 +196,7 @@ function ResponsiveAppBar() {
             </div>
           </Box>
           {/* SignIn/Signup Modals */}
-          {currentForm === "SignIn" && (
+          {/* {currentForm === "SignIn" && (
             <Signin
               open={openLogin}
               handleClose={handleClose}
@@ -211,7 +209,7 @@ function ResponsiveAppBar() {
               handleClose={handleClose}
               toggle={handleToggleDialogs}
             />
-          )}
+          )} */}
         </Toolbar>
       </Container>
     </AppBar>
