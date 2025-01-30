@@ -96,18 +96,18 @@
 }
 
 .purple-box-text {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 105px;
-    height: 36px;
-    border-radius: 6px;
-    opacity: 0.6;
-    background: #351763;
-    color: rgba(208, 208, 208, 1) !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 105px;
+  height: 36px;
+  border-radius: 6px;
+  opacity: 0.6;
+  background: #351763;
+  color: rgba(208, 208, 208, 1) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .whatyouget-playbutton {
@@ -115,10 +115,10 @@
   left: 100px;
   top: 60px;
 }
-.hidden{
+.hidden {
   display: none;
 }
-.playbuttonactive{
+.playbuttonactive {
   display: block;
 }
 @media only screen and (max-width: 600px) {

@@ -1,14 +1,14 @@
-import { Button, Typography } from "@mui/material";
-import React from "react";
-import "./community.css";
-import { useLanguage } from "../../../../globalContext/GlobalProvider";
-import Person from "../../../../assets/Images/communityPerson.png";
-import Picture from "../../../../assets/Images/nigga.png";
-import Meeting from "../../../../assets/Images/meeting.png";
-import Podcast from "../../../../assets/Images/podcast.png";
-import Meet from "../../../../assets/Images/meet.png";
-import Play from "../../../../assets/Icons/play.svg";
-import Conversation from "../../../../assets/Images/conversation.png";
+import { Button, Typography } from '@mui/material';
+import React from 'react';
+import './community.css';
+import { useLanguage } from '../../../../globalContext/GlobalProvider';
+import Person from '../../../../assets/Images/communityPerson.png';
+import Picture from '../../../../assets/Images/nigga.png';
+import Meeting from '../../../../assets/Images/meeting.png';
+import Podcast from '../../../../assets/Images/podcast.png';
+import Meet from '../../../../assets/Images/meet.png';
+import Play from '../../../../assets/Icons/play.svg';
+import Conversation from '../../../../assets/Images/conversation.png';
 
 const Community = () => {
   const { language, data, status, error } = useLanguage();
@@ -18,7 +18,7 @@ const Community = () => {
   }
 
   // Define the font class: 'rubik' for Persian, no changes for others
-  const fontClass = language === "persian" ? "rubik" : "";
+  const fontClass = language === 'persian' ? 'rubik' : '';
 
   return (
     <section className="community-section">

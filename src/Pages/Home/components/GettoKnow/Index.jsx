@@ -1,15 +1,15 @@
-import React from "react";
-import { Box, Button } from "@mui/material";
-import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
-import "./get.css";
-import { useLanguage } from "../../../../globalContext/GlobalProvider";
-import Drimg from "../../../../assets/Images/Drimg.png";
-import sciencespo from "../../../../assets/Images/sciencespo.png";
-import tolonews from "../../../../assets/Images/tolonews.png";
-import tv from "../../../../assets/Images/tv.png";
-import mudaris from "../../../../assets/Images/mudaris.png";
-import undplogo from "../../../../assets/Images/undplogo.png";
-import onelogo from "../../../../assets/Images/onelogo.png";
+import React from 'react';
+import { Box, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import './get.css';
+import { useLanguage } from '../../../../globalContext/GlobalProvider';
+import Drimg from '../../../../assets/Images/Drimg.png';
+import sciencespo from '../../../../assets/Images/sciencespo.png';
+import tolonews from '../../../../assets/Images/tolonews.png';
+import tv from '../../../../assets/Images/tv.png';
+import mudaris from '../../../../assets/Images/mudaris.png';
+import undplogo from '../../../../assets/Images/undplogo.png';
+import onelogo from '../../../../assets/Images/onelogo.png';
 
 const logos = [sciencespo, tolonews, tv, mudaris, undplogo, onelogo];
 
@@ -22,10 +22,10 @@ const GettoKnow = () => {
 
   // Function to handle button click and navigate
   const handleButtonClick = () => {
-    navigate("/AboutOwner"); // Navigate to /Mudaris/AboutOwner
+    navigate('/AboutOwner'); // Navigate to /Mudaris/AboutOwner
   };
   // Dynamically set the font based on the language
-  const fontClass = language === "persian" ? "rubik" : "inter";
+  const fontClass = language === 'persian' ? 'rubik' : 'inter';
 
   return (
     <section className="GetToknowMainSection">

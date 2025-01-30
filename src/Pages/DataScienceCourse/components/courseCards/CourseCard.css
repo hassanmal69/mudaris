@@ -52,14 +52,14 @@
   font-weight: 400;
   padding: 4px 12px;
   text-transform: capitalize;
-    width: fit-content;
+  width: fit-content;
 }
-.SpecialExtraCardsNew{
-    background: #AB800C;
+.SpecialExtraCardsNew {
+  background: #ab800c;
 }
-.SpecialExtraCardsLatest{
-    background: #184417;
+.SpecialExtraCardsLatest {
+  background: #184417;
 }
-.SpecialExtraCardsSpecial{
-    background: #744399;
+.SpecialExtraCardsSpecial {
+  background: #744399;
 }

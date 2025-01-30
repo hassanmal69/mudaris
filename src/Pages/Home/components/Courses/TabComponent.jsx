@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import "./courses.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Cards from "./Card";
-import { useLanguage } from "../../../../globalContext/GlobalProvider";
-import Slider from "react-slick";
+import React, { useState, useEffect } from 'react';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import './courses.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Cards from './Card';
+import { useLanguage } from '../../../../globalContext/GlobalProvider';
+import Slider from 'react-slick';
 
 const debug = (value) => {
   console.log(`i am ${value}-> `, value);
@@ -17,8 +17,8 @@ const TabComponent = () => {
   let CourseData = data[0];
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [items, setItems] = useState(4);
-  const [selectedTab, setSelectedTab] = useState("");
-  const [value, setValue] = useState("");
+  const [selectedTab, setSelectedTab] = useState('');
+  const [value, setValue] = useState('');
 
   // Ensure that selectedTab and value are reset when data (language) changes
   useEffect(() => {
@@ -45,11 +45,11 @@ const TabComponent = () => {
         setItems(4);
       }
     };
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     handleResize();
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   });
 
@@ -78,8 +78,8 @@ const TabComponent = () => {
         aria-label="secondary tabs example"
         className="course-tab-container"
         sx={{
-          "& .MuiTabs-indicator": {
-            backgroundColor: "#9855ff",
+          '& .MuiTabs-indicator': {
+            backgroundColor: '#9855ff',
           },
         }}
       >
@@ -145,7 +145,7 @@ const TabComponent = () => {
       <div className="tab-buttons flex">{renderTabs()}</div>
       <div
         className={`course-content flex ${
-          isTransitioning ? "fade-out" : "fade-in"
+          isTransitioning ? 'fade-out' : 'fade-in'
         }`}
       >
         {renderCourses()}

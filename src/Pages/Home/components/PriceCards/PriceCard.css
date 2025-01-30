@@ -147,8 +147,8 @@
 }
 
 .plan-card:nth-child(3) {
-display: none !important;
-} 
+  display: none !important;
+}
 .plan-para {
   color: #fff;
   font-size: 14px !important;

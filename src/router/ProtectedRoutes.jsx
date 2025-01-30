@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Navigate, Outlet } from "react-router-dom";
-import { checkAutoLogin } from "@features/auth/authThunk";
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Navigate, Outlet } from 'react-router-dom';
+import { checkAutoLogin } from '@features/auth/authThunk';
 
 const ProtectedRoutes = () => {
   const { token } = useSelector((state) => state.auth);
@@ -14,7 +14,7 @@ const ProtectedRoutes = () => {
       try {
         await dispatch(checkAutoLogin()); // Await the dispatch if it's asynchronous
       } catch (error) {
-        console.error("Error checking token:", error);
+        console.error('Error checking token:', error);
       } finally {
         setIsCheckingAuth(false); // Mark auth check as complete
       }
@@ -23,7 +23,7 @@ const ProtectedRoutes = () => {
     checkToken(); // Run the async function
   }, [dispatch]);
 
-  console.log("Token in ProtectedRoute:", token);
+  console.log('Token in ProtectedRoute:', token);
 
   // While auth check is happening, render a loader or nothing
   if (isCheckingAuth) {

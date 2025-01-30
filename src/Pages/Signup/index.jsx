@@ -1,6 +1,6 @@
-import React from "react";
-import { useFormik } from "formik";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom';
 import {
   Button,
   InputAdornment,
@@ -11,29 +11,29 @@ import {
   DialogContent,
   DialogActions,
   IconButton,
-} from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-import { styled } from "@mui/material/styles";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import "./form.css";
-import signUpSchema from "../../Schema/signUpSchema";
-import Google from "../../assets/Icons/google.svg";
-import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import { FacebookRounded } from "@mui/icons-material";
-import { useDispatch } from "react-redux";
+} from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import { styled } from '@mui/material/styles';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import './form.css';
+import signUpSchema from '../../Schema/signUpSchema';
+import Google from '../../assets/Icons/google.svg';
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import { FacebookRounded } from '@mui/icons-material';
+import { useDispatch } from 'react-redux';
 
 const Signup = ({ open, handleClose, toggle }) => {
   const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
-      username: "",
-      email: "",
-      password: "",
+      username: '',
+      email: '',
+      password: '',
     },
     validationSchema: signUpSchema,
     onSubmit: (values) => {
-      console.log("Form Data", values);
+      console.log('Form Data', values);
       // Dispatch the signUpUser action with email and password
     },
   });
@@ -57,7 +57,7 @@ const Signup = ({ open, handleClose, toggle }) => {
           aria-label="close"
           onClick={handleClose}
           sx={(theme) => ({
-            position: "absolute",
+            position: 'absolute',
             right: 8,
             top: 8,
             color: theme.palette.grey[500],
@@ -123,21 +123,21 @@ const Signup = ({ open, handleClose, toggle }) => {
                     formik.touched[field.name] && formik.errors[field.name]
                   }
                   sx={{
-                    width: "400px",
+                    width: '400px',
 
-                    "& .MuiOutlinedInput-root": {
-                      borderRadius: "40px",
-                      "& fieldset": {
-                        borderColor: "white",
+                    '& .MuiOutlinedInput-root': {
+                      borderRadius: '40px',
+                      '& fieldset': {
+                        borderColor: 'white',
                       },
-                      "&:hover fieldset": {
-                        borderColor: "white",
+                      '&:hover fieldset': {
+                        borderColor: 'white',
                       },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "white",
+                      '&.Mui-focused fieldset': {
+                        borderColor: 'white',
                       },
                     },
-                    input: { color: "white" }, // Optional: change text color to white
+                    input: { color: 'white' }, // Optional: change text color to white
                   }}
                 />
               </div>
@@ -164,7 +164,7 @@ const Signup = ({ open, handleClose, toggle }) => {
           </DialogActions>
 
           <p className="clr-white dm-sans center">
-            Already have an account?{" "}
+            Already have an account?{' '}
             <Button onClick={toggle} className="link-btn">
               Sign in now
             </Button>
@@ -178,33 +178,33 @@ const Signup = ({ open, handleClose, toggle }) => {
 export default Signup;
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  "& .MuiDialogContent-root": {
+  '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
   },
-  "& .MuiDialogActions-root": {
+  '& .MuiDialogActions-root': {
     padding: theme.spacing(1),
   },
 }));
 const fields = [
   {
-    name: "username",
-    type: "text",
-    label: "Your Name",
-    placeholder: "e.g John Smith",
+    name: 'username',
+    type: 'text',
+    label: 'Your Name',
+    placeholder: 'e.g John Smith',
     icon: <AccountCircleOutlinedIcon />,
   },
   {
-    name: "email",
-    type: "email",
-    label: "Email",
-    placeholder: "yourname@mail.co",
+    name: 'email',
+    type: 'email',
+    label: 'Email',
+    placeholder: 'yourname@mail.co',
     icon: <VisibilityOutlinedIcon />,
   },
   {
-    name: "password",
-    type: "password",
-    label: "Password",
-    placeholder: "enter your password",
+    name: 'password',
+    type: 'password',
+    label: 'Password',
+    placeholder: 'enter your password',
     icon: <LockOutlinedIcon />,
   },
 ];

@@ -1,16 +1,16 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import "./getstarted.css";
-import { Container } from "@mui/material";
-import { TextField } from "@mui/material";
-import { useLanguage } from "../../../../globalContext/GlobalProvider";
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import './getstarted.css';
+import { Container } from '@mui/material';
+import { TextField } from '@mui/material';
+import { useLanguage } from '../../../../globalContext/GlobalProvider';
 
 function GetStart() {
   const { data, language } = useLanguage();
 
   if (!data) return <h2>data not loading</h2>;
 
-  const fontClass = language === "persian" ? "rubik" : "inter";
+  const fontClass = language === 'persian' ? 'rubik' : 'inter';
 
   return (
     <Container className="get-start-container">
@@ -30,28 +30,28 @@ function GetStart() {
           className={`custom-input ${fontClass}`}
           fullWidth
           sx={{
-            "& .MuiOutlinedInput-root": {
-              "& fieldset": {
-                borderColor: "#FFFFFF26", // Outline color
+            '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+                borderColor: '#FFFFFF26', // Outline color
               },
-              "&:hover fieldset": {
-                borderColor: "#FFFFFF26", // Outline color on hover
+              '&:hover fieldset': {
+                borderColor: '#FFFFFF26', // Outline color on hover
               },
-              "& .MuiInputBase-input": {
-                color: "#FFF", // Text color
+              '& .MuiInputBase-input': {
+                color: '#FFF', // Text color
               },
-              "&.Mui-focused fieldset": {
-                borderColor: "#FFFFFF26", // Outline color when focused
+              '&.Mui-focused fieldset': {
+                borderColor: '#FFFFFF26', // Outline color when focused
               },
             },
-            "& .MuiInputBase-input::placeholder": {
-              color: "#fff", // Placeholder color
+            '& .MuiInputBase-input::placeholder': {
+              color: '#fff', // Placeholder color
             },
           }}
         />
 
         <button
-          className={` button-text ${fontClass} ${language === "persian" ? "my-with" : "get-start-button"}`}
+          className={` button-text ${fontClass} ${language === 'persian' ? 'my-with' : 'get-start-button'}`}
         >
           {data.GetStarted.buttontext}
         </button>

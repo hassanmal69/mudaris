@@ -1,17 +1,17 @@
-import React from "react";
-import Slider from "react-slick";
-import { Box, Typography, Button } from "@mui/material";
-import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { useLanguage } from "../../../../globalContext/GlobalProvider";
-import "./DigitalEducation.css";
-import Development from "@assets/Images/Developmentimg.png";
-import Design from "@assets/Images/Designimg.png";
-import Marketing from "@assets/Images/Marketingimg.png";
-import Business from "@assets/Images/Businessimg.png";
-import DataScience from "@assets/Images/DataScienceimg.png";
-import Technology from "@assets/Images/Technologyimg.png";
+import React from 'react';
+import Slider from 'react-slick';
+import { Box, Typography, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { useLanguage } from '../../../../globalContext/GlobalProvider';
+import './DigitalEducation.css';
+import Development from '@assets/Images/Developmentimg.png';
+import Design from '@assets/Images/Designimg.png';
+import Marketing from '@assets/Images/Marketingimg.png';
+import Business from '@assets/Images/Businessimg.png';
+import DataScience from '@assets/Images/DataScienceimg.png';
+import Technology from '@assets/Images/Technologyimg.png';
 
 const educationImages = [
   Development,
@@ -101,7 +101,7 @@ export default function DigitalEducation() {
 
   // Function to handle "See All" button click
   const handleSeeAllClick = () => {
-    navigate("/datascience"); // Navigate to Mudaris/datascience
+    navigate('/datascience'); // Navigate to Mudaris/datascience
   };
 
   return (
@@ -116,13 +116,13 @@ export default function DigitalEducation() {
           </Typography>
           <Typography
             variant="body1"
-            className={`${language === "persian" ? "DigitalEducationComponentDescription rubik" : "DigitalEducationComponentDescription inter"}`}
+            className={`${language === 'persian' ? 'DigitalEducationComponentDescription rubik' : 'DigitalEducationComponentDescription inter'}`}
           >
             {data.digitaleducation.description}
           </Typography>
         </Box>
         <Box className="DigitalEducationComponentButtonDiv">
-          <Button onClick={handleSeeAllClick}>See All</Button>{" "}
+          <Button onClick={handleSeeAllClick}>See All</Button>{' '}
           {/* Add onClick event */}
         </Box>
       </Box>
@@ -134,7 +134,7 @@ export default function DigitalEducation() {
             className="PicBgDigitalEducationSlide"
             sx={{
               backgroundImage: `url(${img})`,
-              backgroundSize: "cover",
+              backgroundSize: 'cover',
             }}
           >
             {images[index] && (
@@ -143,7 +143,7 @@ export default function DigitalEducation() {
                   {images[index].new && (
                     <Typography
                       variant="body"
-                      className={`${language === "persian" ? "DigitalEducationSlideNew clr-white rubik" : "DigitalEducationSlideNew clr-white dm-sans"}`}
+                      className={`${language === 'persian' ? 'DigitalEducationSlideNew clr-white rubik' : 'DigitalEducationSlideNew clr-white dm-sans'}`}
                     >
                       {images[index].new}
                     </Typography>
@@ -155,13 +155,13 @@ export default function DigitalEducation() {
             <Box
               className={
                 images[index].des
-                  ? "DigitalEducationSlideTitleandPicBoxwith-description"
-                  : "DigitalEducationSlideTitleandPicBox"
+                  ? 'DigitalEducationSlideTitleandPicBoxwith-description'
+                  : 'DigitalEducationSlideTitleandPicBox'
               }
             >
               <Typography
                 variant="h5"
-                className={`${language === "persian" ? "DigitalEducationCardTitle clr-white rubik" : "DigitalEducationCardTitle clr-white inter"}`}
+                className={`${language === 'persian' ? 'DigitalEducationCardTitle clr-white rubik' : 'DigitalEducationCardTitle clr-white inter'}`}
               >
                 {images[index]?.title}
               </Typography>
