@@ -1,18 +1,18 @@
-import React from "react";
-import "./classes.css";
-import { Box } from "@mui/material";
-import { useLanguage } from "../../../../globalContext/GlobalProvider";
+import React from 'react';
+import './classes.css';
+import { Box } from '@mui/material';
+import { useLanguage } from '../../../../globalContext/GlobalProvider';
 
 const Classes = () => {
   const { language, data } = useLanguage(); // Get language in addition to data
   if (!data) return <div> data is loading..... </div>;
-  
+
   // Dynamically set the font based on the language
-  const fontClass = language === "persian" ? "rubik" : "";
-  
+  const fontClass = language === 'persian' ? 'rubik' : '';
+
   const pickData = data.Class;
   const getData = data.DonotJoinCourse;
-  
+
   return (
     <section className="class-container row">
       <Box className="class-head row">

@@ -37,7 +37,7 @@ const Hero = () => {
           {/*  */}
           <Typography
             variant="h1"
-            className={`  ${language === "persian" ? "persianHeading clr-white rubik" : "mainHeading inter"}`}
+            className={`${language === 'persian' ? 'persianHeading clr-white rubik' : 'mainHeading inter'}`}
           >
             {/* {data.Introduction.title} */}
             {t("Introduction.title")}
@@ -45,7 +45,7 @@ const Hero = () => {
 
           <Typography
             variant="body1"
-            className={` ${language === "persian" ? "persianDescription clr-white rubik" : "mainDescription inter"}`}
+            className={`${language === 'persian' ? 'persianDescription clr-white rubik' : 'mainDescription inter'}`}
           >
             {t("Introduction.description")}
           </Typography>
@@ -56,17 +56,19 @@ const Hero = () => {
             {!video && (
               <span
                 className={`hero-play-wrapper ${
-                  video ? "video-fade-out" : "video-fade-in"
+                  video ? 'video-fade-out' : 'video-fade-in'
                 }`}
               >
                 <img src={Play} alt="icon" onClick={videoPlay} />
               </span>
             )}
             <video
+            preload='metadata'
               ref={videoRef}
               src={LandingPageVideo}
               className={`LandingPageVideo`}
               onClick={videoPlay}
+
             />
           </div>
         </Box>

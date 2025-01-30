@@ -1,18 +1,18 @@
-import React from "react";
-import { Box, Typography } from "@mui/material";
-import { useLanguage } from "../../../../globalContext/GlobalProvider";
-import "./LineCard.css";
+import React from 'react';
+import { Box, Typography } from '@mui/material';
+import { useLanguage } from '../../../../globalContext/GlobalProvider';
+import './LineCard.css';
 
-import LineImg from "../../../../assets/Images/linewo.png";
-import Symbol from "../../../../../public/assets/Icons/Symbol.png";
-import Symbol1 from "../../../../../public/assets/Icons/Symbol (1).png";
-import Symbol2 from "../../../../../public/assets/Icons/Symbol (2).png";
-import Symbol3 from "../../../../../public/assets/Icons/Symbol (3).png";
-import Symbol4 from "../../../../../public/assets/Icons/moneyicon.png";
-import Symbol5 from "../../../../../public/assets/Icons/currciculumicon.png";
-import Symbol6 from "../../../../../public/assets/Icons/networkbrighticon.png";
-import Symbol7 from "../../../../../public/assets/Icons/unilevelicon.png";
-import Community from "../Community";
+import LineImg from '../../../../assets/Images/linewo.png';
+import Symbol from '../../../../../public/assets/Icons/Symbol.png';
+import Symbol1 from '../../../../../public/assets/Icons/Symbol (1).png';
+import Symbol2 from '../../../../../public/assets/Icons/Symbol (2).png';
+import Symbol3 from '../../../../../public/assets/Icons/Symbol (3).png';
+import Symbol4 from '../../../../../public/assets/Icons/moneyicon.png';
+import Symbol5 from '../../../../../public/assets/Icons/currciculumicon.png';
+import Symbol6 from '../../../../../public/assets/Icons/networkbrighticon.png';
+import Symbol7 from '../../../../../public/assets/Icons/unilevelicon.png';
+import Community from '../Community';
 
 const LineCards = () => {
   const { data, language } = useLanguage();
@@ -46,7 +46,7 @@ const LineCards = () => {
             <Typography
               variant="h1"
               className={`LineCardContainerMainTitle ${
-                language === "persian" ? "rubik" : "inter"
+                language === 'persian' ? 'rubik' : 'inter'
               }`}
             >
               {sectionItems[0]?.title}
@@ -57,7 +57,7 @@ const LineCards = () => {
               <Typography
                 variant="h1"
                 className={`LineCardContainerMainTitle ${
-                  language === "persian" ? "rubik" : "inter"
+                  language === 'persian' ? 'rubik' : 'inter'
                 }`}
               >
                 {sectionItems[0]?.title2}
@@ -66,7 +66,7 @@ const LineCards = () => {
                 <Typography
                   variant="body1"
                   className={`LineCardContainerMainDesc ${
-                    language === "persian" ? "rubik" : "inter"
+                    language === 'persian' ? 'rubik' : 'inter'
                   }`}
                 >
                   {sectionItems[0]?.description}
@@ -87,17 +87,17 @@ const LineCards = () => {
                     <Box
                       key={index}
                       className={`importanttoreadCardnumberDiv ${
-                        sectionKey === "participate"
-                          ? "specialClassForSecondComponent"
-                          : ""
+                        sectionKey === 'participate'
+                          ? 'specialClassForSecondComponent'
+                          : ''
                       }`}
                     >
                       <Typography
                         variant="h6"
                         className={`${
-                          language === "persian"
-                            ? "importanttoreadCardnumber rubik"
-                            : "importanttoreadCardnumber Eng inter"
+                          language === 'persian'
+                            ? 'importanttoreadCardnumber rubik'
+                            : 'importanttoreadCardnumber Eng inter'
                         }`}
                       >
                         {num}
@@ -123,7 +123,7 @@ const LineCards = () => {
                         <Typography
                           variant="h6"
                           className={`importanttoreadCardtitle ${
-                            language === "persian" ? "rubik" : "inter"
+                            language === 'persian' ? 'rubik' : 'inter'
                           }`}
                         >
                           {item.Cardtitle}
@@ -131,7 +131,7 @@ const LineCards = () => {
                         <Typography
                           variant="body1"
                           className={`importanttoreadCarddescription ${
-                            language === "persian" ? "rubik" : "inter"
+                            language === 'persian' ? 'rubik' : 'inter'
                           }`}
                         >
                           {item.Carddescription}

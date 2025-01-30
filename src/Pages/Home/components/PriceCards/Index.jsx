@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { Box, Card, CardContent, Typography, Button } from "@mui/material";
-import { useLanguage } from "../../../../globalContext/GlobalProvider";
-import "./PriceCard.css";
-import Line from "../../../../assets/Icons/line.png";
-import Tick from "../../../../assets/Icons/tick.png";
-import PaymentScreen from "./PaymentScreen";
+import React, { useState } from 'react';
+import { Box, Card, CardContent, Typography, Button } from '@mui/material';
+import { useLanguage } from '../../../../globalContext/GlobalProvider';
+import './PriceCard.css';
+import Line from '../../../../assets/Icons/line.png';
+import Tick from '../../../../assets/Icons/tick.png';
+import PaymentScreen from './PaymentScreen';
 
 export const PriceCards = () => {
   const { data, language } = useLanguage();
@@ -51,7 +51,7 @@ export const PriceCards = () => {
           <Card
             key={index}
             className={`plan-card ${
-              language === "persian" ? `align-right` : `align-left`
+              language === 'persian' ? `align-right` : `align-left`
             }`}
           >
             <CardContent>

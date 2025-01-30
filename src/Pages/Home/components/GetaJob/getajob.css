@@ -114,8 +114,11 @@
     justify-content: center;
     width: 100%;
   }
+  .getajob-heading h1 {
+    font-size: 44px;
+  }
   .logodiv {
-    display: block;
+    display: none;
   }
   .getajob-heading h2 {
     font-size: 22px;

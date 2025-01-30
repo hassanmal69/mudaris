@@ -1,3 +1,4 @@
+
 import React, { useRef } from "react";
 import E_Learn from "./components/E_Learn";
 import Hero from "./components/Hero/Index";
@@ -14,6 +15,7 @@ import GetaJob from "./components/GetaJob";
 import LineCards from "./components/ReadIt";
 import { GetStartedButton } from "./components/GetStartedButton";
 import { useTranslation } from "react-i18next";
+
 const Home = () => {
   const priceCardsRef = useRef(null);
   const { t, i18n } = useTranslation("home");
@@ -23,7 +25,7 @@ const Home = () => {
   };
   const scrollToPriceCards = () => {
     if (priceCardsRef.current) {
-      priceCardsRef.current.scrollIntoView({ behavior: "smooth" });
+      priceCardsRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
   return (
@@ -41,7 +43,7 @@ const Home = () => {
         <PriceCards />
       </div>
       <GettoKnow />
-      <GetStartedButton onButtonClick={scrollToPriceCards} />
+      <GetStartedButton onButtonClick={scrollToPriceCards} /> 
       <E_Learn />
       <FAQ />
       <GetStartedButton onButtonClick={scrollToPriceCards} />

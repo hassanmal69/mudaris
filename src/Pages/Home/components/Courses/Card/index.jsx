@@ -1,20 +1,20 @@
-import * as React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import videoIcon from "../../../../../assets/Icons/videoIcon.png";
-import heartIcon from "../../../../../assets/Icons/heartIcon.png";
-import clockIcon from "../../../../../assets/Icons/clockIcon.png";
-import certificateIcon from "../../../../../assets/Icons/certificateIcon.png";
-import { useLanguage } from "../../../../../globalContext/GlobalProvider";
-import "./courseCard.css";
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import videoIcon from '../../../../../assets/Icons/videoIcon.png';
+import heartIcon from '../../../../../assets/Icons/heartIcon.png';
+import clockIcon from '../../../../../assets/Icons/clockIcon.png';
+import certificateIcon from '../../../../../assets/Icons/certificateIcon.png';
+import { useLanguage } from '../../../../../globalContext/GlobalProvider';
+import './courseCard.css';
 
 const Cards = () => {
   const { data } = useLanguage();
 
   if (!data || !data.tabs || data.tabs.length < 2) {
-    console.log("Data is not loading or there are not enough tabs");
+    console.log('Data is not loading or there are not enough tabs');
     return <div>Data is loading...</div>;
   }
 
@@ -22,7 +22,7 @@ const Cards = () => {
   const selectedTab = data.tabs[1];
 
   if (!selectedTab.courses || selectedTab.courses.length === 0) {
-    console.log("No courses found in the selected tab");
+    console.log('No courses found in the selected tab');
     return <div>No courses available</div>;
   }
 

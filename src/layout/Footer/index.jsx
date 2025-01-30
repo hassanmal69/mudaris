@@ -1,21 +1,21 @@
-import React from "react";
-import { Box, Button, Divider, Typography } from "@mui/material";
-import LanguageIcon from "@mui/icons-material/Language";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import "./footer.css";
-import FaceBook from "@assets/Icons/FaceBook.svg";
-import Instagram from "@assets/Icons/Instagram.svg";
-import LinkedIn from "@assets/Icons/LinkedIn.svg";
-import Youtube from "@assets/Icons/Lozenge.svg";
-import { useLanguage } from "../../globalContext/GlobalProvider";
-import Twitter from "@assets/Icons/Twitter.svg";
+import React from 'react';
+import { Box, Button, Divider, Typography } from '@mui/material';
+import LanguageIcon from '@mui/icons-material/Language';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import './footer.css';
+import FaceBook from '@assets/Icons/FaceBook.svg';
+import Instagram from '@assets/Icons/Instagram.svg';
+import LinkedIn from '@assets/Icons/LinkedIn.svg';
+import Youtube from '@assets/Icons/Lozenge.svg';
+import { useLanguage } from '../../globalContext/GlobalProvider';
+import Twitter from '@assets/Icons/Twitter.svg';
 
 const Footer = () => {
   const { data, toggleLanguage, language } = useLanguage();
 
   if (!data) return <h2>data is loading....</h2>;
 
-  const fontClass = language === "persian" ? "rubik" : "monts";
+  const fontClass = language === 'persian' ? 'rubik' : 'monts';
 
   return (
     <footer className="footer-bg align-center">

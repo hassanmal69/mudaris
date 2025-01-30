@@ -117,11 +117,29 @@
 .css-1lvtzne {
   justify-content: flex-end !important;
 }
-
+/* it's for hiding the buttons of sign in and sign up */
+.BorderDiv .rightbtn:nth-child(2),
+.BorderDiv .rightbtn:nth-child(3){
+  display: none !important;
+}
+.BorderDiv .rightbtn:nth-child(2) Button,
+.BorderDiv .rightbtn:nth-child(3) Button {
+  display: none !important;
+}
 @media only screen and (max-width: 600px) {
   .css-nt0iva-MuiPaper-root-MuiAppBar-root {
     width: 100% !important;
   }
+  
+/* it's for hiding the buttons of sign in and sign up */
+.BorderDiv .rightbtn:nth-child(2),
+.BorderDiv .rightbtn:nth-child(3){
+  display: none !important;
+}
+.BorderDiv .rightbtn:nth-child(2) Button,
+.BorderDiv .rightbtn:nth-child(3) Button {
+  display: none !important;
+}
 }
 @media only screen and (min-width: 600px) {
   .css-1jmxzwo-MuiToolbar-root {
@@ -150,9 +168,9 @@
     justify-content: center !important;
     flex-wrap: wrap !important;
   }
-  .css-1jmxzwo-MuiToolbar-root {
+  /* .css-1jmxzwo-MuiToolbar-root {
     height: 250px !important;
-  }
+  } */
   .css-1q2doa3-MuiTypography-root {
     margin-left: 50px !important;
   }
