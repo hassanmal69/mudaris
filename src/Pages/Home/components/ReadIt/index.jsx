@@ -12,7 +12,6 @@ import Symbol4 from '../../../../../public/assets/Icons/moneyicon.png';
 import Symbol5 from '../../../../../public/assets/Icons/currciculumicon.png';
 import Symbol6 from '../../../../../public/assets/Icons/networkbrighticon.png';
 import Symbol7 from '../../../../../public/assets/Icons/unilevelicon.png';
-import Community from '../Community';
 
 const LineCards = () => {
   const { data, language } = useLanguage();
@@ -90,7 +89,11 @@ const LineCards = () => {
                         sectionKey === 'participate'
                           ? 'specialClassForSecondComponent'
                           : ''
-                      }`}
+                      } ${
+                          language === 'persian'
+                            ? 'fa'
+                            : 'en'
+                        }`}
                     >
                       <Typography
                         variant="h6"

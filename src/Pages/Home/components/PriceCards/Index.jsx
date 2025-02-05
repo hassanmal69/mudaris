@@ -25,6 +25,7 @@ export const PriceCards = () => {
     setSelectedPlan({
       planTitle: plan[`plan${index + 1}`],
       price: plan.price,
+      para:plan.para,
       perks: [
         plan.perk1,
         plan.perk2,

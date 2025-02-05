@@ -53,10 +53,11 @@
   color: #fff !important;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   gap: 20px;
-  width: 100%;
-  margin: 30px 0 !important;
+  width: 85%;
+  text-align: left;
+  margin: 30px auto !important;
 }
 .DigitalEducationComponentMainTitle {
   font-size: 48px !important;
@@ -164,31 +165,47 @@
   gap: 0px !important;
   justify-content: space-between;
 }
+.slick-initialized .slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .TitleDescPer {
   width: 100%;
 }
 @media screen and (max-width: 667px) {
   .DigitalEducationComponentMainTitle {
-    font-size: 28px !important;
+    font-size: 22px !important;
     font-weight: 400 !important;
-    line-height: 140% !important;
+    line-height: 120% !important;
     letter-spacing: -0.72px !important;
+    width: 100%;
+}
+  .DigitalEducationComponentButtonDiv {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
+  .DigitalEducationComponentDescription {
+    font-size: 14px !important;
+    line-height: 150% !important;
+}
   .DigitalEducationComponentTextComponent {
     width: 85%;
     flex-direction: column;
-    gap: 20px !important;
+    gap: 0px !important;
     align-items: flex-start;
   }
   .DigitalEducationComponentTitleDesc {
-    gap: 20px;
+    gap: 10px;
     width: 100%;
   }
   .DigitalEducationComponentButtonDiv Button {
-    width: 100px;
+    width: 90px;
     height: 50px;
-    margin-bottom: 30px;
-  }
+    margin-bottom: 15px;
+    font-size: 13px;
+}
   .slick-slide {
     padding: 20px 100px !important;
   }

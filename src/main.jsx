@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -6,24 +5,15 @@ import { ThemeProvider } from "@mui/material/styles";
 import App from "./App";
 import theme from "./theme";
 import "./global.css";
-import { I18nextProvider } from "react-i18next";
-import i18n from "./utils/i18n";
+import { I18nextProvider } from "react-i18next"; // Keep this from your version
+import i18n from "./utils/i18n"; // Keep this from your version
+
 const rootElement = document.getElementById("root");
-=======
-import * as React from 'react';
-import { createRoot } from 'react-dom/client';
-import CssBaseline from '@mui/material/CssBaseline';
-import { ThemeProvider } from '@mui/material/styles';
-import App from './App';
-import theme from './theme';
-import './global.css';
-const rootElement = document.getElementById('root');
->>>>>>> main
 const root = createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    <I18nextProvider i18n={i18n}>
+    <I18nextProvider i18n={i18n}> {/* Ensure i18n wrapper is included */}
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <App />

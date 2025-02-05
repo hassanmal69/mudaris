@@ -42,6 +42,7 @@
 }
 .DataScienceCoursePageHeroRelatedSkillsTabs {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .DataScienceCoursePageCardSectionParent {
@@ -63,13 +64,13 @@
 .DataScienceCourseCardVideocomp {
   display: flex;
   align-items: center;
-  gap: 4px;
+  justify-content: space-between;
 }
 .DataScienceCourseCardMainImg {
   height: 240px;
 }
 .DataScienceCourseCardCertificateandheartIconBox {
-  width: 53%;
+  width: 50%;
   display: flex;
   justify-content: end;
 }
@@ -116,6 +117,7 @@
 }
 .DataScienceCoursePagebtnSection {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 .DataScienceCoursePagebtnspanSection {
@@ -146,4 +148,35 @@
 }
 .DataScienceCoursePagebtnCardsMainSection {
   display: flex;
+}
+@media screen and (max-width: 600px) {
+  .DataScienceCoursePageHeroTextContentMain {
+    width: 100%;
+}
+.DataScienceCoursePageCardSection {
+  gap: 100px;
+}
+.DataScienceCoursePageHeroRelatedSkills {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start; 
+  margin-top: 40px;
+}
+.DataScienceCourseCard {
+  flex-direction: column;
+  gap: 20px;
+  width: 90%;
+  margin: auto;
+}
+.DataScienceCourseCardCertificateandheartIconBox {
+  width: 20%;
+}
+.DataScienceCourseCardMainImg {
+  height: 200px;
+}
+.DataScienceCoursePagebtnCardsMainSection {
+  display: flex;
+  flex-direction: column;
+}
 }
