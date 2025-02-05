@@ -3,7 +3,7 @@ import E_Learn from './components/E_Learn';
 import Hero from './components/Hero/Index';
 import FAQ from './components/Accordion';
 import GetStart from './components/GetStarted';
-import PriceCards from './components/PriceCards';
+import PriceCards from './components/PriceCards/Index';
 import Review from './components/Review/Index';
 import GettoKnow from './components/GettoKnow/Index';
 import DigitalEducation from './components/digitalEducationSlider';
@@ -32,24 +32,23 @@ const Home = () => {
   return (
     <section className="home-page column primary-bg">
       {/* home-page column primary-bg */}
-      {/* <Testimonials /> */}
-      {/* <GetaJob /> */}
-      {/* <Community /> */}
-      {/* <WhatYouGet /> need to render in array */}
-      {/* <PriceCards /> */}
-      {/* <GettoKnow /> */}
-      {/* <LineCards /> */}
-      <E_Learn />
-      {/* <Hero />
+      <Hero />
+      <Community />
+      <GetaJob />
+      {/* <WhatYouGet /> */}
       <DigitalEducation />
       <GetStartedButton onButtonClick={scrollToPriceCards} />
       <GetStartedButton onButtonClick={scrollToPriceCards} />
+      <LineCards />
       <div className="price" ref={priceCardsRef}>
+        <PriceCards />
       </div>
+      <GettoKnow />
       <GetStartedButton onButtonClick={scrollToPriceCards} />
+      <E_Learn />
       <FAQ />
       <GetStartedButton onButtonClick={scrollToPriceCards} />
-      <GetStart /> */}
+      <GetStart />
     </section>
   );
 };

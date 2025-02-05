@@ -6,12 +6,12 @@ import { useLanguage } from "../../../../globalContext/GlobalProvider";
 import { useTranslation } from "react-i18next";
 
 const Hero = () => {
-  const { language, data } = useLanguage();
+  const { data } = useLanguage();
   const { t, i18n } = useTranslation("home");
 
   const [video, setVideo] = useState(false);
   const videoRef = useRef(null);
-
+  const language = i18n.language;
   const videoPlay = () => {
     setVideo((prevState) => {
       const newVideoState = !prevState;
@@ -35,7 +35,7 @@ const Hero = () => {
           <Typography
             variant="h1"
             className={`${
-              language === "persian"
+              language === "fa"
                 ? "persianHeading clr-white rubik"
                 : "mainHeading inter"
             }`}
@@ -46,8 +46,8 @@ const Hero = () => {
           <Typography
             variant="body1"
             className={`${
-              language === "persian"
-                ? "persianDescription clr-white rubik"
+              language === "fa"
+                ? "persianDescription clr-white zain"
                 : "mainDescription inter"
             }`}
           >

@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Zain&display=swap');
 
 * {
   margin: 0;
@@ -11,7 +10,9 @@
   font-family: 'Public Sans', sans-serif;
   font-family: 'Barlow', sans-serif;
   font-family: 'Rubik', sans-serif;
+  font-family: 'Zain', sans-serif;
 }
+
 
 :root {
   --primary-clr: #020103;
@@ -52,6 +53,9 @@ body {
 .inter {
   font-family: 'Inter', sans-serif !important;
 }
+.zain{
+  font-family: 'Zain', sans-serif !important;
+}
 html[lang='fa'] .inter {
   font-family: 'Rubik', sans-serif !important;
 }
@@ -60,6 +64,12 @@ html[lang='fa'] .inter {
 }
 .manrope {
   font-family: 'Manrope', sans-serif !important;
+}
+.alignItems-left{
+  align-items: flex-start !important;
+}
+.alignItems-right{
+  align-items: flex-end !important;
 }
 .public-sans {
   font-family: 'Public Sans', sans-serif !important;
