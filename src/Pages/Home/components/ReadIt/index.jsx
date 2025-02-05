@@ -1,8 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import { useLanguage } from '../../../../globalContext/GlobalProvider';
+import { useTranslation } from 'react-i18next';
 import './LineCard.css';
-
 import LineImg from '../../../../assets/Images/linewo.png';
 import Symbol from '../../../../../public/assets/Icons/Symbol.png';
 import Symbol1 from '../../../../../public/assets/Icons/Symbol (1).png';
@@ -14,11 +13,11 @@ import Symbol6 from '../../../../../public/assets/Icons/networkbrighticon.png';
 import Symbol7 from '../../../../../public/assets/Icons/unilevelicon.png';
 
 const LineCards = () => {
-  const { data, language } = useLanguage();
-  if (!data) return <Typography>Data not available</Typography>;
+  const { t } = useTranslation('home');
+  const data = t('parentarray', { returnObjects: true }); // Get JSON data as an object
 
-  const parentArray = data.parentarray;
-  const numbers = data.numbersforparentarray;
+  if (!data || !Array.isArray(data))
+    return <Typography>Data not available</Typography>;
 
   const symbolArray = [
     Symbol,
@@ -33,47 +32,35 @@ const LineCards = () => {
 
   return (
     <>
-      {parentArray.map((section, sectionIndex) => {
-        const sectionKey = Object.keys(section)[0];
+      {data.map((section, sectionIndex) => {
+        const sectionKey = Object.keys(section)[0]; // Extract key (e.g., "Important" or "participate")
         const sectionItems = section[sectionKey];
 
         return (
           <Box key={sectionIndex} className="importanttoread">
-            {/* Render Community before the rest of the content if sectionKey is "participate" */}
-            {/* {sectionKey === "participate" && <Community />} */}
-
-            <Typography
-              variant="h1"
-              className={`LineCardContainerMainTitle ${
-                language === 'persian' ? 'rubik' : 'inter'
-              }`}
-            >
+            <Typography variant="h1" className="LineCardContainerMainTitle">
               {sectionItems[0]?.title}
             </Typography>
 
-            {/* Title 2 and Description */}
-            <Box className="LineCardContainerMainTitleDesc">
-              <Typography
-                variant="h1"
-                className={`LineCardContainerMainTitle ${
-                  language === 'persian' ? 'rubik' : 'inter'
-                }`}
-              >
-                {sectionItems[0]?.title2}
-              </Typography>
-              <Box className="LineCardContainerMainTitleDesc">
-                <Typography
-                  variant="body1"
-                  className={`LineCardContainerMainDesc ${
-                    language === 'persian' ? 'rubik' : 'inter'
-                  }`}
-                >
-                  {sectionItems[0]?.description}
-                </Typography>
-              </Box>
-            </Box>
+            {/* <Box className="LineCardContainerMainTitleDesc">
+              {sectionItems.slice(1).map((item, index) => (
+                <Box key={index}>
+                  <Typography
+                    variant="h1"
+                    className="LineCardContainerMainTitle"
+                  >
+                    {item.title}
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    className="LineCardContainerMainDesc"
+                  >
+                    {item.description}
+                  </Typography>
+                </Box>
+              ))}
+            </Box> */}
 
-            {/* Line Image and Numbers */}
             <Box className="LineCardContainerMain">
               <Box className="LineCardContainerMainPic">
                 <img
@@ -81,33 +68,6 @@ const LineCards = () => {
                   className="importanttoreadLinePic"
                   alt="Line"
                 />
-                <Box className="importanttoreadCardnumberDivParent">
-                  {Object.values(numbers).map((num, index) => (
-                    <Box
-                      key={index}
-                      className={`importanttoreadCardnumberDiv ${
-                        sectionKey === 'participate'
-                          ? 'specialClassForSecondComponent'
-                          : ''
-                      } ${
-                          language === 'persian'
-                            ? 'fa'
-                            : 'en'
-                        }`}
-                    >
-                      <Typography
-                        variant="h6"
-                        className={`${
-                          language === 'persian'
-                            ? 'importanttoreadCardnumber rubik'
-                            : 'importanttoreadCardnumber Eng inter'
-                        }`}
-                      >
-                        {num}
-                      </Typography>
-                    </Box>
-                  ))}
-                </Box>
               </Box>
 
               {/* Cards with Symbols */}
@@ -116,7 +76,6 @@ const LineCards = () => {
                   <Box className="uaatest" key={index}>
                     <Box className="importanttoreadCard">
                       <Box className="importanttoreadCardPicDiv">
-                        {/* Use the symbol from the symbolArray based on the index */}
                         <img
                           src={symbolArray[index % symbolArray.length]}
                           alt={`Symbol ${index}`}
@@ -125,19 +84,15 @@ const LineCards = () => {
                       <Box className="importanttoreadCardContentText">
                         <Typography
                           variant="h6"
-                          className={`importanttoreadCardtitle ${
-                            language === 'persian' ? 'rubik' : 'inter'
-                          }`}
+                          className="importanttoreadCardtitle"
                         >
-                          {item.Cardtitle}
+                          {item.title}
                         </Typography>
                         <Typography
                           variant="body1"
-                          className={`importanttoreadCarddescription ${
-                            language === 'persian' ? 'rubik' : 'inter'
-                          }`}
+                          className="importanttoreadCarddescription"
                         >
-                          {item.Carddescription}
+                          {item.description}
                         </Typography>
                       </Box>
                     </Box>

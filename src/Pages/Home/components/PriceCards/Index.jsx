@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { Box, Card, CardContent, Typography, Button } from "@mui/material";
-import Slider from "react-slick"; // Import React Slick
-import { useLanguage } from "../../../../globalContext/GlobalProvider";
-import "./PriceCard.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Line from "../../../../assets/Icons/line.png";
-import Tick from "../../../../assets/Icons/tick.png";
-import PaymentScreen from "./PaymentScreen";
+import React, { useState, useEffect } from 'react';
+import { Box, Card, CardContent, Typography, Button } from '@mui/material';
+import Slider from 'react-slick'; // Import React Slick
+import { useLanguage } from '../../../../globalContext/GlobalProvider';
+import './PriceCard.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Line from '../../../../assets/Icons/line.png';
+import Tick from '../../../../assets/Icons/tick.png';
+import PaymentScreen from './PaymentScreen';
+import { useTranslation } from 'react-i18next';
 
 export const PriceCards = () => {
   const { data, language } = useLanguage();
+  const { t } = useTranslation('home');
   const [isPaymentScreenVisible, setIsPaymentScreenVisible] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
@@ -20,17 +22,14 @@ export const PriceCards = () => {
       setIsMobile(window.innerWidth <= 600);
     };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  if (!data) {
-    return <div>Loading...</div>;
-  }
 
   if (isPaymentScreenVisible) {
     return <PaymentScreen selectedPlan={selectedPlan} />;
   }
+  if (!data) return 'nigga';
 
   const paymentPlans = data.paymentPlans;
   const handleSubscribe = (plan, index) => {
@@ -54,20 +53,20 @@ export const PriceCards = () => {
   const sliderSettings = {
     dots: true,
     infinite: false,
-    arrows:false,
+    arrows: false,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1, 
+    slidesToScroll: 1,
   };
 
   return (
     <section className="price-container">
       <Box className="text-container">
         <Typography variant="h1" className="plan-title inter">
-          {paymentPlans[0].title}
+          {t('paymentHeader.title')}
         </Typography>
         <Typography variant="body1" className="plan-description inter">
-          {paymentPlans[0].description}
+          {t('paymentHeader.description')}
         </Typography>
       </Box>
 
@@ -76,7 +75,9 @@ export const PriceCards = () => {
         <Slider {...sliderSettings}>
           {paymentPlans.slice(1, 5).map((plan, index) => (
             <div key={index}>
-              <Card className={`plan-card ${language === "persian" ? "align-right" : "align-left"}`}>
+              <Card
+                className={`plan-card ${language === 'persian' ? 'align-right' : 'align-left'}`}
+              >
                 <CardContent>
                   <Box className="plan-upper">
                     <Typography variant="h5" className="plan-heading inter">
@@ -93,7 +94,14 @@ export const PriceCards = () => {
                     </Typography>
                   )}
                   <ul className="plan-perks">
-                    {[plan.perk1, plan.perk2, plan.perk3, plan.perk4, plan.perk5, plan.perk6]
+                    {[
+                      plan.perk1,
+                      plan.perk2,
+                      plan.perk3,
+                      plan.perk4,
+                      plan.perk5,
+                      plan.perk6,
+                    ]
                       .filter(Boolean)
                       .map((perk, perkIndex) => (
                         <Box className="perk flex inter" key={perkIndex}>
@@ -104,7 +112,10 @@ export const PriceCards = () => {
                   </ul>
                 </CardContent>
                 <Box className="ButtonDiv">
-                  <Button className="subscribe-button" onClick={() => handleSubscribe(plan, index)}>
+                  <Button
+                    className="subscribe-button"
+                    onClick={() => handleSubscribe(plan, index)}
+                  >
                     {paymentPlans[5].subscribe}
                   </Button>
                 </Box>
@@ -115,7 +126,10 @@ export const PriceCards = () => {
       ) : (
         <Box className="card-wrapper">
           {paymentPlans.slice(1, 5).map((plan, index) => (
-            <Card key={index} className={`plan-card ${language === "persian" ? "align-right" : "align-left"}`}>
+            <Card
+              key={index}
+              className={`plan-card ${language === 'persian' ? 'align-right' : 'align-left'}`}
+            >
               <CardContent>
                 <Box className="plan-upper">
                   <Typography variant="h5" className="plan-heading inter">
@@ -132,7 +146,14 @@ export const PriceCards = () => {
                   </Typography>
                 )}
                 <ul className="plan-perks">
-                  {[plan.perk1, plan.perk2, plan.perk3, plan.perk4, plan.perk5, plan.perk6]
+                  {[
+                    plan.perk1,
+                    plan.perk2,
+                    plan.perk3,
+                    plan.perk4,
+                    plan.perk5,
+                    plan.perk6,
+                  ]
                     .filter(Boolean)
                     .map((perk, perkIndex) => (
                       <Box className="perk flex inter" key={perkIndex}>
@@ -143,7 +164,10 @@ export const PriceCards = () => {
                 </ul>
               </CardContent>
               <Box className="ButtonDiv">
-                <Button className="subscribe-button" onClick={() => handleSubscribe(plan, index)}>
+                <Button
+                  className="subscribe-button"
+                  onClick={() => handleSubscribe(plan, index)}
+                >
                   {paymentPlans[5].subscribe}
                 </Button>
               </Box>
