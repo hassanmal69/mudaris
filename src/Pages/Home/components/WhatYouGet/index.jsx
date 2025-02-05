@@ -17,9 +17,6 @@ const wygImages = [
 ];
 
 const WhatYouGet = () => {
-  const { language, data } = useLanguage();
-  if (!data) return <div>data is loading.....</div>;
-
   const videoRefs = useRef([]); // To store video elements
   const playButtonRefs = useRef([]); // To store play button elements
 

@@ -1,23 +1,23 @@
-import React, { useRef } from "react";
-import E_Learn from "./components/E_Learn";
-import Hero from "./components/Hero/Index";
-import FAQ from "./components/Accordion";
-import GetStart from "./components/GetStarted";
-import PriceCards from "./components/PriceCards/Index";
-import Review from "./components/Review/Index";
-import GettoKnow from "./components/GettoKnow/Index";
-import DigitalEducation from "./components/digitalEducationSlider";
-import Community from "./components/Community";
-import WhatYouGet from "./components/WhatYouGet";
-import "./home.css";
-import GetaJob from "./components/GetaJob";
-import LineCards from "./components/ReadIt";
-import { GetStartedButton } from "./components/GetStartedButton";
-import { useTranslation } from "react-i18next";
-
+import React, { useRef } from 'react';
+import E_Learn from './components/E_Learn';
+import Hero from './components/Hero/Index';
+import FAQ from './components/Accordion';
+import GetStart from './components/GetStarted';
+import PriceCards from './components/PriceCards/Index';
+import Review from './components/Review/Index';
+import GettoKnow from './components/GettoKnow/Index';
+import DigitalEducation from './components/digitalEducationSlider';
+import Community from './components/Community';
+import WhatYouGet from './components/WhatYouGet';
+import './home.css';
+import GetaJob from './components/GetaJob';
+import LineCards from './components/ReadIt';
+import Testimonials from './components/Testimonials/Testimonials';
+import { GetStartedButton } from './components/GetStartedButton';
+import { useTranslation } from 'react-i18next';
 const Home = () => {
   const priceCardsRef = useRef(null);
-  const { t, i18n } = useTranslation("home");
+  const { t, i18n } = useTranslation('home');
 
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);
@@ -25,20 +25,22 @@ const Home = () => {
 
   const scrollToPriceCards = () => {
     if (priceCardsRef.current) {
-      priceCardsRef.current.scrollIntoView({ behavior: "smooth" });
+      priceCardsRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
     <section className="home-page column primary-bg">
       {/* home-page column primary-bg */}
-      <Hero />
-      <GetaJob />
-      <GetStartedButton onButtonClick={scrollToPriceCards} />
+      {/* <Testimonials /> */}
+      {/* <GetaJob /> */}
+      {/* <Community /> */}
+      <WhatYouGet />
+      {/* <Hero />
       <DigitalEducation />
       <GetStartedButton onButtonClick={scrollToPriceCards} />
+      <GetStartedButton onButtonClick={scrollToPriceCards} />
       <LineCards />
-      <WhatYouGet />
       <div className="price" ref={priceCardsRef}>
         <PriceCards />
       </div>
@@ -47,7 +49,7 @@ const Home = () => {
       <E_Learn />
       <FAQ />
       <GetStartedButton onButtonClick={scrollToPriceCards} />
-      <GetStart />
+      <GetStart /> */}
     </section>
   );
 };

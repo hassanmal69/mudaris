@@ -1,7 +1,6 @@
 import { Button, Typography } from '@mui/material';
 import React from 'react';
 import './community.css';
-import { useLanguage } from '../../../../globalContext/GlobalProvider';
 import Person from '../../../../assets/Images/communityPerson.png';
 import Picture from '../../../../assets/Images/nigga.png';
 import Meeting from '../../../../assets/Images/meeting.png';
@@ -9,16 +8,13 @@ import Podcast from '../../../../assets/Images/podcast.png';
 import Meet from '../../../../assets/Images/meet.png';
 import Play from '../../../../assets/Icons/play.svg';
 import Conversation from '../../../../assets/Images/conversation.png';
+import { useTranslation } from 'react-i18next';
 
 const Community = () => {
-  const { language, data, status, error } = useLanguage();
-
-  if (!data) {
-    return <div className="clr-white">Data is not available</div>;
-  }
-
   // Define the font class: 'rubik' for Persian, no changes for others
-  const fontClass = language === 'persian' ? 'rubik' : '';
+  // const fontClass = language === 'persian' ? 'rubik' : '';
+  const fontClass = 'rubik';
+  const { t } = useTranslation('home');
 
   return (
     <section className="community-section">
@@ -27,19 +23,25 @@ const Community = () => {
           variant="h3"
           className={`clr-white inter community-title ${fontClass}`}
         >
-          {data.studentvideoreviews.title}
+          {t('studentvideoreviews.title')}
         </Typography>
         <Typography
           variant="h3"
           className={`clr-white inter description ${fontClass}`}
         >
-          {data.studentvideoreviews.para}
+          {t('studentvideoreviews.heading')}
+        </Typography>
+        <Typography
+          variant="h3"
+          className={`clr-white inter description ${fontClass}`}
+        >
+          {t('studentvideoreviews.description')}
         </Typography>
         <Button
           variant="contained"
           className={`community-btn inter ${fontClass}`}
         >
-          {data.studentvideoreviews.button}
+          {t('studentvideoreviews.button')}
         </Button>
       </div>
       <section className="community-stories flex">
