@@ -46,15 +46,15 @@ export default function DigitalEducation() {
     // slidesToShow: 6,
     // slidesToScroll: 6,
     dots: false, // Hide dots for a cleaner UI
-infinite: true, // Loop the slider infinitely
-arrows: false, // No navigation arrows
-speed: 4000, // Control smoothness (lower = faster)
-slidesToShow: 6, // Display 6 slides at a time
-slidesToScroll: 1, // Move one slide at a time
-autoplay: true, // Enable auto-scroll
-autoplaySpeed: 1, // Instantly starts moving
-cssEase: "linear", // Ensures smooth movement
-pauseOnHover: true, // Keeps moving even when hovered
+    infinite: true, // Loop the slider infinitely
+    arrows: false, // No navigation arrows
+    speed: 4000, // Control smoothness (lower = faster)
+    slidesToShow: 6, // Display 6 slides at a time
+    slidesToScroll: 1, // Move one slide at a time
+    autoplay: true, // Enable auto-scroll
+    autoplaySpeed: 1, // Instantly starts moving
+    cssEase: 'linear', // Ensures smooth movement
+    pauseOnHover: true, // Keeps moving even when hovered
     responsive: [
       {
         breakpoint: 1544,
@@ -101,7 +101,7 @@ pauseOnHover: true, // Keeps moving even when hovered
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2.3,
           slidesToScroll: 1,
           dots: false,
         },

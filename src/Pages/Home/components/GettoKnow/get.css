@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   gap: 120px;
+  margin-bottom: 40px;
 }
 .GetToknowContent {
   display: flex !important;
@@ -88,6 +89,10 @@
   gap: 40px;
   width: 90%;
   margin: auto;
+}
+.mobile-slider {
+  height: 200px;
+  width: 100%;
 }
 .GetToknowTextContentbelowMainText h4 {
   font-size: 32px;
@@ -194,7 +199,9 @@
   .GetToknowMainContainer {
     width: 90% !important;
   }
-
+  .GetToknowContentbelowLogo {
+    display: flex !important;
+  }
   .GetToknowContent {
     flex-direction: column !important;
   }
