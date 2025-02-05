@@ -3,7 +3,7 @@ import E_Learn from './components/E_Learn';
 import Hero from './components/Hero/Index';
 import FAQ from './components/Accordion';
 import GetStart from './components/GetStarted';
-import PriceCards from './components/PriceCards/Index';
+import PriceCards from './components/PriceCards';
 import Review from './components/Review/Index';
 import GettoKnow from './components/GettoKnow/Index';
 import DigitalEducation from './components/digitalEducationSlider';
@@ -35,18 +35,18 @@ const Home = () => {
       {/* <Testimonials /> */}
       {/* <GetaJob /> */}
       {/* <Community /> */}
-      <WhatYouGet />
+      {/* <WhatYouGet /> need to render in array */}
+      {/* <PriceCards /> */}
+      {/* <GettoKnow /> */}
+      {/* <LineCards /> */}
+      <E_Learn />
       {/* <Hero />
       <DigitalEducation />
       <GetStartedButton onButtonClick={scrollToPriceCards} />
       <GetStartedButton onButtonClick={scrollToPriceCards} />
-      <LineCards />
       <div className="price" ref={priceCardsRef}>
-        <PriceCards />
       </div>
-      <GettoKnow />
       <GetStartedButton onButtonClick={scrollToPriceCards} />
-      <E_Learn />
       <FAQ />
       <GetStartedButton onButtonClick={scrollToPriceCards} />
       <GetStart /> */}
