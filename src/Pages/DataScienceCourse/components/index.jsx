@@ -5,7 +5,6 @@ import './datascience.css';
 import { CourseCards } from './CourseCards/Index';
 import { MenuSide } from './CourseCardSideMenu';
 import PaginationComponent from './Pagination';
-
 // Import images
 import courseImage1 from '../../../../public/assets/images/coursepagecardimage.png'; // Course image 1
 import courseImage2 from '../../../../public/assets/images/coursepagecardimageML.png'; // Course image 2

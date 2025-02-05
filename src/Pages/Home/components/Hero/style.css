@@ -75,8 +75,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
-
+iframe>html{
+  background-color: transparent !important;
+}
+.video-container{
+  background: transparent !important;
+}
 .mainHeading {
   background: linear-gradient(180deg, #ffffff 54.17%, #b372cf 100%);
   -webkit-background-clip: text;
@@ -109,9 +115,11 @@
 
 .LandingPageVideo {
   width: 95%;
-  border: 10px solid black;
+  height: 630px;
+  border: 2px solid black;
   box-shadow: -1px -41px 55px 3px rgba(98, 42, 154, 0.69);
   overflow: hidden;
+  background: transparent !important;
 }
 
 .BlurGlow {
@@ -123,6 +131,7 @@
 }
 .video-container {
   position: relative;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,8 +140,9 @@
   content: '';
   position: absolute;
   width: 95%;
+  pointer-events: none;
   height: 80%;
-  bottom: 10px;
+  bottom: 0px;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 3.8%, #050208 86.04%);
 }
 .hero-play-wrapper {
@@ -291,41 +301,45 @@
   }
 }
 @media only screen and (max-width: 670px) {
-  .mainHeading,.persianHeading {
+  .mainHeading,
+  .persianHeading {
     width: 90%;
     font-size: 65px !important;
-}
-.hero-bg-lines::before {
-display: none;
-}
-.ContainerText::before {
-  width: 95%;
-  height: 540px;
-}
-.hero-bg-lines::after {
-  top: -70px;
-}
+  }
+  .hero-bg-lines::before {
+    display: none;
+  }
+  .ContainerText::before {
+    width: 95%;
+    height: 540px;
+  }
+  .hero-bg-lines::after {
+    top: -70px;
+  }
 }
 @media only screen and (max-width: 600px) {
   .HeroPagecontainer {
     justify-content: flex-start;
   }
+  .ContainerText {
+    gap: 10px;
+  }
   .ContainerContent {
-    gap: 15px;
+    gap: 10px;
   }
   .mainHeading {
-    font-size: 40px !important;
-    width: 100%;
+    font-size: 28px !important;
+    width: 70%;
   }
   .persianHeading {
-    font-size: 40px !important;
+    font-size: 28px !important;
     height: fit-content;
     width: 75% !important;
   }
   .mainDescription,
   .persianDescription {
-    font-size: 18px !important;
-    width: 100% !important;
+    font-size: 12px !important;
+    width: 80% !important;
   }
   .LandingPageVideo {
     width: 100%;
@@ -347,11 +361,16 @@ display: none;
   .video-container::before {
     content: '';
     position: absolute;
-    bottom: 10px;
+    bottom: 0px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 3.8%, #050208 86.04%);
   }
+  .LandingPageVideo {
+    width: 100%;
+    height: 195px;
+}
   .hero-play-wrapper {
-    padding: 20px !important;
+    padding: 10px !important;
+    border-radius: 10px;
   }
 
   .video-fade-out {
@@ -363,7 +382,10 @@ display: none;
   .hero-play-wrapper img:hover {
     cursor: pointer;
   }
-
+  .hero-play-wrapper img{
+    width: 20px;
+    height: 20px;
+  }
   .hero-section-button {
     padding: 5px 15px;
     width: fit-content;
@@ -379,6 +401,7 @@ display: none;
   }
   .hero-bg-lines {
     position: relative;
+    display: none;
   }
   .hero-bg-lines::after {
     width: 290px;
@@ -413,15 +436,15 @@ display: none;
     left: 190px;
   }
 }
-@media screen and (width: 375px) {
+ @media screen and (width: 375px) {
   .ContainerText::before {
     position: absolute;
     width: 100%;
-    height: 350px;
+    height: 150px;
     top: 80px;
     border-radius: 61%;
   }
-}
+} 
 @media screen and (width: 344px) {
   .mainHeading {
     font-size: 39px !important;

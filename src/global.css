@@ -109,7 +109,9 @@ html[lang='fa'] .inter {
   display: flex;
   flex-direction: column;
 }
-
+.rev-flex {
+  flex-direction: row-reverse;
+}
 li {
   list-style: none;
 }

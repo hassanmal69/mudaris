@@ -92,3 +92,11 @@
   transform: rotate(45deg);
   background: transparent;
 }
+@media screen and (max-width: 600px) {
+  .CourseCardMenuBarLeft {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react";
 import E_Learn from "./components/E_Learn";
 import Hero from "./components/Hero/Index";
@@ -7,7 +6,7 @@ import GetStart from "./components/GetStarted";
 import PriceCards from "./components/PriceCards/Index";
 import Review from "./components/Review/Index";
 import GettoKnow from "./components/GettoKnow/Index";
-import DigitalEducation from "./components/DigitalEducationSlider";
+import DigitalEducation from "./components/digitalEducationSlider";
 import Community from "./components/Community";
 import WhatYouGet from "./components/WhatYouGet";
 import "./home.css";
@@ -23,18 +22,19 @@ const Home = () => {
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);
   };
+
   const scrollToPriceCards = () => {
     if (priceCardsRef.current) {
-      priceCardsRef.current.scrollIntoView({ behavior: 'smooth' });
+      priceCardsRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   return (
-    <section className="">
+    <section className="home-page column primary-bg">
       {/* home-page column primary-bg */}
       <Hero />
       <GetaJob />
-      <GetStartedButton onButtonClick={scrollToPriceCards} /> 
-      {/*  */}
+      <GetStartedButton onButtonClick={scrollToPriceCards} />
       <DigitalEducation />
       <GetStartedButton onButtonClick={scrollToPriceCards} />
       <LineCards />
@@ -43,7 +43,7 @@ const Home = () => {
         <PriceCards />
       </div>
       <GettoKnow />
-      <GetStartedButton onButtonClick={scrollToPriceCards} /> 
+      <GetStartedButton onButtonClick={scrollToPriceCards} />
       <E_Learn />
       <FAQ />
       <GetStartedButton onButtonClick={scrollToPriceCards} />

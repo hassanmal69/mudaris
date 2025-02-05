@@ -63,3 +63,9 @@
 .SpecialExtraCardsSpecial {
   background: #744399;
 }
+@media screen and (max-width: 600px) {
+  .DataScienceCoursePageCourseSectionParent{
+    width: 100%;
+    margin-top: 30px;
+  }
+}
