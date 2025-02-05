@@ -26,26 +26,24 @@
 /* language exception handling */
 .persianHeading {
   font-size: 82px !important;
-  height: 200px;
   display: flex;
-  font-weight: 500 !important;
-  align-items: center;
-  width: 700px;
+  /* width: 700px; */
   background: linear-gradient(180deg, #fff 54.17%, #b372cf 100%);
   background-clip: text;
   -webkit-background-clip: text;
   letter-spacing: -4.149px;
   -webkit-text-fill-color: transparent;
+  font-weight: 900 !important;
+  letter-spacing: -0.0506em;
+  text-align: center;
 }
 .persianDescription {
-  text-align: center;
-  font-family: Rubik;
-  font-size: 20px !important;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 31px; /* 155% */
-  letter-spacing: -0.002px;
-  width: 500px !important;
+  font-size: 27px !important;
+  width: 75% !important;
+  font-weight: 400 !important;
+  line-height: 30px !important;
+  letter-spacing: -0.0001em !important;
+  text-align: center !important;
 }
 
 .cardText {
@@ -77,10 +75,7 @@
   align-items: center;
   width: 100%;
 }
-iframe>html{
-  background-color: transparent !important;
-}
-.video-container{
+.video-container {
   background: transparent !important;
 }
 .mainHeading {
@@ -367,7 +362,7 @@ iframe>html{
   .LandingPageVideo {
     width: 100%;
     height: 195px;
-}
+  }
   .hero-play-wrapper {
     padding: 10px !important;
     border-radius: 10px;
@@ -382,7 +377,7 @@ iframe>html{
   .hero-play-wrapper img:hover {
     cursor: pointer;
   }
-  .hero-play-wrapper img{
+  .hero-play-wrapper img {
     width: 20px;
     height: 20px;
   }
@@ -436,7 +431,7 @@ iframe>html{
     left: 190px;
   }
 }
- @media screen and (width: 375px) {
+@media screen and (width: 375px) {
   .ContainerText::before {
     position: absolute;
     width: 100%;
@@ -444,7 +439,7 @@ iframe>html{
     top: 80px;
     border-radius: 61%;
   }
-} 
+}
 @media screen and (width: 344px) {
   .mainHeading {
     font-size: 39px !important;

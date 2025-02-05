@@ -19,7 +19,7 @@ const wygImages = [
 const WhatYouGet = () => {
   const videoRefs = useRef([]); // To store video elements
   const playButtonRefs = useRef([]); // To store play button elements
-
+  const {data, language} = useLanguage();
   const videoPlay = (index) => {
     const currentVideo = videoRefs.current[index];
     const currentPlayButton = playButtonRefs.current[index];

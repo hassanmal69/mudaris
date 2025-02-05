@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: row;
 }
+
 .getajob-paragraphs {
   display: flex;
   flex-direction: row;
@@ -30,11 +31,16 @@
 }
 
 .getajob-heading h1 {
-  font-weight: 600;
+  font-size: 60px;
+  font-weight: 900;
   letter-spacing: -0.015em;
-  color: rgba(224, 224, 224, 1);
-  font-size: 56px;
   text-align: center;
+  width: 75%;
+  margin: auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(348.44deg, #9855ff 8.04%, #ffffff 68.68%);
+  background-clip: text;
 }
 
 .getajob-infobox {
@@ -74,13 +80,11 @@
   padding: 56px;
 }
 .getajob-paragraphs p {
-  font-size: 24px;
-  font-style: normal;
   width: 100%;
-  font-weight: 400;
-  line-height: 130%; /* 31.2px */
-  letter-spacing: -0.12px;
   color: white;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
 }
 .getajobparacontentonly {
   display: flex;
@@ -116,9 +120,12 @@
     justify-content: center;
     align-items: center;
     border-radius: 24px;
-    background: var(--LBG1, linear-gradient(107deg, #190d2e 0.54%, #020103 99.46%));
+    background: var(
+      --LBG1,
+      linear-gradient(107deg, #190d2e 0.54%, #020103 99.46%)
+    );
     padding: 25px;
-}
+  }
   .getajob-paragraphs {
     gap: 20px;
     justify-content: center;
@@ -150,7 +157,7 @@
   .getajob-info {
     font-size: 15px;
     width: 100%;
-}
+  }
 }
 @media only screen and (min-width: 600px) and (max-width: 992px) {
   .getajob-circle {
@@ -204,9 +211,9 @@
   }
   .getajobParaforbg {
     width: 500px;
-    padding: 45px;
+    padding: 40px;
     gap: 45px;
-}
+  }
   .getajob-infobox {
     padding: 29px 29px;
   }
@@ -230,7 +237,7 @@
   }
 
   .getajob-paragraphs p {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .getajob-infobox {

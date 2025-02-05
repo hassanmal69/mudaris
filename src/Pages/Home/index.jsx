@@ -32,11 +32,10 @@ const Home = () => {
   return (
     <section className="home-page column primary-bg">
       {/* home-page column primary-bg */}
-      {/* <Testimonials /> */}
-      {/* <GetaJob /> */}
-      {/* <Community /> */}
-      <WhatYouGet />
-      {/* <Hero />
+      <Hero />
+      <Community />
+      <GetaJob />
+      {/* <WhatYouGet /> */}
       <DigitalEducation />
       <GetStartedButton onButtonClick={scrollToPriceCards} />
       <GetStartedButton onButtonClick={scrollToPriceCards} />
@@ -49,7 +48,7 @@ const Home = () => {
       <E_Learn />
       <FAQ />
       <GetStartedButton onButtonClick={scrollToPriceCards} />
-      <GetStart /> */}
+      <GetStart />
     </section>
   );
 };

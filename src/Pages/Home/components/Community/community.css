@@ -1,5 +1,10 @@
 .community-title {
-  font-weight: 500 !important;
+  font-size: 50px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.015em !important;
+  text-align: right;
+  width: 85%;
+  margin-bottom: 30px !important;
 }
 .community-btn {
   padding: 6px 15px !important;
@@ -15,15 +20,26 @@
   display: none;
 }
 .community-header {
-  gap: 30px;
-  width: 40%;
+  gap: 10px;
+  width: 29%;
   align-items: flex-start;
+}
+.community-description {
+  text-align: end;
+  width: 140%;
 }
 .community-section {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin: 100px 0;
+  width: 90%;
+  margin: auto;
+}
+.commmunity-smallHeading {
+  font-size: 33px !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.0001em !important;
 }
 .community-stories {
   align-items: start;
