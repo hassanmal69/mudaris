@@ -183,23 +183,20 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
   top: 560px;
   right: 3px;
 }
-/* .importanttoreadCardnumber Eng:nth-child(3) {
-  bottom: 635px;
-} */
 .importanttoreadCardnumberDiv:nth-child(3) {
   bottom: 560px;
 }
 .specialClassForSecondComponent:nth-child(3) {
-  bottom: 675px;
+  bottom: 630px;
 }
-/* .specialClassForSecondComponent:nth-child(2) {
-  top: 675px;
-} */
 .specialClassForSecondComponent:nth-child(2) {
-  top: 590px;
+  top: 610px;
 }
-.specialClassForSecondComponent:nth-child(3) {
-  bottom: 570px;
+.fa:nth-child(2) {
+  top: 585px;
+}
+.fa:nth-child(3) {
+  bottom: 560px;
 }
 /* .importanttoreadCardnumberDiv */
 @media screen and (max-width: 1180px) {
@@ -222,22 +219,137 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
     bottom: 705px;
   }
 }
-/* @media screen and (max-width: 830px) {
-  .uaatest {
-    justify-content: center !important;
+@media screen and (max-width: 830px) {
+  .importanttoreadcardContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 150px;
   }
   .importanttoreadcardContainer {
-    gap: 100px;
+    gap: 20px;
+    width: 100%;
+    align-items: flex-end;
   }
-  .LineCardContainerMainTitleDesc {
-    margin-bottom: 30px;
+  .importanttoreadCard {
+    gap: 10px;
+    width: 360px;
   }
-} */
+  .LineCardContainerMainPic {
+    position: absolute;
+    height: 83%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  /* .importanttoreadCarddescription {
+    font-size: 14px !important;
+    letter-spacing: 0.8px !important;
+    line-height: normal;
+  }
+  .importanttoreadCardtitle {
+    font-size: 20px !important;
+    line-height: 120% !important;
+  } */
+  .importanttoreadCardPicDiv {
+    padding: 15px;
+  }
+  .uaatest {
+    justify-content: center !important;
+    width: 75%;
+  }
+  .importanttoreadCardPicDiv img {
+    width: 30px;
+  }
+  .LineCardContainerMain {
+    align-items: flex-start;
+  }
+  .importanttoreadLinePic {
+    left: 170px;
+    height: 85%;
+    margin-bottom: 125px;
+  }
+  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(1) {
+    top: 20px;
+    left: 25px;
+  }
+  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(2) {
+    left: 25px;
+    top: 350px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(1) {
+    top: 50px;
+    left: 170px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(3) {
+    left: 150px;
+  }
+  .specialClassForSecondComponent:nth-child(3) {
+    bottom: 355px;
+    left: 20px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(2) {
+    top: 330px;
+    left: 180px;
+  }
+  .importanttoreadCardnumberDiv {
+    position: absolute;
+    right: -220px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(4) {
+    left: 175px;
+    bottom: 85px;
+  }
+  /* 2nd component */
+  .importanttoread:nth-child(2) .LineCardContainerMain {
+    flex-direction: row-reverse !important;
+  }
+  .importanttoread:nth-child(2) .importanttoreadcardContainer {
+    align-items: flex-start;
+  }
+  .importanttoread:nth-child(2) .importanttoreadLinePic {
+    left: 100px;
+    height: 90%;
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(1) {
+    top: 55px;
+    left: 96px;
+  }
+  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(2) {
+    left: 80px;
+    top: 420px;
+  }
+  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(3) {
+    bottom: 280px;
+    left: 100px;
+  }
+  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(4) {
+    left: 100px;
+    bottom: -45px;
+  }
+  .specialClassForSecondComponent:nth-child(2) {
+    top: 440px;
+  }
+  .specialClassForSecondComponent:nth-child(3),
+  .fa:nth-child(3) {
+    bottom: 520px;
+    /* top: 1200px; */
+    left: 175px;
+  }
+}
 
-/*  */
 @media screen and (max-width: 768px) {
   .LineCardContainerMainTitleDesc {
     margin-bottom: 10px;
+  }
+  .importanttoreadCardnumber {
+    font-size: 22px !important;
+  }
+  .importanttoreadCardnumberDiv {
+    height: 40px;
+    width: 40px;
   }
   .LineCardContainerMainDesc {
     font-size: 18px !important;
@@ -276,30 +388,31 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
 
   /* card Numbers */
   .importanttoreadCardnumberDiv:nth-child(2) {
-    top: 225px;
+    top: 235px;
     right: -14px;
   }
   .importanttoreadCardnumberDiv:nth-child(3) {
-    bottom: 280px;
+    bottom: 250px;
   }
   .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(3) {
     bottom: 280px;
     left: -30px;
   }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(2) {
-    left: -25px;
+  .specialClassForSecondComponent:nth-child(2) {
+    top: 280px;
   }
 }
 @media screen and (max-width: 600px) {
   .LineCardContainerMainTitleDesc {
     margin-bottom: 10px;
+    gap: 4px;
   }
   .LineCardContainerMainDesc {
-    font-size: 18px !important;
+    font-size: 14px !important;
   }
   .LineCardContainerMainTitle {
-    font-size: 20px !important;
-    line-height: 40px !important;
+    font-size: 22px !important;
+    line-height: 28px !important;
   }
   .importanttoreadcardContainer {
     gap: 20px;
@@ -312,13 +425,16 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
     width: 230px;
   }
   .importanttoreadCarddescription {
-    font-size: 14px !important;
+    font-size: 12px !important;
     letter-spacing: 0.8px !important;
     line-height: normal;
   }
   .importanttoreadCardtitle {
-    font-size: 20px !important;
-    line-height: 120% !important;
+    font-size: 18px !important;
+    line-height: 125% !important;
+  }
+  .importanttoreadCardContentText {
+    gap: 5px;
   }
   .importanttoreadCardPicDiv {
     padding: 15px;
@@ -347,12 +463,16 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
     top: 350px;
   }
   .importanttoreadCardnumberDiv:nth-child(1) {
-    top: 0px;
-    left: 25px;
+    top: 10px;
+    left: 30px;
   }
   .importanttoreadCardnumberDiv:nth-child(3) {
-    bottom: 390px;
-    left: 10px;
+    bottom: 265px;
+    left: 30px;
+  }
+  .specialClassForSecondComponent:nth-child(3) {
+    bottom: 355px;
+    left: 20px;
   }
   .importanttoreadCardnumberDiv:nth-child(2) {
     top: 240px;
@@ -363,9 +483,9 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
     right: -60px;
   }
   .importanttoreadCardnumberDiv:nth-child(4) {
-    left: 25px;
-    bottom: 20px;
-  }
+    left: 35px;
+    bottom: 35px;
+}
   /* 2nd component */
   .importanttoread:nth-child(2) .LineCardContainerMain {
     flex-direction: row-reverse !important;
@@ -395,4 +515,11 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
     left: 100px;
     bottom: -45px;
   }
+  .specialClassForSecondComponent:nth-child(2) {
+    top: 320px;
+  }
+  .specialClassForSecondComponent:nth-child(3), .fa:nth-child(3) {
+    bottom: 295px;
+    left: 35px;
+}
 }

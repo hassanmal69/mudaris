@@ -17,9 +17,11 @@
     "@reduxjs/toolkit": "^2.2.7",
     "@splinetool/react-spline": "^4.0.0",
     "@toolpad/core": "^0.7.0",
+    "@videojs/http-streaming": "^3.16.2",
     "dotenv": "^16.4.5",
     "firebase": "^10.13.2",
     "formik": "^2.4.6",
+    "hls.js": "^1.5.20",
     "i18next": "^23.14.0",
     "js-cookie": "^3.0.5",
     "react": "latest",
@@ -29,6 +31,7 @@
     "react-router-dom": "^6.26.1",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
+    "video.js": "^8.21.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {

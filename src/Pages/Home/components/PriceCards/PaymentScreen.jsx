@@ -10,13 +10,14 @@ import {
   Tabs,
 } from '@mui/material';
 import './PriceCard.css';
+import { useLanguage } from '../../../../globalContext/GlobalProvider';
 import Line from '../../../../assets/Icons/line.png';
 import Tick from '../../../../assets/Icons/tick.png';
 
 const PaymentScreen = ({ selectedPlan }) => {
   const [value, setValue] = useState('one');
-  console.table(selectedPlan.planTitle);
-
+  const { language } = useLanguage();
+  console.log(selectedPlan);
   return (
     <section className="payment-screen flex">
       <main className="column checkout-section">
@@ -148,7 +149,12 @@ const PaymentScreen = ({ selectedPlan }) => {
       </main>
 
       <section>
-        <Card className="plan-card checkout-plan-card">
+        //card is here~!!!!!!
+        <Card
+          className={`plan-card checkout-plan-card ${
+            language === 'persian' ? 'align-right' : 'align-left'
+          }`}
+        >
           <CardContent>
             <Box className="checkout-card-upper">
               <Typography variant="h5" className="plan-heading fs-36 inter">
@@ -158,10 +164,13 @@ const PaymentScreen = ({ selectedPlan }) => {
                 {selectedPlan.price}
               </Typography>
               <img src={Line} className="linePic" alt="line separator" />
+              {selectedPlan.para && (
+                <p className="plan-para inter">{selectedPlan.para}</p>
+              )}
             </Box>
             <ul className="plan-perks">
               {selectedPlan.perks.map((perk, index) => (
-                <Box className="perk flex inter" key={index}>
+                <Box className={`perk flex inter ${language===`persian` ? `rev-flex`:`flex`}`} key={index}>
                   <img src={Tick} alt="Tick Icon" />
                   <li className="fs-18" key={index}>
                     {perk}

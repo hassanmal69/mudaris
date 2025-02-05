@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <section className="home-page column primary-bg">
       <Hero />
-      <GetaJob />
+       <GetaJob />
       <GetStartedButton onButtonClick={scrollToPriceCards} />
       <DigitalEducation />
       <GetStartedButton onButtonClick={scrollToPriceCards} />
@@ -34,11 +34,11 @@ const Home = () => {
         <PriceCards />
       </div>
       <GettoKnow />
-      <GetStartedButton onButtonClick={scrollToPriceCards} /> */}
+      <GetStartedButton onButtonClick={scrollToPriceCards} /> 
       <E_Learn />
       <FAQ />
       <GetStartedButton onButtonClick={scrollToPriceCards} />
-      <GetStart />
+      <GetStart /> 
     </section>
   );
 };

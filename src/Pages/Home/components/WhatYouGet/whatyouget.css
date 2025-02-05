@@ -130,9 +130,10 @@
   }
 
   .wyg-head1 {
-    font-size: 35px;
+    font-size: 21px;
     width: 90%;
-  }
+    text-align: justify;
+}
 
   .wyg-para2 {
     font-size: 15px;
