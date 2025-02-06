@@ -13,7 +13,6 @@
   font-family: 'Zain', sans-serif;
 }
 
-
 :root {
   --primary-clr: #020103;
   --secondary-clr: #4d3763;
@@ -53,7 +52,7 @@ body {
 .inter {
   font-family: 'Inter', sans-serif !important;
 }
-.zain{
+.zain {
   font-family: 'Zain', sans-serif !important;
 }
 html[lang='fa'] .inter {
@@ -65,11 +64,11 @@ html[lang='fa'] .inter {
 .manrope {
   font-family: 'Manrope', sans-serif !important;
 }
-.alignItems-left{
-  align-items: flex-start !important;
-}
-.alignItems-right{
+.alignItems-left {
   align-items: flex-end !important;
+}
+.alignItems-right {
+  align-items: flex-start !important;
 }
 .public-sans {
   font-family: 'Public Sans', sans-serif !important;

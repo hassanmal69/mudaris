@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
-import { Box, Typography, Button } from '@mui/material';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import { Box, Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useLanguage } from '../../../../globalContext/GlobalProvider';
 import './DigitalEducation.css';
+
 import Development from '@assets/Images/Developmentimg.png';
 import Design from '@assets/Images/Designimg.png';
 import Marketing from '@assets/Images/Marketingimg.png';
@@ -29,157 +29,98 @@ const educationImages = [
 ];
 
 export default function DigitalEducation() {
-  const { language, data, status, error } = useLanguage();
-  const navigate = useNavigate(); // Create navigate instance
+  const { t, i18n } = useTranslation('home');
+  const language = i18n.language;
+  const fontClass = language === 'fa' ? 'rubik' : 'inter';
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [isPaused, setIsPaused] = useState(false);
 
-  if (!data) {
-    return <div>Data is loading...</div>;
-  }
-
-  // Get the JSON data that corresponds to each image
-  const images = data.digitaleducationcards;
   const settings = {
-    // dots: true,
-    // infinite: true,
-    // arrows: false,
-    // speed: 500,
-    // slidesToShow: 6,
-    // slidesToScroll: 6,
-    dots: false, // Hide dots for a cleaner UI
-    infinite: true, // Loop the slider infinitely
-    arrows: false, // No navigation arrows
-    speed: 4000, // Control smoothness (lower = faster)
-    slidesToShow: 6, // Display 6 slides at a time
-    slidesToScroll: 1, // Move one slide at a time
-    autoplay: true, // Enable auto-scroll
-    autoplaySpeed: 1, // Instantly starts moving
-    cssEase: 'linear', // Ensures smooth movement
-    pauseOnHover: true, // Keeps moving even when hovered
+    dots: false,
+    infinite: true,
+    arrows: false,
+    speed: 4000,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: !isPaused, // Autoplay is paused when mouse is hovered
+    autoplaySpeed: 1,
+    cssEase: 'linear',
+    pauseOnHover: true, // We handle pausing manually
     responsive: [
-      {
-        breakpoint: 1544,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 1044,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 960,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-          infinite: true,
-          dots: false,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-          dots: false,
-        },
-      },
-      {
-        breakpoint: 670,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2.3,
-          slidesToScroll: 1,
-          dots: false,
-        },
-      },
+      { breakpoint: 1544, settings: { slidesToShow: 5, slidesToScroll: 3, dots: true } },
+      { breakpoint: 1044, settings: { slidesToShow: 4, slidesToScroll: 3, dots: true } },
+      { breakpoint: 960, settings: { slidesToShow: 3, slidesToScroll: 2, dots: false } },
+      { breakpoint: 768, settings: { slidesToShow: 3, slidesToScroll: 2, dots: false } },
+      { breakpoint: 670, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+      { breakpoint: 480, settings: { slidesToShow: 2.3, slidesToScroll: 1, dots: false } },
     ],
-  };
-
-  // Function to handle "See All" button click
-  const handleSeeAllClick = () => {
-    navigate('/datascience'); // Navigate to Mudaris/datascience
   };
 
   return (
     <section className="DigitalEducationComponent">
-      <Box className={`DigitalEducationComponentTextComponent`}>
-        <Box className={`DigitalEducationComponentTitleDesc`}>
-          <Typography
-            variant="h1"
-            className={`DigitalEducationComponentMainTitle inter`}
-          >
-            {data.digitaleducation.headtitle}
-          </Typography>
-          <Typography
-            variant="body1"
-            className={`${language === 'persian' ? 'DigitalEducationComponentDescription rubik' : 'DigitalEducationComponentDescription inter'}`}
-          >
-            {data.digitaleducation.description}
-          </Typography>
-        </Box>
-        <Box className="DigitalEducationComponentButtonDiv">
-          <Button onClick={handleSeeAllClick}>See All</Button>{' '}
-          {/* Add onClick event */}
-        </Box>
-      </Box>
+      <Slider
+        {...settings}
+        onMouseEnter={() => setIsPaused(true)}  // Pause slider when mouse enters
+        onMouseLeave={() => setIsPaused(false)} // Resume slider when mouse leaves
+      >
+        {educationImages.map((img, index) => {
+          const title = t(`digitaleducationcards.${index}.title`, { defaultValue: '' });
+          const newLabel = t(`digitaleducationcards.${index}.new`, { defaultValue: '' });
+          const description = t(`digitaleducationcards.${index}.des`, { defaultValue: '' });
 
-      <Slider {...settings}>
-        {educationImages.map((img, index) => (
-          <Box
-            key={index}
-            className="PicBgDigitalEducationSlide"
-            sx={{
-              backgroundImage: `url(${img})`,
-              backgroundSize: 'cover',
-            }}
-          >
-            {images[index] && (
+          return (
+            <Box
+              key={index}
+              className="PicBgDigitalEducationSlide"
+              sx={{ backgroundImage: `url(${img})`, backgroundSize: 'cover' }}
+              onMouseEnter={() => {
+                setHoveredIndex(index);
+              }}
+              onMouseLeave={() => {
+                setHoveredIndex(null);
+              }}
+            >
               <Box className="DigitalEducationSlideNewandPicBox">
                 <Box className="DigitalEducationSlideNewChildBox">
-                  {images[index].new && (
+                  {newLabel && (
                     <Typography
                       variant="body"
                       className={`${language === 'persian' ? 'DigitalEducationSlideNew clr-white rubik' : 'DigitalEducationSlideNew clr-white dm-sans'}`}
                     >
-                      {images[index].new}
+                      {newLabel}
                     </Typography>
                   )}
                 </Box>
               </Box>
-            )}
 
-            <Box
-              className={
-                images[index].des
-                  ? 'DigitalEducationSlideTitleandPicBoxwith-description'
-                  : 'DigitalEducationSlideTitleandPicBox'
-              }
-            >
-              <Typography
-                variant="h5"
-                className={`${language === 'persian' ? 'DigitalEducationCardTitle clr-white rubik' : 'DigitalEducationCardTitle clr-white inter'}`}
+              <Box
+                className={hoveredIndex === index ? 'DigitalEducationSlideTitleandPicBoxwith-description' : 'DigitalEducationSlideTitleandPicBox'}
               >
-                {images[index]?.title}
-              </Typography>
+                <Typography
+                  variant="h5"
+                  className={`${language === 'persian' ? 'DigitalEducationCardTitle clr-white rubik' : 'DigitalEducationCardTitle clr-white inter'}`}
+                >
+                  {title}
+                </Typography>
+
+                {/* Show description only on hover */}
+                {hoveredIndex === index && description && (
+                  <Typography variant="body2"
+                  className={`DigitalEducationCardDescription clr-white ${hoveredIndex === index ? 'visible' : ''}`}>
+                  {description}
+                  </Typography>
+                )}
+              </Box>
             </Box>
-          </Box>
-        ))}
+          );
+        })}
       </Slider>
+
+      <Box className="DigitalEducationComponentTextComponent">
+        <Typography variant="h1" className={`DigitalEducationComponentMainTitle clr-white ${fontClass}`}>
+          {t('digitaleducation.headtitle')}
+        </Typography>
+      </Box>
     </section>
   );
 }
-// for auto rotation on cards

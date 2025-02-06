@@ -1,6 +1,16 @@
 .home-page {
   gap: 150px;
 }
+.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+/* RTL for Persian (Farsi) */
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
 @media only screen and (max-width: 600px) {
   .home-page {
     gap: 50px;
