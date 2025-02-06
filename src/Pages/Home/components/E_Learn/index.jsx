@@ -1,37 +1,35 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 import './Elearn.css';
-import { useLanguage } from '../../../../globalContext/GlobalProvider';
 import Home from '@assets/Icons/Home.svg';
 import CaseStudy from '@assets/Icons/caseStudy.svg';
 import Discussion from '@assets/Icons/communication.svg';
 import Schedule from '@assets/Icons/scheduel.svg';
 import Certificate from '@assets/Icons/diploma.svg';
 import Upload from '@assets/Icons/upload.png';
+import { useTranslation } from 'react-i18next';
 
 const E_Learn = () => {
-  const { data, language } = useLanguage();
+  const { t } = useTranslation('home');
+  let language = 'persian';
 
-  // Ensure `data` exists before accessing `data.whyElearn`
-  if (!data || !data.whyElearn) {
-    return <div>Data is loading...</div>;
-  }
+  // Icons Array
+  let imgs = [Home, CaseStudy, Discussion, Schedule, Certificate, Upload];
 
-  const whyElearn = data.whyElearn;
-  {
-    `${language === 'persian' ? 'viewBtn rubik' : 'viewBtn dm-sans'}`;
-  }
   return (
     <section className="Elearn-section">
       <div className="width-90 why-cards-container">
+        {/* Title */}
         <Typography
           component="h6"
           className={`fs-48 why-title clr-white ${
             language === 'persian' ? `align-right rubik` : `align-left inter`
           }`}
         >
-          {whyElearn[1].title}
+          {t('whyElearn.0.title')}
         </Typography>
+
+        {/* Cards Section */}
         <Box
           component="div"
           className={`why_card_wrapper flex border-gradient ${
@@ -46,16 +44,19 @@ const E_Learn = () => {
                 </Box>
                 <Typography
                   variant="body1"
-                  className={`${language === 'persian' ? 'why-card-content rubik' : 'why-card-content inter'}`}
+                  className={`${
+                    language === 'persian'
+                      ? 'why-card-content rubik'
+                      : 'why-card-content inter'
+                  }`}
                 >
-                  {whyElearn[1][`box${index + 1}`]}
+                  {t(`whyElearn.1.${index}`)}
                 </Typography>
               </Box>
               <div className="vertical"></div>
-              {(index + 1) % 3 === 0 &&
-                index !== whyElearn[0].img.length - 1 && (
-                  <div className="horizontal-line"></div>
-                )}
+              {(index + 1) % 3 === 0 && index !== imgs.length - 1 && (
+                <div className="horizontal-line"></div>
+              )}
             </React.Fragment>
           ))}
         </Box>
@@ -65,5 +66,3 @@ const E_Learn = () => {
 };
 
 export default E_Learn;
-
-let imgs = [Home, CaseStudy, Discussion, Schedule, Certificate, Upload];

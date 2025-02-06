@@ -19,28 +19,36 @@ const GetaJob = () => {
         <div className="getajob-paragraphs">
           <div className="getajobParaforbg">
             <div className="getajobparacontentonly">
-              <p className={`getajob-para ${language === 'fa' ? 'zain' : 'dm-sans'}`}>
+              <p
+                className={`getajob-para ${language === 'fa' ? 'zain' : 'dm-sans'}`}
+              >
                 {t('getajob.descriptionpara1')}
               </p>
-              </div>
-              </div>
-              <div className="getajobParaforbg">
-              {/* <div className="getajob-para"> */}
-                <p className={`getajob-qa ${language === 'fa' ? 'zain' : 'dm-sans'}`}>
-                  {t('getajob.descriptionpara2')}
-                </p>
-              {/* </div> */}
-              </div>
-              <div className="getajobParaforbg">
-              <p className={`getajob-qa ${language === 'fa' ? 'zain' : 'dm-sans'}`}>
-                {t('getajob.descriptionpara4')}
-              </p>
-              </div>
-              <div className="getajobParaforbg">
-              <p className={`getajob-qa ${language === 'fa' ? 'zain' : 'dm-sans'}`}>
-                {t('getajob.descriptionpara3')}
-              </p>
-              </div>
+            </div>
+          </div>
+          <div className="getajobParaforbg">
+            {/* <div className="getajob-para"> */}
+            <p
+              className={`getajob-qa ${language === 'fa' ? 'zain' : 'dm-sans'}`}
+            >
+              {t('getajob.descriptionpara2')}
+            </p>
+            {/* </div> */}
+          </div>
+          <div className="getajobParaforbg">
+            <p
+              className={`getajob-qa ${language === 'fa' ? 'zain' : 'dm-sans'}`}
+            >
+              {t('getajob.descriptionpara3')}
+            </p>
+          </div>
+          <div className="getajobParaforbg">
+            <p
+              className={`getajob-qa ${language === 'fa' ? 'zain' : 'dm-sans'}`}
+            >
+              {t('getajob.descriptionpara4')}
+            </p>
+          </div>
 
           {/* Infinite looping video */}
           <div className="logodiv">
