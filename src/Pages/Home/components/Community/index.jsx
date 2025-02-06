@@ -19,7 +19,7 @@ const Community = () => {
   return (
     <section>
       <div
-        className={` community-section ${language === 'fa' ? 'rev-flex' : ''}`}
+        className={` community-section`}
       >
         <Typography
           variant="h2"
@@ -49,7 +49,7 @@ const Community = () => {
         </div>
         <section className="community-stories flex">
           {images.map((imageGroup, index) => (
-            <div key={index} className={`community-stories-section ${language === 'fa' ? 'rev-flex' : ''}`}>
+            <div key={index} className={`community-stories-section`}>
               {Object.keys(imageGroup).map((column, i) => (
                 <div key={i} className="column stories-wrapper">
                   {imageGroup[column].map((img, idx) => (

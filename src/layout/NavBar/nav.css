@@ -9,6 +9,11 @@
   display: flex;
   gap: 100px;
   border-radius: 60px;
+  direction:ltr;
+}
+.css-10h82pl-MuiPaper-root-MuiAppBar-root{
+margin: auto !important;
+width: 90% !important;
 }
 .css-1jmxzwo-MuiToolbar-root {
   gap: 40px;
@@ -178,6 +183,7 @@
 @media only screen and (min-width: 1163px) {
   .css-1jmxzwo-MuiToolbar-root {
     height: 100px !important;
+  direction: ltr;
   }
 }
 @media only screen and (min-width: 1200px) {
