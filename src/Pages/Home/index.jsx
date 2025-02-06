@@ -37,7 +37,8 @@ const Home = () => {
       <GetaJob />
       {/* <WhatYouGet /> */}
       <DigitalEducation />
-      {/* <GetStartedButton onButtonClick={scrollToPriceCards} /> */}
+      <GetStartedButton onButtonClick={scrollToPriceCards} />
+      <GetStartedButton onButtonClick={scrollToPriceCards} />
       <LineCards />
       <div className="price" ref={priceCardsRef}>
         <PriceCards />
