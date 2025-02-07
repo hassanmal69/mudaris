@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Button, Container, Typography } from '@mui/material';
 import './style.css';
 import BlurGlow from '@assets/Images/Blur2.png';
 import { useTranslation } from 'react-i18next';
@@ -46,6 +46,9 @@ const Hero = () => {
           >
             {t('Introduction.description')}
           </Typography>
+          <div className="HeroComponentButtonDiv">
+          <button className='hero-section-button zain clr-white'>به جمع میلیونر‌های جوان بپیوندید</button>
+          </div>
           <span className="hero-bg-lines">
             <img src={BlurGlow} className="BlurGlow" alt="Blur effect" />
           </span>

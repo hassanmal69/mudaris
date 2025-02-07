@@ -1,5 +1,5 @@
 import { Button, Typography } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './community.css';
 import Person from '../../../../assets/Images/communityPerson.png';
 import Picture from '../../../../assets/Images/nigga.png';
@@ -9,47 +9,88 @@ import Meet from '../../../../assets/Images/meet.png';
 import Play from '../../../../assets/Icons/play.svg';
 import Conversation from '../../../../assets/Images/conversation.png';
 import { useTranslation } from 'react-i18next';
+import 'slick-carousel/slick/slick.css';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Community = () => {
   const { t, i18n } = useTranslation('home');
-  // Define the font class: 'rubik' for Persian, no changes for others
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const language = i18n.language;
   const fontClass = language === 'fa' ? 'zain' : '';
-  const headingClass='rubik'
+  const headingClass = 'rubik';
+
+  let images = [
+    {
+      column1: [Conversation, Meet, Picture],
+      column2: [Meet, Picture, Meeting],
+      column3: [Person, Podcast, Conversation, Person],
+    },
+  ];
+
+  const sliderSettings = {
+    dots: false,
+    infinite: true,
+    arrows: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,         // Enable autoplay
+    autoplaySpeed: 3000,    // Slide every 3 seconds
+    pauseOnHover: true,     // Pause on hover
+    pauseOnFocus: true,     // Pause on focus (click)
+    draggable: false,       // Prevent manual dragging from stopping autoplay
+  };
+  
+
   return (
-    <section>
-      <div
-        className={` community-section`}
-      >
-        <Typography
-          variant="h2"
-          className={`clr-white community-title ${headingClass}`}
-        >
-          {t('studentvideoreviews.title')}
+    <section className="community-section">
+      <Typography variant="h2" className={`clr-white community-title ${headingClass}`}>
+        {t('studentvideoreviews.title')}
+      </Typography>
+      <div className={`community-header column ${language === 'fa' ? 'alignItems-right' : 'alignItems-left'}`}>
+        <Typography variant="h3" className={`clr-white commmunity-smallHeading ${fontClass}`}>
+          {t('studentvideoreviews.heading')}
         </Typography>
-        <div className={`community-header column ${language === 'fa' ? 'alignItems-right' : 'alignItems-left'}`}>
-          <Typography
-            variant="h3"
-            className={`clr-white commmunity-smallHeading ${fontClass}`}
-          >
-            {t('studentvideoreviews.heading')}
-          </Typography>
-          <Typography
-            variant="p"
-            className={`clr-white description community-description ${fontClass}`}
-          >
-            {t('studentvideoreviews.description')}
-          </Typography>
-          <Button
-            variant="contained"
-            className={`community-btn inter ${fontClass}`}
-          >
-            {t('studentvideoreviews.button')}
-          </Button>
-        </div>
+        <Typography variant="body1" className={`clr-white description community-description ${fontClass}`}>
+          {t('studentvideoreviews.description')}
+        </Typography>
+        <Button variant="contained" className={`community-btn inter ${fontClass}`}>
+          {t('studentvideoreviews.button')}
+        </Button>
+      </div>
+
+      {/* Mobile View - Slider */}
+      {isMobile ? (
+        <Slider {...sliderSettings} className="community-slider">
+          {images.map((imageGroup, index) =>
+            Object.keys(imageGroup).map((column, i) =>
+              imageGroup[column].map((img, idx) => (
+                <div key={`${index}-${i}-${idx}`} className="community-video-container">
+                  <span className="community-overlay-play">
+                    <img src={Play} alt="play-icon" />
+                  </span>
+                  <img src={img} alt={`image-${idx}`} className="video-img" />
+                </div>
+              ))
+            )
+          )}
+        </Slider>
+      ) : (
+        // Desktop View - Grid
         <section className="community-stories flex">
           {images.map((imageGroup, index) => (
-            <div key={index} className={`community-stories-section`}>
+            <div key={index} className="community-stories-section">
               {Object.keys(imageGroup).map((column, i) => (
                 <div key={i} className="column stories-wrapper">
                   {imageGroup[column].map((img, idx) => (
@@ -57,11 +98,7 @@ const Community = () => {
                       <span className="community-overlay-play">
                         <img src={Play} alt="play-icon" />
                       </span>
-                      <img
-                        src={img}
-                        alt={`image-${idx}`}
-                        className="video-img"
-                      />
+                      <img src={img} alt={`image-${idx}`} className="video-img" />
                     </div>
                   ))}
                 </div>
@@ -69,17 +106,9 @@ const Community = () => {
             </div>
           ))}
         </section>
-      </div>
+      )}
     </section>
   );
 };
 
 export default Community;
-
-let images = [
-  {
-    column1: [Conversation, Meet, Picture],
-    column2: [Meet, Picture, Meeting],
-    column3: [Person, Podcast, Conversation, Person],
-  },
-];

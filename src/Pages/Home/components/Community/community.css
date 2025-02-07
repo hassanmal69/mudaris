@@ -119,10 +119,25 @@
   .stories-wrapper:nth-child(2) {
     justify-content: flex-start;
   }
-  .community-header {
+  .community-video-container{
+    display: flex !important;
+  }
+  .community-description{
+    font-size: 14px !important;
+    width: 100%;
+    text-align: center !important;
+    line-height: normal !important;
+  }
+  .community-title {
+    font-size: 20px !important;
     width: 100%;
     text-align: center;
-    align-items: center;
+  }
+  .community-header {
+    width: 100%;
+    text-align: center !important;
+    align-items: center !important;
+    margin-bottom: 20px;
   }
   .video-img {
     width: 100%;
