@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import './LineCard.css';
+
 import LineImg from '../../../../assets/Images/linewo.png';
 import Symbol from '../../../../../public/assets/Icons/Symbol.png';
 import Symbol1 from '../../../../../public/assets/Icons/Symbol (1).png';
@@ -11,14 +12,12 @@ import Symbol4 from '../../../../../public/assets/Icons/moneyicon.png';
 import Symbol5 from '../../../../../public/assets/Icons/currciculumicon.png';
 import Symbol6 from '../../../../../public/assets/Icons/networkbrighticon.png';
 import Symbol7 from '../../../../../public/assets/Icons/unilevelicon.png';
+import Community from '../Community';
 
 const LineCards = () => {
-  const { t } = useTranslation('home');
-  const data = t('parentarray', { returnObjects: true }); // Get JSON data as an object
-
-  if (!data || !Array.isArray(data))
-    return <Typography>Data not available</Typography>;
-
+  const { t, i18n } = useTranslation('home');
+  const parentArray = t('parentarray', { returnObjects: true });
+  const language = i18n.language;
   const symbolArray = [
     Symbol,
     Symbol1,
@@ -32,35 +31,18 @@ const LineCards = () => {
 
   return (
     <>
-      {data.map((section, sectionIndex) => {
-        const sectionKey = Object.keys(section)[0]; // Extract key (e.g., "Important" or "participate")
+      {parentArray.map((section, sectionIndex) => {
+        const sectionKey = Object.keys(section)[0];
         const sectionItems = section[sectionKey];
 
         return (
           <Box key={sectionIndex} className="importanttoread">
-            <Typography variant="h1" className="LineCardContainerMainTitle">
+            <Typography
+              variant="h1"
+              className="LineCardContainerMainTitle rubik"
+            >
               {sectionItems[0]?.title}
             </Typography>
-
-            {/* <Box className="LineCardContainerMainTitleDesc">
-              {sectionItems.slice(1).map((item, index) => (
-                <Box key={index}>
-                  <Typography
-                    variant="h1"
-                    className="LineCardContainerMainTitle"
-                  >
-                    {item.title}
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    className="LineCardContainerMainDesc"
-                  >
-                    {item.description}
-                  </Typography>
-                </Box>
-              ))}
-            </Box> */}
-
             <Box className="LineCardContainerMain">
               <Box className="LineCardContainerMainPic">
                 <img
@@ -68,9 +50,28 @@ const LineCards = () => {
                   className="importanttoreadLinePic"
                   alt="Line"
                 />
+                <Box className="importanttoreadCardnumberDivParent">
+                  {sectionItems.slice(1).map((item, index) => (
+                    <Box
+                      key={index}
+                      className={`importanttoreadCardnumberDiv ${
+                        sectionKey === 'participate'
+                          ? 'specialClassForSecondComponent'
+                          : ''
+                      }`}
+                    >
+                      <Typography
+                        variant="h6"
+                        className="importanttoreadCardnumber rubik"
+                      >
+                        {/* {item.numbers} */}
+                        {index+1}
+                      </Typography>
+                    </Box>
+                  ))}
+                </Box>
               </Box>
 
-              {/* Cards with Symbols */}
               <Box className="importanttoreadcardContainer">
                 {sectionItems.slice(1).map((item, index) => (
                   <Box className="uaatest" key={index}>
@@ -84,13 +85,13 @@ const LineCards = () => {
                       <Box className="importanttoreadCardContentText">
                         <Typography
                           variant="h6"
-                          className="importanttoreadCardtitle"
+                          className="importanttoreadCardtitle rubik"
                         >
                           {item.title}
                         </Typography>
                         <Typography
                           variant="body1"
-                          className="importanttoreadCarddescription"
+                          className="importanttoreadCarddescription rubik"
                         >
                           {item.description}
                         </Typography>

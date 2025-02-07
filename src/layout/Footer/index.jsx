@@ -5,9 +5,8 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import './footer.css';
 import FaceBook from '@assets/Icons/FaceBook.svg';
 import Instagram from '@assets/Icons/Instagram.svg';
-import LinkedIn from '@assets/Icons/LinkedIn.svg';
 import Youtube from '@assets/Icons/Lozenge.svg';
-import Twitter from '@assets/Icons/Twitter.svg';
+import Tiktok from '@assets/Icons/ha.svg'
 import { useTranslation } from 'react-i18next';
 const Footer = () => {
   let language = '';
@@ -78,20 +77,6 @@ const Footer = () => {
             <img src={Instagram} alt="Instagram" />
           </a>
           <a
-            href="https://www.linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={LinkedIn} alt="LinkedIn" />
-          </a>
-          <a
-            href="https://www.twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={Twitter} alt="Twitter" />
-          </a>
-          <a
             href="https://www.facebook.com/share/19vLPZX6B3/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
@@ -110,7 +95,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={Youtube} alt="TikTok" />
+            <img src={Tiktok} alt="TikTok" className='tiktokiconfooter' />
           </a>
         </div>
 
