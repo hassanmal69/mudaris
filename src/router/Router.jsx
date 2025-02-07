@@ -23,9 +23,9 @@ const WithNavbarAndFooter = ({ element }) => {
   const shouldRenderNavbarAndFooter = location.pathname !== '/profile'; // Adjust the path
   return shouldRenderNavbarAndFooter ? (
     <>
-      {/* <ResponsiveAppBar /> */}
+      <ResponsiveAppBar />
       {element}
-      {/* <Footer /> */}
+      <Footer />
     </>
   ) : (
     element

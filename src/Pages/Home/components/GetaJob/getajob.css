@@ -21,7 +21,9 @@
   gap: 150px;
   position: relative;
 }
-
+.getajob-qa {
+  animation: upDownAnimation 2s ease-in-out infinite;
+}
 .getajob-para {
   width: 70%;
 }
@@ -247,5 +249,16 @@
   .getajob-info {
     font-size: 32px;
     width: 95%;
+  }
+}
+@keyframes upDownAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

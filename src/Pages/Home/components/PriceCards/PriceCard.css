@@ -32,6 +32,7 @@
   font-size: 14px !important;
   font-weight: 600 !important;
   margin-bottom: 10px !important;
+  color: #cfcaca !important;
   letter-spacing: -0.015em !important;
 }
 .plan-description {
@@ -300,5 +301,8 @@
   }
   .plan-description {
     font-size: 18px !important;
+  }
+  .ButtonDiv {
+    height: 30%;
   }
 }

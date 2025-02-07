@@ -37,10 +37,14 @@ const Home = () => {
     >
       <Hero />
       <GetStartedButton onButtonClick={scrollToPriceCards}/>
-      <Community />
-      <GetaJob />
       <DigitalEducation />
+      <LineCards />
+      <GetaJob />
+      <GettoKnow />
       <WhatYouGet />
+      <div className="price" ref={priceCardsRef}>
+        <PriceCards />
+      </div>
       <LineCards />
       <div className="price" ref={priceCardsRef}>
         <PriceCards />

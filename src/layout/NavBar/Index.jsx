@@ -109,33 +109,16 @@ function ResponsiveAppBar() {
                 },
               }}
             >
-              {/* {RightBtns.map((btn, index) => (
-                <>
-                  {index === 2 ? ( // 'Get Started' button
-                    <Button
-                      onClick={() => handleClickOpen('Signup')}
-                      sx={{ my: 2, color: 'white', display: 'none' }}
-                    >
-                      {btn}
-                    </Button>
-                  ) : index === 1 ? ( // 'Sign In' button
-                    <Button
-                      onClick={() => handleClickOpen('SignIn')}
-                      sx={{ my: 2, color: 'white', display: 'none' }}
-                    >
-                      {btn}
-                    </Button>
-                  ) : (
-                    <Button
-                      sx={{ my: 2, color: 'white', display: 'block' }}
-                      onClick={toggleLanguage} // Toggle language button
-                      className={fontClass}
-                    >
-                      {btn}
-                    </Button>
-                  )}
-                </>
-              ))} */}
+              {t('pagesnav', { returnObjects: true }).map((page, i) => (
+                <Button
+                  key={i}
+                  onClick={handleCloseNavMenu}
+                  className="nav-menu-btn"
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  {page}
+                </Button>
+              ))}
             </Menu>
           </Box>
 
@@ -143,7 +126,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <div className="Btns">
               <div className="btnContainer">
-                {pages.map((page, i) => (
+                {t('pagesnav', { returnObjects: true }).map((page, i) => (
                   <Button
                     key={i}
                     onClick={handleCloseNavMenu}
@@ -154,38 +137,6 @@ function ResponsiveAppBar() {
                   </Button>
                 ))}
               </div>
-              {/* 
-              <Box component="div" className="navBarBtns2 BorderDiv">
-                {RightBtns.map((btn, index) => (
-                  <div className={`rightbtn ${fontClass}`} key={index}>
-                    {/* Use consistent keys (index) for SignIn and Signup *
-                    {index === 2 ? ( // 'Get Started' button
-                      <Button
-                        onClick={() => handleClickOpen('Signup')}
-                        sx={{ my: 2, color: 'white', display: 'block' }}
-                      >
-                        {btn}
-                      </Button>
-                    ) : index === 1 ? ( // 'Sign In' button
-                      <Button
-                        onClick={() => handleClickOpen('SignIn')}
-                        sx={{ my: 2, color: 'white', display: 'block' }}
-                      >
-                        {btn}
-                      </Button>
-                    ) : (
-                      <Button
-                        sx={{ my: 2, color: 'white', display: 'block' }}
-                        onClick={toggleLanguage} // Toggle language button
-                        className={fontClass}
-                      >
-                        {btn}
-                      </Button>
-                    )}
-                  </div>
-                ))}
-              </Box> 
-              */}
             </div>
           </Box>
         </Toolbar>

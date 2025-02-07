@@ -6,12 +6,12 @@ import './footer.css';
 import FaceBook from '@assets/Icons/FaceBook.svg';
 import Instagram from '@assets/Icons/Instagram.svg';
 import Youtube from '@assets/Icons/Lozenge.svg';
-import Tiktok from '@assets/Icons/ha.svg'
+import Tiktok from '@assets/Icons/tiktok.svg';
 import { useTranslation } from 'react-i18next';
 const Footer = () => {
   let language = '';
 
-  const fontClass = language === 'persian' ? 'rubik' : 'monts';
+  const fontClass = language === 'fa' ? 'rubik' : 'zain';
   const { t } = useTranslation('home');
   return (
     <footer className="footer-bg align-center">
@@ -47,16 +47,16 @@ const Footer = () => {
         </Box>
 
         <Box component="div" className="flex footer-right-section">
-          {Array.isArray(t('footerContent', { returnObjects: true })) &&
-            t('footerContent', { returnObjects: true }).map(
-              (content, index) => (
-                <Box component="div" key={index} className="sublinks-wrapper">
-                  <ul>
-                    <li className="white-normal">{content}</li>
-                  </ul>
-                </Box>
-              )
-            )}
+          <ul className="sublinks-wrapper">
+            {Array.isArray(t('footerContent', { returnObjects: true })) &&
+              t('footerContent', { returnObjects: true }).map(
+                (content, index) => (
+                  <li key={index} className="white-normal">
+                    {content}
+                  </li>
+                )
+              )}
+          </ul>
         </Box>
       </div>
       <Divider />
@@ -95,7 +95,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={Tiktok} alt="TikTok" className='tiktokiconfooter' />
+            <img src={Tiktok} alt="TikTok" className="tiktokiconfooter" />
           </a>
         </div>
 
@@ -103,7 +103,7 @@ const Footer = () => {
           variant="body1"
           className={`secondary-font-clr footer-p ${fontClass}`}
         >
-          © 2025 Mudaris Academy, Inc. All rights reserved.
+          © 2025 Mudaris Academy, Inc. All rights reserved
         </Typography>
       </div>
     </footer>
