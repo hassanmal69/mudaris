@@ -10,10 +10,9 @@ import Upload from '@assets/Icons/upload.png';
 import { useTranslation } from 'react-i18next';
 
 const E_Learn = () => {
-  const { t } = useTranslation('home');
-  let language = 'persian';
+  const { t, i18n } = useTranslation('home');
+  let language = i18n.language;
 
-  // Icons Array
   let imgs = [Home, CaseStudy, Discussion, Schedule, Certificate, Upload];
 
   return (
@@ -23,7 +22,7 @@ const E_Learn = () => {
         <Typography
           component="h6"
           className={`fs-48 why-title clr-white ${
-            language === 'persian' ? `align-right rubik` : `align-left inter`
+            language === 'fa' ? `align-right rubik` : `align-left inter`
           }`}
         >
           {t('whyElearn.0.title')}
@@ -32,9 +31,7 @@ const E_Learn = () => {
         {/* Cards Section */}
         <Box
           component="div"
-          className={`why_card_wrapper flex border-gradient ${
-            language === 'persian' ? `row-reverse` : ``
-          }`}
+          className={`why_card_wrapper flex border-gradient`}
         >
           {imgs.map((image, index) => (
             <React.Fragment key={index}>
@@ -45,7 +42,7 @@ const E_Learn = () => {
                 <Typography
                   variant="body1"
                   className={`${
-                    language === 'persian'
+                    language === 'fa'
                       ? 'why-card-content rubik'
                       : 'why-card-content inter'
                   }`}

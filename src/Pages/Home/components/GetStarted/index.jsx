@@ -18,6 +18,7 @@ function GetStart() {
       </h1>
 
       {/* Input field with placeholder */}
+      {/* <div className="getStartedContainerforFieldandButton"> */}
       <Box className="get-email-field">
         <TextField
           type="email"

@@ -11,12 +11,12 @@ import PaymentScreen from './PaymentScreen';
 import { useTranslation } from 'react-i18next';
 
 export const PriceCards = () => {
-  const { data, language } = useLanguage();
-  const { t } = useTranslation('home');
+  const { data } = useLanguage();
+  const { t, i18n } = useTranslation('home');
   const [isPaymentScreenVisible, setIsPaymentScreenVisible] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
-
+  const language = i18n.language;
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 600);
@@ -29,7 +29,7 @@ export const PriceCards = () => {
   if (isPaymentScreenVisible) {
     return <PaymentScreen selectedPlan={selectedPlan} />;
   }
-  if (!data) return 'nigga';
+  if (!data) return 'no data in price cards';
 
   const paymentPlans = data.paymentPlans;
   const handleSubscribe = (plan, index) => {
@@ -58,14 +58,17 @@ export const PriceCards = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-
+  const fontClass = language === 'fa' ? 'rubik' : 'inter';
   return (
     <section className="price-container">
       <Box className="text-container">
-        <Typography variant="h1" className="plan-title inter">
+        <Typography variant="h1" className={`plan-title ${fontClass}`}>
           {t('paymentHeader.title')}
         </Typography>
-        <Typography variant="body1" className="plan-description inter">
+        <Typography
+          variant="body1"
+          className={`plan-description ${language === 'fa' ? 'zain' : 'inter'}`}
+        >
           {t('paymentHeader.description')}
         </Typography>
       </Box>

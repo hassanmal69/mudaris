@@ -18,13 +18,13 @@ import { useTranslation } from 'react-i18next';
 const logos = [sciencespo, tolonews, tv, mudaris, undplogo, onelogo];
 
 const GettoKnow = () => {
-  const { t } = useTranslation('home');
+  const { t, i18n } = useTranslation('home');
   const navigate = useNavigate();
   const isMobile = useMediaQuery('(max-width: 600px)'); // Detect mobile screen
-
+  const language = i18n.language;
   // const getData = data.gettoknow;
-  // const fontClass = language === 'persian' ? 'rubik' : 'inter';
-  const fontClass = '';
+  const fontClass = language === 'fa' ? 'rubik' : 'inter';
+  // const fontClass = '';
 
   // Slider settings for mobile
   const sliderSettings = {
@@ -43,13 +43,15 @@ const GettoKnow = () => {
   return (
     <section className="GetToknowMainSection">
       <Box className="GetToknowMainContainer">
-        <Box className="GetToknowContent">
+        <Box
+          className={`GetToknowContent  ${language === 'fa' ? 'rev-flex' : ''}`}
+        >
           <img src={Drimg} alt="Drimg" />
 
           <Box className={`GetToknowTextContent ${fontClass}`}>
-            <h2 className={fontClass}>{t('gettoknow.title')}</h2>
+            <h1 className={fontClass}>{t('gettoknow.title')}</h1>
             <Box className="paraDivGettoKnow">
-              <p className={fontClass}>{t('gettoknow.description')}</p>
+              <p className="zain">{t('gettoknow.description')}</p>
             </Box>
             <Button
               className={`dm-sans ${fontClass}`}
@@ -65,7 +67,7 @@ const GettoKnow = () => {
             <Box className="GetToknowTextContentbelowMainText">
               <h4 className={fontClass}>{t('gettoknow.heading')}</h4>
               <p className={fontClass}>{t('gettoknow.transformdescription')}</p>
-              <p className={fontClass}>{t('gettoknow.featuredline')}</p>
+              <h5 className="inter">{t('gettoknow.featuredline')}</h5>
             </Box>
           </Box>
         </Box>
