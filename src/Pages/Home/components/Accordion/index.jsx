@@ -10,29 +10,29 @@ import './faq.css';
 import { useTranslation } from 'react-i18next';
 
 export default function FAQ() {
-  const { t } = useTranslation('home');
+  const { t, i18n } = useTranslation('home');
   const [expanded, setExpanded] = useState(false);
 
   const handleAccordionChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
-  let language = 'persian';
+  let language = i18n.language;
   return (
     <section className="width-90 faq-section">
       <Box component="div" className="faq-title-container column">
         <Typography
           variant="h6"
-          className={`${language === 'persian' ? 'clr-white faq-title rubik' : 'clr-white faq-title inter'}`}
+          className={`${language === 'fa' ? 'clr-white faq-title rubik' : 'clr-white faq-title inter'}`}
         >
           {t('faqTitle.title')}
         </Typography>
         <Typography
-          className={`${language === 'persian' ? 'clr-white faq-subtitle rubik' : 'clr-white faq-subtitle inter'}`}
+          className={`${language === 'fa' ? 'clr-white faq-subtitle rubik' : 'clr-white faq-subtitle inter'}`}
         >
           {t('faqTitle.description')}
         </Typography>
       </Box>
-      <div className="faq-container column">
+      <div className="faq-container">
         {t('faqArray', { returnObjects: true }).map((faq, index) => (
           <Accordion
             key={index}
@@ -57,7 +57,7 @@ export default function FAQ() {
               <span className="faq-number-container flex flex-center">
                 <Typography
                   className={`faq-number ${expanded === index ? 'purple' : 'clr-white'} ${
-                    language === 'persian' ? 'rubik' : 'inter'
+                    language === 'fa' ? 'rubik' : 'inter'
                   }`}
                 >
                   {faq.index}
@@ -66,14 +66,14 @@ export default function FAQ() {
               <Typography
                 className={`faq-question flex flex-center ${
                   expanded === index ? 'purple' : 'clr-white'
-                } ${language === 'persian' ? 'rubik' : 'inter'}`}
+                } ${language === 'fa' ? 'rubik' : 'inter'}`}
               >
                 {faq.question}
               </Typography>
             </AccordionSummary>
             <AccordionDetails className="faq-answer-wrapper">
               <Typography
-                className={`${language === 'persian' ? 'gray rubik' : 'gray inter'}`}
+                className={` faq-answer ${language === 'fa' ? 'gray rubik' : 'gray inter'}`}
               >
                 {faq.answer}
               </Typography>

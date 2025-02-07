@@ -9,11 +9,12 @@ import Tick from '@assets/Icons/tick.png';
 import { useTranslation } from 'react-i18next';
 
 export const PriceCards = () => {
-  const { t } = useTranslation('home');
+
+  const { t, i18n } = useTranslation('home');
   const [isPaymentScreenVisible, setIsPaymentScreenVisible] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
-  const language = 'persian';
+  const language = i18n.language;
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 600);
@@ -24,6 +25,7 @@ export const PriceCards = () => {
   }, []);
 
   const paymentPlans = t('paymentPlans', { returnObjects: true }); // Fetching translated JSON from i18next
+
 
   const handleSubscribe = (plan, index) => {};
 
@@ -36,7 +38,7 @@ export const PriceCards = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-
+  const fontClass = language === 'fa' ? 'rubik' : 'inter';
   return (
     <section className="price-container">
       <Box className="text-container">

@@ -24,11 +24,15 @@
   margin-bottom: 100px;
 }
 .LineCardContainerMainTitle {
-  font-size: 56px !important;
-  font-weight: 500 !important;
-  line-height: 65px !important; /* 116.071% */
   letter-spacing: -0.84px !important;
+  font-size: 58px !important;
   text-align: center;
+  font-weight: 900 !important;
+  background: linear-gradient(348.44deg, #9855ff 8.04%, #ffffff 68.68%);
+  margin-bottom: 140px !important;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .importanttoreadcardContainer {
   display: flex;
@@ -75,7 +79,7 @@
 .uaatest {
   display: flex;
   width: 100%;
-  /* justify-content: left; */
+  justify-content: left;
   /* align-items: center; */
 }
 .uaatest:nth-child(even) {
@@ -118,8 +122,8 @@
   color: transparent;
 }
 .importanttoreadCarddescription {
-  font-size: 22px !important;
-  font-weight: 400 !important;
+  font-size: 20px !important;
+  font-weight: 300 !important;
   line-height: 130% !important;
 }
 .importanttoreadCardContentText {
@@ -171,7 +175,7 @@
 }
 .importanttoreadCardnumberDiv:nth-child(1) {
   top: 0px;
-  left: -20px;
+  right: -35px;
 }
 /*
 forEnglishversion dont want english yet so iam hidding this and below is forpersian
@@ -180,17 +184,20 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
   right: 3px;
 } */
 .importanttoreadCardnumberDiv:nth-child(2) {
-  top: 560px;
-  right: 3px;
+  top: 764px;
+  right: 10px;
 }
 .importanttoreadCardnumberDiv:nth-child(3) {
-  bottom: 560px;
+  bottom: 730px;
 }
 .specialClassForSecondComponent:nth-child(3) {
-  bottom: 630px;
+  bottom: 930px;
+  right: 15px;
 }
+
 .specialClassForSecondComponent:nth-child(2) {
   top: 610px;
+  right: -40px;
 }
 .fa:nth-child(2) {
   top: 585px;
@@ -485,7 +492,7 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
   .importanttoreadCardnumberDiv:nth-child(4) {
     left: 35px;
     bottom: 35px;
-}
+  }
   /* 2nd component */
   .importanttoread:nth-child(2) .LineCardContainerMain {
     flex-direction: row-reverse !important;
@@ -518,8 +525,9 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
   .specialClassForSecondComponent:nth-child(2) {
     top: 320px;
   }
-  .specialClassForSecondComponent:nth-child(3), .fa:nth-child(3) {
+  .specialClassForSecondComponent:nth-child(3),
+  .fa:nth-child(3) {
     bottom: 295px;
     left: 35px;
-}
+  }
 }
