@@ -34,19 +34,20 @@ const Home = () => {
         i18n.language === 'fa' ? 'rtl' : 'ltr'
       }`}
     >
-      {/* <Hero />
+      <Hero />
       <Community />
-      <GetaJob />
       <DigitalEducation />
+      <LineCards />
+      <GetaJob />
+      <GettoKnow />
       <WhatYouGet />
-      <LineCards /> */}
       <div className="price" ref={priceCardsRef}>
         <PriceCards />
       </div>
-      {/* <GettoKnow />
+
       <E_Learn />
       <FAQ />
-      <GetStart /> */}
+      <GetStart />
     </section>
   );
 };

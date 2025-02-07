@@ -33,6 +33,7 @@ export const PriceCards = () => {
     infinite: false,
     arrows: false,
     speed: 500,
+    autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
@@ -51,44 +52,39 @@ export const PriceCards = () => {
       {isMobile ? (
         <Slider {...sliderSettings}>
           {paymentPlans.map((plan, index) => (
-            <div key={index}>
-              <Card
-                className={`plan-card ${language === 'persian' ? 'align-right' : 'align-left'}`}
-              >
-                <CardContent>
-                  <Box className="plan-header">
-                    <Typography variant="h5" className="plan-heading rubik">
-                      {plan.title}
-                    </Typography>
-                    <Typography variant="h6" className="plan-price zain">
-                      {plan.price}
-                    </Typography>
-                    <img src={Line} className="linePic" alt="line separator" />
-                  </Box>
-                  <div className="plan-body">
-                    {plan.feature_desc && (
-                      <Typography
-                        variant="body2"
-                        className="f-desc zain clr-white"
-                      >
-                        {plan.feature_desc}
-                      </Typography>
-                    )}
-                    <ul className="plan-perks">
-                      {plan.features?.map((feature, i) => (
-                        <Box className="perk feature-list inter">
-                          <img src={Tick} alt="Tick Icon" />
-                          <li>{feature}</li>
-                        </Box>
-                      ))}
-                    </ul>
-                  </div>
-                </CardContent>
-                <Box className="ButtonDiv">
-                  <Button className="subscribe-button">Pay Now</Button>
+            <Card
+              key={index}
+              className={`plan-card ${language === 'fa' ? 'align-right' : 'align-left'}`}
+            >
+              <CardContent>
+                <Box className="plan-header">
+                  <Typography variant="h5" className="plan-heading rubik">
+                    {plan.title}
+                  </Typography>
+                  <Typography variant="h6" className="plan-price zain">
+                    {plan.price}
+                  </Typography>
+                  <img src={Line} className="linePic" alt="line separator" />
                 </Box>
-              </Card>
-            </div>
+                <div className="plan-body">
+                  {plan.feature_desc && (
+                    <Typography variant="body2" className="f-desc zain ">
+                      {plan.feature_desc}
+                    </Typography>
+                  )}
+                  <ul className="plan-perks">
+                    {plan.features?.map((feature, i) => (
+                      <li className="zain" key={i}>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </CardContent>
+              <Box className="ButtonDiv">
+                <Button className="subscribe-button">Pay Now</Button>
+              </Box>
+            </Card>
           ))}
         </Slider>
       ) : (
@@ -110,18 +106,15 @@ export const PriceCards = () => {
                 </Box>
                 <div className="plan-body">
                   {plan.feature_desc && (
-                    <Typography
-                      variant="body2"
-                      className="f-desc zain clr-white"
-                    >
+                    <Typography variant="body2" className="f-desc zain ">
                       {plan.feature_desc}
                     </Typography>
                   )}
                   <ul className="plan-perks">
                     {plan.features?.map((feature, i) => (
-                      <Box className="perk zain">
-                        <li>{feature}</li>
-                      </Box>
+                      <li key={i} className="zain">
+                        {feature}
+                      </li>
                     ))}
                   </ul>
                 </div>

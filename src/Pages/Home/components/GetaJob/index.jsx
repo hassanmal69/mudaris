@@ -1,7 +1,6 @@
 import React from 'react';
 import './getajob.css';
 import { Box } from '@mui/material';
-import MudarisVideo from '@assets/Images/AgencyNavigatorMale.mp4'; // Video import
 import { useTranslation } from 'react-i18next';
 
 const GetaJob = () => {
@@ -20,7 +19,7 @@ const GetaJob = () => {
           <div className="getajobParaforbg">
             <div className="getajobparacontentonly">
               <p
-                className={`getajob-para ${language === 'fa' ? 'zain' : 'dm-sans'}`}
+                className={`getajob-para getajob-qa ${language === 'fa' ? 'zain' : 'dm-sans'}`}
               >
                 {t('getajob.descriptionpara1')}
               </p>
@@ -49,13 +48,12 @@ const GetaJob = () => {
               {t('getajob.descriptionpara4')}
             </p>
           </div>
-
-          {/* Infinite looping video */}
+          {/* Infinite looping video
           <div className="logodiv">
             <video width="100%" autoPlay loop muted>
               <source src={MudarisVideo} type="video/mp4" />
             </video>
-          </div>
+          </div>*/}
         </div>
       </Box>
     </section>
