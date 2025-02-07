@@ -17,7 +17,7 @@ import { useTranslation } from 'react-i18next';
 const logos = [sciencespo, tolonews, tv, mudaris, undplogo, onelogo];
 
 const GettoKnow = () => {
-  const { t } = useTranslation('home');
+  const { t, i18n } = useTranslation('home');
 
   const isMobile = useMediaQuery('(max-width: 600px)'); // Detect mobile screen
   const language = i18n.language;

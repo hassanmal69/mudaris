@@ -9,7 +9,6 @@ import Tick from '@assets/Icons/tick.png';
 import { useTranslation } from 'react-i18next';
 
 export const PriceCards = () => {
-
   const { t, i18n } = useTranslation('home');
   const [isPaymentScreenVisible, setIsPaymentScreenVisible] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState(null);
@@ -26,7 +25,6 @@ export const PriceCards = () => {
 
   const paymentPlans = t('paymentPlans', { returnObjects: true }); // Fetching translated JSON from i18next
 
-
   const handleSubscribe = (plan, index) => {};
 
   // Slick Slider Settings
@@ -38,7 +36,6 @@ export const PriceCards = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-  const fontClass = language === 'fa' ? 'rubik' : 'inter';
   return (
     <section className="price-container">
       <Box className="text-container">
@@ -99,7 +96,7 @@ export const PriceCards = () => {
           {paymentPlans.map((plan, index) => (
             <Card
               key={index}
-              className={`plan-card ${language === 'persian' ? 'align-right' : 'align-left'}`}
+              className={`plan-card ${language === 'fa' ? 'align-right' : 'align-left'}`}
             >
               <CardContent>
                 <Box className="plan-header">
@@ -122,8 +119,7 @@ export const PriceCards = () => {
                   )}
                   <ul className="plan-perks">
                     {plan.features?.map((feature, i) => (
-                      <Box className="perk feature-list inter">
-                        <img src={Tick} alt="Tick Icon" />
+                      <Box className="perk zain">
                         <li>{feature}</li>
                       </Box>
                     ))}
