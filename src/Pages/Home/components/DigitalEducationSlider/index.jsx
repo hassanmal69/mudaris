@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './DigitalEducation.css';
-
 import Development from '@assets/Images/Developmentimg.png';
 import Design from '@assets/Images/Designimg.png';
 import Marketing from '@assets/Images/Marketingimg.png';
@@ -47,12 +46,27 @@ export default function DigitalEducation() {
     cssEase: 'linear',
     pauseOnHover: true, // We handle pausing manually
     responsive: [
-      { breakpoint: 1544, settings: { slidesToShow: 5, slidesToScroll: 3, dots: true } },
-      { breakpoint: 1044, settings: { slidesToShow: 4, slidesToScroll: 3, dots: true } },
-      { breakpoint: 960, settings: { slidesToShow: 3, slidesToScroll: 2, dots: false } },
-      { breakpoint: 768, settings: { slidesToShow: 3, slidesToScroll: 2, dots: false } },
+      {
+        breakpoint: 1544,
+        settings: { slidesToShow: 5, slidesToScroll: 3, dots: true },
+      },
+      {
+        breakpoint: 1044,
+        settings: { slidesToShow: 4, slidesToScroll: 3, dots: true },
+      },
+      {
+        breakpoint: 960,
+        settings: { slidesToShow: 3, slidesToScroll: 2, dots: false },
+      },
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 3, slidesToScroll: 2, dots: false },
+      },
       { breakpoint: 670, settings: { slidesToShow: 2, slidesToScroll: 2 } },
-      { breakpoint: 480, settings: { slidesToShow: 2.3, slidesToScroll: 1, dots: false } },
+      {
+        breakpoint: 480,
+        settings: { slidesToShow: 2.3, slidesToScroll: 1, dots: false },
+      },
     ],
   };
 
@@ -60,13 +74,19 @@ export default function DigitalEducation() {
     <section className="DigitalEducationComponent">
       <Slider
         {...settings}
-        onMouseEnter={() => setIsPaused(true)}  // Pause slider when mouse enters
+        onMouseEnter={() => setIsPaused(true)} // Pause slider when mouse enters
         onMouseLeave={() => setIsPaused(false)} // Resume slider when mouse leaves
       >
         {educationImages.map((img, index) => {
-          const title = t(`digitaleducationcards.${index}.title`, { defaultValue: '' });
-          const newLabel = t(`digitaleducationcards.${index}.new`, { defaultValue: '' });
-          const description = t(`digitaleducationcards.${index}.des`, { defaultValue: '' });
+          const title = t(`digitaleducationcards.${index}.title`, {
+            defaultValue: '',
+          });
+          // const newLabel = t(`digitaleducationcards.${index}.new`, {
+          //   defaultValue: '',
+          // });
+          const description = t(`digitaleducationcards.${index}.desc`, {
+            defaultValue: '',
+          });
 
           return (
             <Box
@@ -82,19 +102,21 @@ export default function DigitalEducation() {
             >
               <Box className="DigitalEducationSlideNewandPicBox">
                 <Box className="DigitalEducationSlideNewChildBox">
-                  {newLabel && (
-                    <Typography
-                      variant="body"
-                      className={`${language === 'persian' ? 'DigitalEducationSlideNew clr-white rubik' : 'DigitalEducationSlideNew clr-white dm-sans'}`}
-                    >
-                      {newLabel}
-                    </Typography>
-                  )}
+                  <Typography
+                    variant="body"
+                    className={`${language === 'persian' ? 'DigitalEducationSlideNew clr-white rubik' : 'DigitalEducationSlideNew clr-white dm-sans'}`}
+                  >
+                    new
+                  </Typography>
                 </Box>
               </Box>
 
               <Box
-                className={hoveredIndex === index ? 'DigitalEducationSlideTitleandPicBoxwith-description' : 'DigitalEducationSlideTitleandPicBox'}
+                className={
+                  hoveredIndex === index
+                    ? 'DigitalEducationSlideTitleandPicBoxwith-description'
+                    : 'DigitalEducationSlideTitleandPicBox'
+                }
               >
                 <Typography
                   variant="h5"
@@ -105,9 +127,11 @@ export default function DigitalEducation() {
 
                 {/* Show description only on hover */}
                 {hoveredIndex === index && description && (
-                  <Typography variant="body2"
-                  className={`DigitalEducationCardDescription clr-white ${hoveredIndex === index ? 'visible' : ''}`}>
-                  {description}
+                  <Typography
+                    variant="body2"
+                    className={`DigitalEducationCardDescription clr-white ${hoveredIndex === index ? 'visible' : ''}`}
+                  >
+                    {description}
                   </Typography>
                 )}
               </Box>
@@ -117,7 +141,10 @@ export default function DigitalEducation() {
       </Slider>
 
       <Box className="DigitalEducationComponentTextComponent">
-        <Typography variant="h1" className={`DigitalEducationComponentMainTitle clr-white ${fontClass}`}>
+        <Typography
+          variant="h1"
+          className={`DigitalEducationComponentMainTitle clr-white ${fontClass}`}
+        >
           {t('digitaleducation.headtitle')}
         </Typography>
       </Box>

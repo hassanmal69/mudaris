@@ -35,20 +35,19 @@ const Home = () => {
       <Hero />
       <Community />
       <GetaJob />
-      {/* <WhatYouGet /> */}
       <DigitalEducation />
-      <GetStartedButton onButtonClick={scrollToPriceCards} />
-      <GetStartedButton onButtonClick={scrollToPriceCards} />
+      <WhatYouGet />
       <LineCards />
+      //{' '}
       <div className="price" ref={priceCardsRef}>
         <PriceCards />
+        //{' '}
       </div>
       <GettoKnow />
-      <GetStartedButton onButtonClick={scrollToPriceCards} />
       <E_Learn />
       <FAQ />
-      <GetStartedButton onButtonClick={scrollToPriceCards} />
       <GetStart />
+      // <GetStartedButton onButtonClick={scrollToPriceCards} />
     </section>
   );
 };
