@@ -11,16 +11,16 @@ import Button from '@mui/material/Button';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import Logo from '../../assets/Icons/Nav/Frame 1.png';
 import './nav.css';
+import { useTranslation } from 'react-i18next';
 
 function ResponsiveAppBar() {
+  const { t, i18n } = useTranslation('home');
   const [openLogin, setOpenLogin] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
-  const { data, toggleLanguage, language } = useLanguage();
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [currentForm, setCurrentForm] = useState('SignIn');
 
-  const pages = data.pagesnav;
-  const RightBtns = data.navRightBtns;
+  const pages = t('pagesnav');
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -57,6 +57,7 @@ function ResponsiveAppBar() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+  let language = 'persian';
 
   const fontClass = language === 'persian' ? 'rubik' : 'inter';
 
@@ -149,21 +150,15 @@ function ResponsiveAppBar() {
                     className="nav-menu-btn"
                     sx={{ my: 2, color: 'white', display: 'block' }}
                   >
-                    {page === 'Explore' ? (
-                      <>
-                        Explore <ArrowDropDownIcon key={i} />
-                      </>
-                    ) : (
-                      page
-                    )}
+                    {page}
                   </Button>
                 ))}
               </div>
-
+              {/* 
               <Box component="div" className="navBarBtns2 BorderDiv">
                 {RightBtns.map((btn, index) => (
                   <div className={`rightbtn ${fontClass}`} key={index}>
-                    {/* Use consistent keys (index) for SignIn and Signup */}
+                    {/* Use consistent keys (index) for SignIn and Signup *
                     {index === 2 ? ( // 'Get Started' button
                       <Button
                         onClick={() => handleClickOpen('Signup')}
@@ -189,7 +184,8 @@ function ResponsiveAppBar() {
                     )}
                   </div>
                 ))}
-              </Box>
+              </Box> 
+              */}
             </div>
           </Box>
         </Toolbar>
