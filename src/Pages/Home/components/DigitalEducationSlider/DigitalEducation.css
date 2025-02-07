@@ -160,8 +160,7 @@
 @media screen and (max-width: 667px) {
   .DigitalEducationComponentMainTitle {
     font-size: 22px !important;
-    font-weight: 400 !important;
-    line-height: 120% !important;
+    line-height: 150% !important;
     letter-spacing: -0.72px !important;
     width: 100%;
   }
@@ -179,9 +178,7 @@
     height: 205px !important;
   }
   .DigitalEducationComponentTextComponent {
-    width: 85%;
-    flex-direction: column;
-    gap: 0px !important;
+    width: 100%;
     align-items: flex-start;
   }
   .DigitalEducationComponentTitleDesc {

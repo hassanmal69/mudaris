@@ -12,6 +12,7 @@ import './home.css';
 import GetaJob from './components/GetaJob';
 import LineCards from './components/ReadIt';
 import { useTranslation } from 'react-i18next';
+import { GetStartedButton } from './components/getStartedButton';
 
 const Home = () => {
   const priceCardsRef = useRef(null);
@@ -35,7 +36,7 @@ const Home = () => {
       }`}
     >
       <Hero />
-      <Community />
+      <GetStartedButton onButtonClick={scrollToPriceCards}/>
       <DigitalEducation />
       <LineCards />
       <GetaJob />
@@ -44,7 +45,11 @@ const Home = () => {
       <div className="price" ref={priceCardsRef}>
         <PriceCards />
       </div>
-
+      <LineCards />
+      <div className="price" ref={priceCardsRef}>
+        <PriceCards />
+      </div>
+      <GettoKnow />
       <E_Learn />
       <FAQ />
       <GetStart />
