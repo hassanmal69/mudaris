@@ -6,21 +6,17 @@ import Typography from '@mui/material/Typography';
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
 import { Box } from '@mui/material';
-import { useLanguage } from '../../../../globalContext/GlobalProvider';
 import './faq.css';
+import { useTranslation } from 'react-i18next';
 
 export default function FAQ() {
+  const { t } = useTranslation('home');
   const [expanded, setExpanded] = useState(false);
-  const { data, language } = useLanguage();
 
   const handleAccordionChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
-
-  if (!data) {
-    return <h2>not loading</h2>;
-  }
-
+  let language = 'persian';
   return (
     <section className="width-90 faq-section">
       <Box component="div" className="faq-title-container column">
@@ -28,16 +24,16 @@ export default function FAQ() {
           variant="h6"
           className={`${language === 'persian' ? 'clr-white faq-title rubik' : 'clr-white faq-title inter'}`}
         >
-          {data.faqTitle.title}
+          {t('faqTitle.title')}
         </Typography>
         <Typography
           className={`${language === 'persian' ? 'clr-white faq-subtitle rubik' : 'clr-white faq-subtitle inter'}`}
         >
-          {data.faqTitle.description}
+          {t('faqTitle.description')}
         </Typography>
       </Box>
       <div className="faq-container column">
-        {data.faqArray.map((faq, index) => (
+        {t('faqArray', { returnObjects: true }).map((faq, index) => (
           <Accordion
             key={index}
             expanded={expanded === index}
