@@ -1,11 +1,10 @@
 import React from 'react';
-import { useLanguage } from '../../../../globalContext/GlobalProvider';
 import Box from '@mui/material/Box';
 import './courses.css';
 import TabComponent from './TabComponent';
 import { Typography } from '@mui/material';
 const Courses = () => {
-  const { data } = useLanguage();
+  // const { data } = useLanguage();
 
   // Check if data is loaded
   if (!data) {
@@ -19,7 +18,7 @@ const Courses = () => {
         className="fs-48 inter course-setion-title clr-white"
         variant="h6"
       >
-        {data['tabsTitle']}
+        {/* {data['tabsTitle']} */}
       </Typography>
 
       <Box className="courses-box">

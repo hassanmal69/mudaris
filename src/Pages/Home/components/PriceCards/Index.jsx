@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Card, CardContent, Typography, Button } from '@mui/material';
 import Slider from 'react-slick'; // Import React Slick
-import { useLanguage } from '../../../../globalContext/GlobalProvider';
 import './PriceCard.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Line from '../../../../assets/Icons/line.png';
-import Tick from '../../../../assets/Icons/tick.png';
-import PaymentScreen from './PaymentScreen';
+import Line from '@assets/Icons/line.png';
+import Tick from '@assets/Icons/tick.png';
 import { useTranslation } from 'react-i18next';
 
 export const PriceCards = () => {
-  const { data } = useLanguage();
+
   const { t, i18n } = useTranslation('home');
   const [isPaymentScreenVisible, setIsPaymentScreenVisible] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState(null);
@@ -26,28 +24,10 @@ export const PriceCards = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  if (isPaymentScreenVisible) {
-    return <PaymentScreen selectedPlan={selectedPlan} />;
-  }
-  if (!data) return 'no data in price cards';
+  const paymentPlans = t('paymentPlans', { returnObjects: true }); // Fetching translated JSON from i18next
 
-  const paymentPlans = data.paymentPlans;
-  const handleSubscribe = (plan, index) => {
-    setIsPaymentScreenVisible(true);
-    setSelectedPlan({
-      planTitle: plan[`plan${index + 1}`],
-      price: plan.price,
-      para: plan.para,
-      perks: [
-        plan.perk1,
-        plan.perk2,
-        plan.perk3,
-        plan.perk4,
-        plan.perk5,
-        plan.perk6,
-      ].filter(Boolean),
-    });
-  };
+
+  const handleSubscribe = (plan, index) => {};
 
   // Slick Slider Settings
   const sliderSettings = {
@@ -62,65 +42,53 @@ export const PriceCards = () => {
   return (
     <section className="price-container">
       <Box className="text-container">
-        <Typography variant="h1" className={`plan-title ${fontClass}`}>
-          {t('paymentHeader.title')}
+        <Typography variant="h1" className="plan-title rubik">
+          {t('paymentHeading.title')}
         </Typography>
-        <Typography
-          variant="body1"
-          className={`plan-description ${language === 'fa' ? 'zain' : 'inter'}`}
-        >
-          {t('paymentHeader.description')}
+        <Typography variant="body1" className="plan-description zain">
+          {t('paymentHeading.description')}
         </Typography>
       </Box>
 
       {/* Conditionally Render Grid or Slider */}
       {isMobile ? (
         <Slider {...sliderSettings}>
-          {paymentPlans.slice(1, 5).map((plan, index) => (
+          {paymentPlans.map((plan, index) => (
             <div key={index}>
               <Card
                 className={`plan-card ${language === 'persian' ? 'align-right' : 'align-left'}`}
               >
                 <CardContent>
-                  <Box className="plan-upper">
-                    <Typography variant="h5" className="plan-heading inter">
-                      {plan[`plan${index + 1}`]}
+                  <Box className="plan-header">
+                    <Typography variant="h5" className="plan-heading rubik">
+                      {plan.title}
                     </Typography>
-                    <Typography variant="h6" className="plan-price inter">
+                    <Typography variant="h6" className="plan-price zain">
                       {plan.price}
                     </Typography>
                     <img src={Line} className="linePic" alt="line separator" />
                   </Box>
-                  {plan.para && (
-                    <Typography variant="body2" className="plan-para inter">
-                      {plan.para}
-                    </Typography>
-                  )}
-                  <ul className="plan-perks">
-                    {[
-                      plan.perk1,
-                      plan.perk2,
-                      plan.perk3,
-                      plan.perk4,
-                      plan.perk5,
-                      plan.perk6,
-                    ]
-                      .filter(Boolean)
-                      .map((perk, perkIndex) => (
-                        <Box className="perk flex inter" key={perkIndex}>
+                  <div className="plan-body">
+                    {plan.feature_desc && (
+                      <Typography
+                        variant="body2"
+                        className="f-desc zain clr-white"
+                      >
+                        {plan.feature_desc}
+                      </Typography>
+                    )}
+                    <ul className="plan-perks">
+                      {plan.features?.map((feature, i) => (
+                        <Box className="perk feature-list inter">
                           <img src={Tick} alt="Tick Icon" />
-                          <li>{perk}</li>
+                          <li>{feature}</li>
                         </Box>
                       ))}
-                  </ul>
+                    </ul>
+                  </div>
                 </CardContent>
                 <Box className="ButtonDiv">
-                  <Button
-                    className="subscribe-button"
-                    onClick={() => handleSubscribe(plan, index)}
-                  >
-                    {paymentPlans[5].subscribe}
-                  </Button>
+                  <Button className="subscribe-button">Pay Now</Button>
                 </Box>
               </Card>
             </div>
@@ -128,51 +96,42 @@ export const PriceCards = () => {
         </Slider>
       ) : (
         <Box className="card-wrapper">
-          {paymentPlans.slice(1, 5).map((plan, index) => (
+          {paymentPlans.map((plan, index) => (
             <Card
               key={index}
               className={`plan-card ${language === 'persian' ? 'align-right' : 'align-left'}`}
             >
               <CardContent>
-                <Box className="plan-upper">
-                  <Typography variant="h5" className="plan-heading inter">
-                    {plan[`plan${index + 1}`]}
+                <Box className="plan-header">
+                  <Typography variant="h5" className="plan-heading rubik">
+                    {plan.title}
                   </Typography>
-                  <Typography variant="h6" className="plan-price inter">
+                  <Typography variant="h6" className="plan-price zain">
                     {plan.price}
                   </Typography>
                   <img src={Line} className="linePic" alt="line separator" />
                 </Box>
-                {plan.para && (
-                  <Typography variant="body2" className="plan-para inter">
-                    {plan.para}
-                  </Typography>
-                )}
-                <ul className="plan-perks">
-                  {[
-                    plan.perk1,
-                    plan.perk2,
-                    plan.perk3,
-                    plan.perk4,
-                    plan.perk5,
-                    plan.perk6,
-                  ]
-                    .filter(Boolean)
-                    .map((perk, perkIndex) => (
-                      <Box className="perk flex inter" key={perkIndex}>
+                <div className="plan-body">
+                  {plan.feature_desc && (
+                    <Typography
+                      variant="body2"
+                      className="f-desc zain clr-white"
+                    >
+                      {plan.feature_desc}
+                    </Typography>
+                  )}
+                  <ul className="plan-perks">
+                    {plan.features?.map((feature, i) => (
+                      <Box className="perk feature-list inter">
                         <img src={Tick} alt="Tick Icon" />
-                        <li>{perk}</li>
+                        <li>{feature}</li>
                       </Box>
                     ))}
-                </ul>
+                  </ul>
+                </div>
               </CardContent>
               <Box className="ButtonDiv">
-                <Button
-                  className="subscribe-button"
-                  onClick={() => handleSubscribe(plan, index)}
-                >
-                  {paymentPlans[5].subscribe}
-                </Button>
+                <Button className="subscribe-button">Pay Now</Button>
               </Box>
             </Card>
           ))}

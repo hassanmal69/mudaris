@@ -1,13 +1,11 @@
-import React, { useState, useRef } from "react";
-import { Box, Container, Typography } from "@mui/material";
-import "./style.css";
-import BlurGlow from "@assets/Images/Blur2.png";
-import { useLanguage } from "../../../../globalContext/GlobalProvider";
-import { useTranslation } from "react-i18next";
+import React, { useState, useRef } from 'react';
+import { Box, Container, Typography } from '@mui/material';
+import './style.css';
+import BlurGlow from '@assets/Images/Blur2.png';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
-  const { data } = useLanguage();
-  const { t, i18n } = useTranslation("home");
+  const { t, i18n } = useTranslation('home');
 
   const [video, setVideo] = useState(false);
   const videoRef = useRef(null);
@@ -23,11 +21,6 @@ const Hero = () => {
       return newVideoState;
     });
   };
-
-  if (!data) {
-    return <div className="clr-white">Data is not available</div>;
-  }
-
   return (
     <Container className="HeroPagecontainer">
       <Box className="ContainerContent">
@@ -35,23 +28,23 @@ const Hero = () => {
           <Typography
             variant="h1"
             className={`${
-              language === "fa"
-                ? "persianHeading clr-white rubik"
-                : "mainHeading inter"
+              language === 'fa'
+                ? 'persianHeading clr-white rubik'
+                : 'mainHeading inter'
             }`}
           >
-            {t("Introduction.title")}
+            {t('Introduction.title')}
           </Typography>
 
           <Typography
             variant="body1"
             className={`${
-              language === "fa"
-                ? "persianDescription clr-white zain"
-                : "mainDescription inter"
+              language === 'fa'
+                ? 'persianDescription clr-white zain'
+                : 'mainDescription inter'
             }`}
           >
-            {t("Introduction.description")}
+            {t('Introduction.description')}
           </Typography>
           <span className="hero-bg-lines">
             <img src={BlurGlow} className="BlurGlow" alt="Blur effect" />

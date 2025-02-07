@@ -1,27 +1,15 @@
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import React, { useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import React from 'react';
 import Home from '../Pages/Home';
 import Footer from '../layout/Footer';
-import ResponsiveAppBar from '../layout/NavBar/Index';
+import ResponsiveAppBar from '../layout/NavBar';
 import NotFound404 from '../Pages/NotFound';
 import { useLocation } from 'react-router-dom';
-import { DataSciCourse } from '../Pages/DataScienceCourse';
-import { AboutOwner } from '../Pages/AboutOwner';
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<WithNavbarAndFooter element={<Home />} />} />
-        <Route
-          path="/datascience"
-          element={<WithNavbarAndFooter element={<DataSciCourse />} />}
-        />
-        <Route
-          path="/AboutOwner"
-          element={<WithNavbarAndFooter element={<AboutOwner />} />}
-        />
-
-        <Route path="*" element={<NotFound404 />} />
       </Routes>
     </BrowserRouter>
   );
@@ -35,9 +23,9 @@ const WithNavbarAndFooter = ({ element }) => {
   const shouldRenderNavbarAndFooter = location.pathname !== '/profile'; // Adjust the path
   return shouldRenderNavbarAndFooter ? (
     <>
-      <ResponsiveAppBar />
+      {/* <ResponsiveAppBar /> */}
       {element}
-      <Footer />
+      {/* <Footer /> */}
     </>
   ) : (
     element

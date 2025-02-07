@@ -3,7 +3,6 @@ import { Box, Button, useMediaQuery } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import './get.css';
-import { useLanguage } from '../../../../globalContext/GlobalProvider';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Drimg from '../../../../assets/Images/Drimg.png';
@@ -18,8 +17,8 @@ import { useTranslation } from 'react-i18next';
 const logos = [sciencespo, tolonews, tv, mudaris, undplogo, onelogo];
 
 const GettoKnow = () => {
-  const { t, i18n } = useTranslation('home');
-  const navigate = useNavigate();
+  const { t } = useTranslation('home');
+
   const isMobile = useMediaQuery('(max-width: 600px)'); // Detect mobile screen
   const language = i18n.language;
   // const getData = data.gettoknow;
@@ -53,10 +52,7 @@ const GettoKnow = () => {
             <Box className="paraDivGettoKnow">
               <p className="zain">{t('gettoknow.description')}</p>
             </Box>
-            <Button
-              className={`dm-sans ${fontClass}`}
-              onClick={() => navigate('/AboutOwner')}
-            >
+            <Button className={`dm-sans ${fontClass}`}>
               {t('gettoknow.buttonlabel')}
             </Button>
           </Box>
