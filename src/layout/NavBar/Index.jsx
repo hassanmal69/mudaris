@@ -10,7 +10,6 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import Logo from '../../assets/Icons/Nav/Frame 1.png';
-import { useLanguage } from '../../globalContext/GlobalProvider';
 import './nav.css';
 
 function ResponsiveAppBar() {
@@ -19,8 +18,6 @@ function ResponsiveAppBar() {
   const { data, toggleLanguage, language } = useLanguage();
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [currentForm, setCurrentForm] = useState('SignIn');
-
-  if (!data) return <div>Loading...</div>;
 
   const pages = data.pagesnav;
   const RightBtns = data.navRightBtns;
@@ -111,7 +108,7 @@ function ResponsiveAppBar() {
                 },
               }}
             >
-              {RightBtns.map((btn, index) => (
+              {/* {RightBtns.map((btn, index) => (
                 <>
                   {index === 2 ? ( // 'Get Started' button
                     <Button
@@ -137,7 +134,7 @@ function ResponsiveAppBar() {
                     </Button>
                   )}
                 </>
-              ))}
+              ))} */}
             </Menu>
           </Box>
 
@@ -195,21 +192,6 @@ function ResponsiveAppBar() {
               </Box>
             </div>
           </Box>
-          {/* SignIn/Signup Modals */}
-          {/* {currentForm === "SignIn" && (
-            <Signin
-              open={openLogin}
-              handleClose={handleClose}
-              toggle={handleToggleDialogs}
-            />
-          )}
-          {currentForm === 'Signup' && (
-            <Signup
-              open={openSignUp}
-              handleClose={handleClose}
-              toggle={handleToggleDialogs}
-            />
-          )} */}
         </Toolbar>
       </Container>
     </AppBar>

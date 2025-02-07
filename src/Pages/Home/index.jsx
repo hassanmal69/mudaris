@@ -3,17 +3,14 @@ import E_Learn from './components/E_Learn';
 import Hero from './components/Hero/Index';
 import FAQ from './components/Accordion';
 import GetStart from './components/GetStarted';
-import PriceCards from './components/PriceCards/Index';
-import Review from './components/Review/Index';
+import PriceCards from './components/PriceCards';
 import GettoKnow from './components/GettoKnow/Index';
 import DigitalEducation from './components/digitalEducationSlider';
 import Community from './components/Community';
 import WhatYouGet from './components/WhatYouGet';
 import './home.css';
 import GetaJob from './components/GetaJob';
-import LineCards from './components/ReadIt';
-import Testimonials from './components/Testimonials/Testimonials';
-import { GetStartedButton } from './components/GetStartedButton';
+
 import { useTranslation } from 'react-i18next';
 const Home = () => {
   const priceCardsRef = useRef(null);
@@ -32,7 +29,8 @@ const Home = () => {
   return (
     <section className="home-page column primary-bg">
       {/* home-page column primary-bg */}
-      <Hero />
+      <PriceCards />
+      {/* <Hero />
       <Community />
       <GetaJob />
       <DigitalEducation />
@@ -40,14 +38,13 @@ const Home = () => {
       <LineCards />
       //{' '}
       <div className="price" ref={priceCardsRef}>
-        <PriceCards />
-        //{' '}
+      //{' '}
       </div>
       <GettoKnow />
       <E_Learn />
       <FAQ />
       <GetStart />
-      // <GetStartedButton onButtonClick={scrollToPriceCards} />
+      // <GetStartedButton onButtonClick={scrollToPriceCards} /> */}
     </section>
   );
 };
