@@ -16,8 +16,9 @@ import Community from '../Community';
 
 const LineCards = () => {
   const { t, i18n } = useTranslation('home');
-  const parentArray = t('parentarray', { returnObjects: true });
+  const parentArray = t('Important', { returnObjects: true });
   const language = i18n.language;
+  console.log(parentArray);
   const symbolArray = [
     Symbol,
     Symbol1,
@@ -31,79 +32,59 @@ const LineCards = () => {
 
   return (
     <>
-      {parentArray.map((section, sectionIndex) => {
-        const sectionKey = Object.keys(section)[0];
-        const sectionItems = section[sectionKey];
-
-        return (
-          <Box key={sectionIndex} className="importanttoread">
-            <Typography
-              variant="h1"
-              className="LineCardContainerMainTitle rubik"
-            >
-              {sectionItems[0]?.title}
-            </Typography>
-            <Box className="LineCardContainerMain">
-              <Box className="LineCardContainerMainPic">
-                <img
-                  src={LineImg}
-                  className="importanttoreadLinePic"
-                  alt="Line"
-                />
-                <Box className="importanttoreadCardnumberDivParent">
-                  {sectionItems.slice(1).map((item, index) => (
-                    <Box
-                      key={index}
-                      className={`importanttoreadCardnumberDiv ${
-                        sectionKey === 'participate'
-                          ? 'specialClassForSecondComponent'
-                          : ''
-                      }`}
-                    >
-                      <Typography
-                        variant="h6"
-                        className="importanttoreadCardnumber rubik"
-                      >
-                        {/* {item.numbers} */}
-                        {index+1}
-                      </Typography>
-                    </Box>
-                  ))}
+      <Box className="importanttoread">
+        <Typography variant="h1" className="LineCardContainerMainTitle rubik">
+          {parentArray[0].title}
+        </Typography>
+        <Box className="LineCardContainerMain">
+          <Box className="LineCardContainerMainPic">
+            <img src={LineImg} className="importanttoreadLinePic" alt="Line" />
+            <Box className="importanttoreadCardnumberDivParent">
+              {parentArray.slice(1).map((item, index) => (
+                <Box key={index+1} className={`importanttoreadCardnumberDiv`}>
+                  <Typography
+                    variant="h6"
+                    className="importanttoreadCardnumber rubik"
+                  >
+                    {index + 1}
+                  </Typography>
                 </Box>
-              </Box>
-
-              <Box className="importanttoreadcardContainer">
-                {sectionItems.slice(1).map((item, index) => (
-                  <Box className="uaatest" key={index}>
-                    <Box className="importanttoreadCard">
-                      <Box className="importanttoreadCardPicDiv">
-                        <img
-                          src={symbolArray[index % symbolArray.length]}
-                          alt={`Symbol ${index}`}
-                        />
-                      </Box>
-                      <Box className="importanttoreadCardContentText">
-                        <Typography
-                          variant="h6"
-                          className="importanttoreadCardtitle rubik"
-                        >
-                          {item.title}
-                        </Typography>
-                        <Typography
-                          variant="body1"
-                          className="importanttoreadCarddescription rubik"
-                        >
-                          {item.description}
-                        </Typography>
-                      </Box>
-                    </Box>
-                  </Box>
-                ))}
-              </Box>
+              ))}
             </Box>
           </Box>
-        );
-      })}
+
+          <Box className="importanttoreadcardContainer">
+            {parentArray.slice(1).map((item, index) => (
+              <Box className="uaatest" key={index}>
+                <Box className="importanttoreadCard">
+                  <Box className="importanttoreadCardPicDiv">
+                    <img
+                      src={symbolArray[index % symbolArray.length]}
+                      alt={`Symbol ${index}`}
+                    />
+                  </Box>
+                  <Box className="importanttoreadCardContentText">
+                    <Typography
+                      variant="h6"
+                      className="importanttoreadCardtitle rubik"
+                    >
+                      {item.cardTitle}
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      className="importanttoreadCarddescription rubik"
+                    >
+                      {item.description}
+                    </Typography>
+                  </Box>
+                </Box>
+              </Box>
+            ))}
+          </Box>
+        </Box>
+      </Box>
+
+      {/* })} */}
     </>
   );
 };

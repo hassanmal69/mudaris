@@ -59,7 +59,7 @@ function ResponsiveAppBar() {
   };
   let language = 'persian';
 
-  const fontClass = language === 'persian' ? 'rubik' : 'inter';
+  const fontClass = language === 'fa' ? 'rubik' : 'inter';
 
   return (
     <AppBar
@@ -130,7 +130,7 @@ function ResponsiveAppBar() {
                   <Button
                     key={i}
                     onClick={handleCloseNavMenu}
-                    className="nav-menu-btn"
+                    className="nav-menu-btn rubik"
                     sx={{ my: 2, color: 'white', display: 'block' }}
                   >
                     {page}

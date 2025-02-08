@@ -3,10 +3,15 @@ import { Box, Button, Container, Typography } from '@mui/material';
 import './style.css';
 import BlurGlow from '@assets/Images/Blur2.png';
 import { useTranslation } from 'react-i18next';
-
+import { GetStartedButton } from '../getStartedButton';
+import { priceCardsRef} from '../../index';
 const Hero = () => {
   const { t, i18n } = useTranslation('home');
-
+  const scrollToPriceCards = () => {
+    if (priceCardsRef.current) {
+      priceCardsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   const [video, setVideo] = useState(false);
   const videoRef = useRef(null);
   const language = i18n.language;
@@ -47,7 +52,8 @@ const Hero = () => {
             {t('Introduction.description')}
           </Typography>
           <div className="HeroComponentButtonDiv">
-          <button className='hero-section-button zain clr-white'>به جمع میلیونر‌های جوان بپیوندید</button>
+          {/* <button className='hero-section-button zain clr-white'>به جمع میلیونر‌های جوان بپیوندید</button> */}
+        <GetStartedButton onButtonClick={scrollToPriceCards}/>
           </div>
           <span className="hero-bg-lines">
             <img src={BlurGlow} className="BlurGlow" alt="Blur effect" />
