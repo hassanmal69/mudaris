@@ -73,8 +73,14 @@
 }
 
 .importanttoreadCard:hover {
-  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  transform: scale(1.003); /* Slightly enlarge the card on hover */
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  background: linear-gradient(180deg, #010002 0%, #361764 100%),
+    url(../../../../assets/Images/Pattern.png) !important;
+  background-size: cover !important;
+  background-blend-mode: screen;
+  box-shadow: 0px 0px 6px 3px rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(7px) !important;
 }
 .uaatest {
   display: flex;

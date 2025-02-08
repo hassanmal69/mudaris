@@ -88,7 +88,7 @@ export const PriceCards = () => {
           ))}
         </Slider>
       ) : (
-        <Box className="card-wrapper">
+        <Box className="card-wrapper rev-flex">
           {paymentPlans.map((plan, index) => (
             <Card
               key={index}
