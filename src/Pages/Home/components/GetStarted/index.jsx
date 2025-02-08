@@ -1,14 +1,49 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import './getstarted.css';
-import { Container } from '@mui/material';
-import { TextField } from '@mui/material';
+import { Container, TextField } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 
 function GetStart() {
-  let language = 'persian';
-  const fontClass = 'persian' === 'persian' ? 'rubik' : 'inter';
+  const language = 'persian';
+  const fontClass = language === 'persian' ? 'rubik' : 'inter';
   const { t } = useTranslation('home');
+
+  const [email, setEmail] = useState(''); // State to store input field data
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(
+        'https://v1.nocodeapi.com/hassan321/google_sheets/sUMVFngsooeFPXXn?tabId=Sheet1', 
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(
+             [[email,new Date()]] // Correct 2D array format
+          ),
+        }
+      );
+  
+      const result = await response.json();
+      console.log(result); // Log response to debug issues
+  
+      if (result.error) {
+        throw new Error(result.info);
+      }
+  
+      setEmail(""); // Clear input field
+      alert("Thank you for your interest. We will contact you soon!"); 
+    } catch (error) {
+      console.error("Error in sending email:", error);
+      alert("Sorry, the server is not responding. Try later!!!");
+    }
+  };
+  
+
   return (
     <Container className="get-start-container">
       {/* Displaying the title */}
@@ -18,7 +53,6 @@ function GetStart() {
       </h1>
 
       {/* Input field with placeholder */}
-      {/* <div className="getStartedContainerforFieldandButton"> */}
       <Box className="get-email-field">
         <TextField
           type="email"
@@ -26,6 +60,9 @@ function GetStart() {
           variant="outlined"
           className={`custom-input ${fontClass}`}
           fullWidth
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)} // Store input field data
           sx={{
             '& .MuiOutlinedInput-root': {
               '& fieldset': {
@@ -48,7 +85,10 @@ function GetStart() {
         />
 
         <button
-          className={` button-text ${fontClass} ${language === 'persian' ? 'my-with' : 'get-start-button'}`}
+          className={`button-text ${fontClass} ${
+            language === 'persian' ? 'my-with' : 'get-start-button'
+          }`}
+          onClick={handleSubmit} // Attach click event
         >
           {t('GetStarted.buttontext')}
         </button>
