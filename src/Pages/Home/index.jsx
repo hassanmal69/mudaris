@@ -116,7 +116,7 @@ const Home = () => {
         initial="hidden"
         whileInView="visible"
         variants={fadeInUp}
-        className='GetToknowMainSection'
+        className="GetToknowMainSection"
         viewport={{ once: true }}
       >
         <GettoKnow />

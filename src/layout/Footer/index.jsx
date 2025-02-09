@@ -51,7 +51,7 @@ const Footer = () => {
             {Array.isArray(t('footerContent', { returnObjects: true })) &&
               t('footerContent', { returnObjects: true }).map(
                 (content, index) => (
-                  <li key={index} className="white-normal">
+                  <li key={index} className="white-normal rubik">
                     {content}
                   </li>
                 )
@@ -61,13 +61,6 @@ const Footer = () => {
       </div>
       <Divider />
       <div className="copy-write space-between flex-center">
-        {/* <div className="footer-icons flex">
-          <img src={Instagram} alt="Instagram" />
-          <img src={LinkedIn} alt="LinkedIn" />
-          <img src={Twitter} alt="Twitter" />
-          <img src={FaceBook} alt="Facebook" />
-          <img src={Youtube} alt="YouTube" />
-        </div> */}
         <div className="footer-icons flex">
           <a
             href="https://www.instagram.com/mudarisacademy?igsh=MTRxeGpmYnAzMjNqaQ=="

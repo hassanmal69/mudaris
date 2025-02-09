@@ -5,26 +5,23 @@ import { useTranslation } from 'react-i18next';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './DigitalEducation.css';
-import Development from '@assets/Images/Developmentimg.png';
-import Design from '@assets/Images/Designimg.png';
-import Marketing from '@assets/Images/Marketingimg.png';
-import Business from '@assets/Images/Businessimg.png';
-import DataScience from '@assets/Images/DataScienceimg.png';
+import Affiliate from '@assets/Images/affiliate.svg';
+import Crypto from '@assets/Images/crypto.svg';
+import Camera from '@assets/Images/camera.svg';
+import Business from '@assets/Images/business.svg';
+import Inovation from '@assets/Images/inovation.svg';
 import Technology from '@assets/Images/Technologyimg.png';
-
+import Mudaris from '@assets/Images/mudaris.svg';
+import Trading from '@assets/Images/trading.svg';
 const educationImages = [
-  Development,
-  Design,
-  Marketing,
+  Trading,
   Business,
-  DataScience,
+  Camera,
+  Mudaris,
+  Affiliate,
   Technology,
-  Development,
-  Design,
-  Marketing,
-  Business,
-  DataScience,
-  Technology,
+  Crypto,
+  Inovation,
 ];
 
 export default function DigitalEducation() {
@@ -38,7 +35,7 @@ export default function DigitalEducation() {
     dots: false,
     infinite: true,
     arrows: false,
-    speed: 4000,
+    speed: 3000,
     slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: !isPaused, // Autoplay is paused when mouse is hovered
@@ -72,6 +69,14 @@ export default function DigitalEducation() {
 
   return (
     <section className="DigitalEducationComponent">
+      <Box className="DigitalEducationComponentTextComponent">
+        <Typography
+          variant="h1"
+          className={`DigitalEducationComponentMainTitle clr-white ${fontClass}`}
+        >
+          {t('digitaleducation.headtitle')}
+        </Typography>
+      </Box>
       <Slider
         {...settings}
         onMouseEnter={() => setIsPaused(true)} // Pause slider when mouse enters
@@ -104,7 +109,7 @@ export default function DigitalEducation() {
                 <Box className="DigitalEducationSlideNewChildBox">
                   <Typography
                     variant="body"
-                    className={`${language === 'persian' ? 'DigitalEducationSlideNew clr-white rubik' : 'DigitalEducationSlideNew clr-white dm-sans'}`}
+                    className={`${language === 'fa' ? 'DigitalEducationSlideNew clr-white rubik' : 'DigitalEducationSlideNew clr-white dm-sans'}`}
                   >
                     new
                   </Typography>
@@ -120,34 +125,27 @@ export default function DigitalEducation() {
               >
                 <Typography
                   variant="h5"
-                  className={`${language === 'persian' ? 'DigitalEducationCardTitle clr-white rubik' : 'DigitalEducationCardTitle clr-white inter'}`}
+                  className={`${language === 'fa' ? 'DigitalEducationCardTitle clr-white zain' : 'DigitalEducationCardTitle clr-white inter'}
+                      ${hoveredIndex === index ? 'hight-visible' : ''} 
+                  `}
                 >
                   {title}
                 </Typography>
-
-                {/* Show description only on hover */}
-                {hoveredIndex === index && description && (
-                  <Typography
-                    variant="body2"
-                    className={`DigitalEducationCardDescription clr-white ${hoveredIndex === index ? 'visible' : ''}`}
-                  >
-                    {description}
-                  </Typography>
-                )}
+                {/* {hoveredIndex === index && description && ( */}
+                <Typography
+                  variant="body2"
+                  className={`DigitalEducationCardDescription clr-white 
+                      ${hoveredIndex === index ? 'visible' : ''} 
+                      ${language === 'fa' ? 'rubik' : 'inter'}`}
+                >
+                  {description}
+                </Typography>
+                {/* )} */}
               </Box>
             </Box>
           );
         })}
       </Slider>
-
-      <Box className="DigitalEducationComponentTextComponent">
-        <Typography
-          variant="h1"
-          className={`DigitalEducationComponentMainTitle clr-white ${fontClass}`}
-        >
-          {t('digitaleducation.headtitle')}
-        </Typography>
-      </Box>
     </section>
   );
 }
