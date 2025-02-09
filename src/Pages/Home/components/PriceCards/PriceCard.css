@@ -70,7 +70,7 @@
   transform: scale(1.04);
 }
 .plan-heading {
-  font-weight: 500;
+  font-weight: 600 !important;
   font-size: 22px !important;
   color: #ffffff;
 }

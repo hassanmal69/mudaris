@@ -5,13 +5,10 @@ import './PriceCard.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Line from '@assets/Icons/line.png';
-import Tick from '@assets/Icons/tick.png';
 import { useTranslation } from 'react-i18next';
 
 export const PriceCards = () => {
   const { t, i18n } = useTranslation('home');
-  const [isPaymentScreenVisible, setIsPaymentScreenVisible] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
   const language = i18n.language;
   useEffect(() => {
@@ -25,7 +22,9 @@ export const PriceCards = () => {
 
   const paymentPlans = t('paymentPlans', { returnObjects: true }); // Fetching translated JSON from i18next
 
-  const handleSubscribe = (plan, index) => {};
+  const handleSubscribe = () => {
+    window.location.href = paymentPlans[1].paymentGateway;
+  };
 
   // Slick Slider Settings
   const sliderSettings = {
@@ -58,7 +57,7 @@ export const PriceCards = () => {
             >
               <CardContent>
                 <Box className="plan-header">
-                  <Typography variant="h5" className="plan-heading rubik">
+                  <Typography variant="h5" className="plan-heading">
                     {plan.title}
                   </Typography>
                   <Typography variant="h6" className="plan-price zain">
@@ -120,7 +119,9 @@ export const PriceCards = () => {
                 </div>
               </CardContent>
               <Box className="ButtonDiv">
-                <Button className="subscribe-button">Pay Now</Button>
+                <Button className="subscribe-button" onClick={handleSubscribe}>
+                  Pay Now
+                </Button>
               </Box>
             </Card>
           ))}
