@@ -115,7 +115,7 @@ const Timeline = () => {
 
   return (
     <>
-      <h1 className="participateCardContainerMainTitle rubik">
+      <h1 className="participateCardContainerMainTitle rubik mobHeading">
         {timelineData[0].title}
       </h1>
       <Box

@@ -46,7 +46,7 @@ const WhatYouGet = () => {
   return (
     <section className={`whatyouget-container ${fontClass}`}>
       <Box className="whatyouget-containerMainText">
-        <h1 className={`whatyouget-containerMainHeading ${fontClass}`}>
+        <h1 className={`whatyouget-containerMainHeading mobHeading ${fontClass}`}>
           {heading}
         </h1>
       </Box>

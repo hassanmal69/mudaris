@@ -33,7 +33,7 @@ const LineCards = () => {
   return (
     <>
       <Box className="importanttoread">
-        <Typography variant="h1" className="LineCardContainerMainTitle rubik">
+        <Typography variant="h1" className="LineCardContainerMainTitle rubik mobHeading">
           {parentArray[0].title}
         </Typography>
         <Box className="LineCardContainerMain">

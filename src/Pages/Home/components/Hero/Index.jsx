@@ -4,7 +4,7 @@ import './style.css';
 import BlurGlow from '@assets/Images/Blur2.png';
 import { useTranslation } from 'react-i18next';
 import { GetStartedButton } from '../getStartedButton';
-import { priceCardsRef} from '../../index';
+import { priceCardsRef } from '../../index';
 const Hero = () => {
   const { t, i18n } = useTranslation('home');
   const scrollToPriceCards = () => {
@@ -52,8 +52,8 @@ const Hero = () => {
             {t('Introduction.description')}
           </Typography>
           <div className="HeroComponentButtonDiv">
-          {/* <button className='hero-section-button zain clr-white'>به جمع میلیونر‌های جوان بپیوندید</button> */}
-        <GetStartedButton onButtonClick={scrollToPriceCards}/>
+            {/* <button className='hero-section-button zain clr-white'>به جمع میلیونر‌های جوان بپیوندید</button> */}
+            <GetStartedButton onButtonClick={scrollToPriceCards} />
           </div>
           <span className="hero-bg-lines">
             <img src={BlurGlow} className="BlurGlow" alt="Blur effect" />
