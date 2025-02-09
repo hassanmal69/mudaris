@@ -16,7 +16,7 @@ function GetStart() {
     e.preventDefault();
     try {
       const response = await fetch(
-        'https://v1.nocodeapi.com/hassan321/google_sheets/sUMVFngsooeFPXXn?tabId=Sheet1', 
+        'https://v1.nocodeapi.com/hassan321/google_sheets/PDYSVtUFJAnfFCeB?tabId=Sheet1', 
         {
           method: 'POST',
           headers: {
@@ -47,7 +47,7 @@ function GetStart() {
   return (
     <Container className="get-start-container">
       {/* Displaying the title */}
-      <h1 className={`clr-white get-start-heading ${fontClass}`}>
+      <h1 className={`clr-white get-start-heading mobHeading ${fontClass}`}>
         {t('GetStarted.title1')}
         {t('GetStarted.title2')}
       </h1>

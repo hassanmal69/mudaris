@@ -11,8 +11,30 @@
   direction: rtl;
   text-align: right;
 }
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track (the area behind the scrollbar) */
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+
+/* Scrollbar thumb (the moving part) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #a142ff, #d08bff);
+  border-radius: 10px;
+}
+
+/* Scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #7e2ce8, #c174ff);
+}
+
 @media only screen and (max-width: 600px) {
   .home-page {
-    gap: 50px;
+    gap: 80px;
   }
 }

@@ -31,11 +31,13 @@ export const PriceCards = () => {
     dots: true,
     infinite: false,
     arrows: false,
-    speed: 500,
+    speed: 500, // Faster transition (reduce this value)
     autoplay: true,
+    autoplaySpeed: 1000, // Slide changes every 1 second (reduce for faster speed)
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+  
   return (
     <section className="price-container">
       <Box className="text-container">

@@ -69,14 +69,6 @@ export default function DigitalEducation() {
 
   return (
     <section className="DigitalEducationComponent">
-      <Box className="DigitalEducationComponentTextComponent">
-        <Typography
-          variant="h1"
-          className={`DigitalEducationComponentMainTitle clr-white ${fontClass}`}
-        >
-          {t('digitaleducation.headtitle')}
-        </Typography>
-      </Box>
       <Slider
         {...settings}
         onMouseEnter={() => setIsPaused(true)} // Pause slider when mouse enters
@@ -146,6 +138,14 @@ export default function DigitalEducation() {
           );
         })}
       </Slider>
+      <Box className="DigitalEducationComponentTextComponent">
+        <Typography
+          variant="h1"
+          className={`DigitalEducationComponentMainTitle mobHeading clr-white ${fontClass}`}
+        >
+          {t('digitaleducation.headtitle')}
+        </Typography>
+      </Box>
     </section>
   );
 }

@@ -98,8 +98,8 @@
 }
 @media only screen and (max-width: 600px) {
   .get-start-heading {
-    width: 90%;
-    font-size: 44px;
+    width: 100%;
+    line-height: 125%;
   }
 
   .get-email-field {

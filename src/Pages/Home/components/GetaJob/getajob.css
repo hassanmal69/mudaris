@@ -11,6 +11,29 @@
   flex-direction: row;
 }
 
+.customCursor {
+  height: 20px;
+  width: 20px;
+  background: radial-gradient(
+    circle,
+    #c020ff 20%,
+    /* Brighter neon purple */ rgba(155, 0, 255, 0.6) 50%,
+    /* Stronger inner glow */ rgba(200, 100, 255, 0.3) 100%
+      /* Smooth outer blend */
+  );
+  border-radius: 50%;
+  position: fixed;
+  z-index: 99;
+  filter: blur(20px); /* Increased blur for a stronger glow */
+  transition: all linear 0.1s;
+  box-shadow:
+    0 0 120px rgba(155, 0, 255, 0.9),
+    /* Stronger purple glow */ 0 0 60px rgba(200, 100, 255, 0.8),
+    /* Soft outer glow */ 0 0 40px rgba(255, 255, 255, 0.5); /* White highlight for brightness */
+  mix-blend-mode: difference; /* Enhances contrast with backgrounds */
+  pointer-events: none; /* Ensures it doesn't interfere with clicks */
+}
+
 .getajob-paragraphs {
   display: flex;
   flex-direction: row;
@@ -111,6 +134,68 @@
   );
   border-radius: 500px;
 }
+.arrow-container {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+  display: none;
+}
+
+.arrow-2 svg {
+  color: #8C45FF; /* Purple color */
+  animation: arrowGlow 1.5s infinite alternate ease-in-out;
+}
+
+.arrow-1 {
+  width: 8px;
+  height: 50px;
+  background: #8C45FF66; /* Transparent purple */
+  margin: 0 auto;
+  border-radius: 5px;
+  animation: arrowGlow 1.5s infinite alternate ease-in-out;
+  box-shadow: 0 0 20px #8C45FF99, 0 0 40px #8C45FFDD; /* Brighter glow */
+}
+
+@keyframes arrowGlow {
+  0% {
+    opacity: 0.6;
+    transform: translateY(0);
+    box-shadow: 0 0 15px #8C45FF99, 0 0 30px #8C45FFCC;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(10px);
+    box-shadow: 0 0 25px #8C45FFFF, 0 0 50px #8C45FFFF;
+  }
+}
+
+.animated {
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+    /* box-shadow: 0 0 1px #8C45FF88; */
+  }
+  50% {
+    opacity: 0.5;
+    /* box-shadow: 0 0 2px #8C45FFCC; */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    /* box-shadow: 0 0 3px #8C45FFFF; */
+  }
+}
+
+.zoomIn {
+  animation-name: zoomIn;
+}
+
 @media only screen and (max-width: 600px) {
   .getajob-circle {
     display: none;
@@ -149,10 +234,12 @@
     width: 98%;
   }
   .getajob-paragraphs p {
-    font-size: 14px;
+    font-size: 12px;
     width: 100%;
   }
-
+  .arrow-container {
+    display: block;
+  }
   .getajob-infobox {
     padding: 25px 25px;
   }
@@ -167,6 +254,9 @@
   }
   .logodiv {
     display: none;
+  }
+  .arrow-container {
+    display: block;
   }
   .getajob-heading h2 {
     font-size: 29px;
@@ -201,6 +291,9 @@
   .logodiv {
     display: none;
   }
+  .arrow-container {
+    display: block;
+  }
   .getajob-paragraphs {
     width: 50%;
     justify-content: center;
@@ -230,6 +323,9 @@
   }
   .logodiv {
     display: block;
+  }
+  .arrow-container {
+    display: none;
   }
   .getajob-para {
     width: 70%;
