@@ -13,7 +13,6 @@ import './home.css';
 import GetaJob from './components/GetaJob';
 import LineCards from './components/ReadIt';
 import { useTranslation } from 'react-i18next';
-import { GetStartedButton } from './components/getStartedButton';
 import Timeline from './components/newLine/index.jsx';
 export const priceCardsRef = React.createRef();
 
@@ -51,7 +50,12 @@ const Home = () => {
         <Hero />
       </motion.div>
 
-      <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        id="community"
+        variants={fadeInUp}
+      >
         <Community />
       </motion.div>
 
@@ -69,6 +73,7 @@ const Home = () => {
         whileInView="visible"
         variants={fadeInUp}
         viewport={{ once: true }}
+        id="slider"
       >
         <DigitalEducation />
       </motion.div>
@@ -78,6 +83,7 @@ const Home = () => {
         whileInView="visible"
         variants={fadeInUp}
         viewport={{ once: true }}
+        id="whatyouget"
       >
         <WhatYouGet />
       </motion.div>
@@ -89,6 +95,7 @@ const Home = () => {
           variants={fadeInUp}
           viewport={{ once: true }}
           className="price"
+          id="priceCard"
         >
           <PriceCards />
         </motion.div>
@@ -118,6 +125,7 @@ const Home = () => {
         variants={fadeInUp}
         className="GetToknowMainSection"
         viewport={{ once: true }}
+        id="gettoknow"
       >
         <GettoKnow />
       </motion.div>
@@ -136,6 +144,7 @@ const Home = () => {
         whileInView="visible"
         variants={fadeInUp}
         viewport={{ once: true }}
+        id="faq"
       >
         <FAQ />
       </motion.div>

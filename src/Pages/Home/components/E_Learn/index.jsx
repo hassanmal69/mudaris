@@ -21,7 +21,7 @@ const E_Learn = () => {
         {/* Title */}
         <Typography
           component="h6"
-          className={`fs-48 why-title clr-white ${
+          className={`fs-48 why-title clr-white mobHeading ${
             language === 'fa' ? `align-right rubik` : `align-left inter`
           }`}
         >
@@ -41,7 +41,7 @@ const E_Learn = () => {
                 </Box>
                 <Typography
                   variant="body1"
-                  className={`${
+                  className={`mobsecondheading ${
                     language === 'fa'
                       ? 'why-card-content rubik'
                       : 'why-card-content inter'

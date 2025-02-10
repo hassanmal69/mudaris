@@ -183,12 +183,6 @@
   top: 0px;
   right: -35px;
 }
-/*
-forEnglishversion dont want english yet so iam hidding this and below is forpersian
- .importanttoreadCardnumber Eng:nth-child(2) {
-  top: 630px;
-  right: 3px;
-} */
 .importanttoreadCardnumberDiv:nth-child(2) {
   top: 764px;
   right: 10px;
@@ -196,21 +190,7 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
 .importanttoreadCardnumberDiv:nth-child(3) {
   bottom: 730px;
 }
-.specialClassForSecondComponent:nth-child(3) {
-  bottom: 930px;
-  right: 15px;
-}
 
-.specialClassForSecondComponent:nth-child(2) {
-  top: 610px;
-  right: -40px;
-}
-.fa:nth-child(2) {
-  top: 585px;
-}
-.fa:nth-child(3) {
-  bottom: 560px;
-}
 /* .importanttoreadCardnumberDiv */
 @media screen and (max-width: 1180px) {
   .uaatest {
@@ -227,9 +207,6 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
     padding: 30px;
     gap: 20px;
     width: 350.062px;
-  }
-  .specialClassForSecondComponent:nth-child(3) {
-    bottom: 705px;
   }
 }
 @media screen and (max-width: 830px) {
@@ -255,15 +232,6 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
     justify-content: center;
     align-items: flex-end;
   }
-  /* .importanttoreadCarddescription {
-    font-size: 14px !important;
-    letter-spacing: 0.8px !important;
-    line-height: normal;
-  }
-  .importanttoreadCardtitle {
-    font-size: 20px !important;
-    line-height: 120% !important;
-  } */
   .importanttoreadCardPicDiv {
     padding: 15px;
   }
@@ -297,10 +265,7 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
   .importanttoreadCardnumberDiv:nth-child(3) {
     left: 150px;
   }
-  .specialClassForSecondComponent:nth-child(3) {
-    bottom: 355px;
-    left: 20px;
-  }
+
   .importanttoreadCardnumberDiv:nth-child(2) {
     top: 330px;
     left: 180px;
@@ -313,7 +278,6 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
     left: 175px;
     bottom: 85px;
   }
-  /* 2nd component */
   .importanttoread:nth-child(2) .LineCardContainerMain {
     flex-direction: row-reverse !important;
   }
@@ -342,15 +306,6 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
     left: 100px;
     bottom: -45px;
   }
-  .specialClassForSecondComponent:nth-child(2) {
-    top: 440px;
-  }
-  .specialClassForSecondComponent:nth-child(3),
-  .fa:nth-child(3) {
-    bottom: 520px;
-    /* top: 1200px; */
-    left: 175px;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -370,6 +325,7 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
   .LineCardContainerMainTitle {
     font-size: 20px !important;
     line-height: 40px !important;
+    margin-bottom: 40px !important;
   }
   .importanttoreadcardContainer {
     gap: 20px;
@@ -395,30 +351,39 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
   .uaatest {
     width: calc(100% - 20px);
   }
-  .importanttoreadCardPicDiv img {
-    width: 30px;
+  .LineCardContainerMainPic {
+    position: absolute;
+    right: 110px;
+    height: 83%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
   }
-
-  /* card Numbers */
-  .importanttoreadCardnumberDiv:nth-child(2) {
-    top: 235px;
-    right: -14px;
+  .importanttoreadCardnumberDiv:nth-child(1) {
+    right: -80px;
   }
   .importanttoreadCardnumberDiv:nth-child(3) {
-    bottom: 250px;
+    bottom: 300px;
+    right: -80px;
   }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(3) {
-    bottom: 280px;
-    left: -30px;
+  .importanttoreadCardnumberDiv:nth-child(2) {
+    top: 350px;
+    right: -60px;
   }
-  .specialClassForSecondComponent:nth-child(2) {
-    top: 280px;
+  .importanttoreadCardnumberDiv:nth-child(4) {
+    right: -70px;
+    bottom: 30px;
   }
 }
 @media screen and (max-width: 600px) {
   .LineCardContainerMainTitleDesc {
     margin-bottom: 10px;
     gap: 4px;
+  }
+  .importanttoreadCardContentText {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
   .LineCardContainerMainDesc {
     font-size: 14px !important;
@@ -433,9 +398,9 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
     align-items: flex-end;
   }
   .importanttoreadCard {
-    padding: 20px 3px 20px 20px;
+    padding: 15px 15px 10px 10px;
     gap: 10px;
-    width: 230px;
+    width: 270px;
   }
   .importanttoreadCarddescription {
     font-size: 12px !important;
@@ -467,73 +432,27 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
     height: 90%;
     margin-bottom: 45px;
   }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(1) {
-    top: 20px;
-    left: 25px;
-  }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(2) {
-    left: 25px;
-    top: 350px;
+  .LineCardContainerMainPic {
+    position: absolute;
+    right: 110px;
+    height: 83%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
   }
   .importanttoreadCardnumberDiv:nth-child(1) {
-    top: 10px;
-    left: 30px;
+    right: -80px;
   }
   .importanttoreadCardnumberDiv:nth-child(3) {
-    bottom: 265px;
-    left: 30px;
-  }
-  .specialClassForSecondComponent:nth-child(3) {
-    bottom: 355px;
-    left: 20px;
+    bottom: 300px;
+    right: -80px;
   }
   .importanttoreadCardnumberDiv:nth-child(2) {
-    top: 240px;
-    left: 25px;
-  }
-  .importanttoreadCardnumberDiv {
-    position: absolute;
+    top: 350px;
     right: -60px;
   }
   .importanttoreadCardnumberDiv:nth-child(4) {
-    left: 35px;
-    bottom: 35px;
-  }
-  /* 2nd component */
-  .importanttoread:nth-child(2) .LineCardContainerMain {
-    flex-direction: row-reverse !important;
-  }
-  .importanttoread:nth-child(2) .importanttoreadcardContainer {
-    align-items: flex-start;
-  }
-  .importanttoread:nth-child(2) .importanttoreadLinePic {
-    left: 100px;
-    height: 90%;
-    margin-top: 50px;
-    margin-bottom: 0;
-  }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(1) {
-    top: 55px;
-    left: 96px;
-  }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(2) {
-    left: 80px;
-    top: 420px;
-  }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(3) {
-    bottom: 280px;
-    left: 100px;
-  }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(4) {
-    left: 100px;
-    bottom: -45px;
-  }
-  .specialClassForSecondComponent:nth-child(2) {
-    top: 320px;
-  }
-  .specialClassForSecondComponent:nth-child(3),
-  .fa:nth-child(3) {
-    bottom: 295px;
-    left: 35px;
+    right: -70px;
+    bottom: 30px;
   }
 }

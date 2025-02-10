@@ -55,7 +55,7 @@ const GettoKnow = () => {
           <Box className={`GetToknowTextContent ${fontClass}`}>
             <h1 className={`mobHeading ${fontClass}`}>{t('gettoknow.title')}</h1>
             <Box className="paraDivGettoKnow">
-              <p className="zain">{t('gettoknow.description')}</p>
+              <p className="zain mobdescription">{t('gettoknow.description')}</p>
             </Box>
             <GetStartedButton onButtonClick={scrollToPriceCards} />
           </Box>
@@ -64,9 +64,9 @@ const GettoKnow = () => {
         <Box className="GetToknowContentbelowContainer">
           <Box className={`GetToknowTextContentbelow ${fontClass}`}>
             <Box className="GetToknowTextContentbelowMainText">
-              <h4 className={fontClass}>{t('gettoknow.heading')}</h4>
-              <p className={fontClass}>{t('gettoknow.transformdescription')}</p>
-              <h5 className="inter">{t('gettoknow.featuredline')}</h5>
+              <h4 className={`${fontClass} mobsecondheading`}>{t('gettoknow.heading')}</h4>
+              <p className={`${fontClass} mobdescription`}>{t('gettoknow.transformdescription')}</p>
+              <h5 className="inter mobsecondheading">{t('gettoknow.featuredline')}</h5>
             </Box>
           </Box>
         </Box>

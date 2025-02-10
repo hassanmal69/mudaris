@@ -220,6 +220,7 @@
   }
   .getajob-heading h1 {
     font-size: 24px;
+    width: 100%;
   }
   .logodiv {
     display: none;
@@ -238,7 +239,8 @@
     width: 100%;
   }
   .arrow-container {
-    display: block;
+    display: flex;
+    flex-direction: column-reverse;
   }
   .getajob-infobox {
     padding: 25px 25px;

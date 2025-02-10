@@ -16,7 +16,6 @@ footer {
 .footer-content-wrapper {
   display: inline-flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 32px;
 }
 .footer-btn {
@@ -44,7 +43,16 @@ footer {
 .footer-arrow-icon {
   font-size: 16px !important;
 }
-
+.footer-logo-heading {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.footer-logo-heading img {
+  width: 100px;
+}
 .footer-left-section {
   max-width: 432px;
   gap: 50px;
@@ -52,8 +60,14 @@ footer {
 .footer-right-section {
   gap: 50px;
 }
-.sublinks-wrapper li {
-  padding: 8px 0;
+.sublinks-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sublinks-wrapper Button {
+  padding: 8px 0 !important;
+  text-align: right !important;
 }
 .css-9mgopn-MuiDivider-root {
   border-color: var(--secondary-font-clr) !important;

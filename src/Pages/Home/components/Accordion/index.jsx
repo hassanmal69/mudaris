@@ -64,7 +64,7 @@ export default function FAQ() {
                 </Typography>
               </span>
               <Typography
-                className={`faq-question flex flex-center ${
+                className={`faq-question flex flex-center mobdescription ${
                   expanded === index ? 'purple' : 'clr-white'
                 } ${language === 'fa' ? 'rubik' : 'inter'}`}
               >
@@ -73,7 +73,7 @@ export default function FAQ() {
             </AccordionSummary>
             <AccordionDetails className="faq-answer-wrapper">
               <Typography
-                className={` faq-answer ${language === 'fa' ? 'gray rubik' : 'gray inter'}`}
+                className={` faq-answer mobdescription ${language === 'fa' ? 'gray rubik' : 'gray inter'}`}
               >
                 {faq.answer}
               </Typography>

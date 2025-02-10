@@ -6,6 +6,7 @@ import './footer.css';
 import FaceBook from '@assets/Icons/FaceBook.svg';
 import Instagram from '@assets/Icons/Instagram.svg';
 import Youtube from '@assets/Icons/Lozenge.svg';
+import MudasrisLogo from '@assets/Images/mudarisLogo.png';
 import Tiktok from '@assets/Icons/tiktok.svg';
 import { useTranslation } from 'react-i18next';
 const Footer = () => {
@@ -13,17 +14,27 @@ const Footer = () => {
 
   const fontClass = language === 'fa' ? 'rubik' : 'zain';
   const { t } = useTranslation('home');
+  const handleScrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    handleCloseNavMenu();
+  };
   return (
     <footer className="footer-bg align-center">
       <div className="footer-section row">
         <Box component="div" className="footer-left-section column">
           <Box component="div" className="footer-content-wrapper">
-            <Typography
-              variant="h6"
-              className={`clr-white footer-h2 ${fontClass}`}
-            >
-              Mudaris Academy
-            </Typography>
+            <div className="footer-logo-heading">
+              <img src={MudasrisLogo} alt="Logo" />
+              <Typography
+                variant="h6"
+                className={`clr-white footer-h2 ${fontClass}`}
+              >
+                Mudaris Academy
+              </Typography>
+            </div>
             <Typography
               variant="body1"
               className={`secondary-font-clr footer-p ${fontClass}`}
@@ -51,9 +62,13 @@ const Footer = () => {
             {Array.isArray(t('footerContent', { returnObjects: true })) &&
               t('footerContent', { returnObjects: true }).map(
                 (content, index) => (
-                  <li key={index} className="white-normal rubik">
-                    {content}
-                  </li>
+                  <Button
+                    key={index}
+                    className="white-normal rubik"
+                    onClick={() => handleScrollToSection(content.id)}
+                  >
+                    {content.label}
+                  </Button>
                 )
               )}
           </ul>

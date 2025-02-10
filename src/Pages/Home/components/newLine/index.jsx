@@ -77,14 +77,14 @@ const TimelineCard = ({ title, description, index, isMobile }) => {
             <Typography
               variant="h4"
               sx={{ fontWeight: 'bold', mb: 2, color: 'white' }}
-              className={`randomComponentCardTextComponentHeading ${language === 'fa' ? ' rubik' : ' inter'}`}
+              className={`randomComponentCardTextComponentHeading mobsecondheading ${language === 'fa' ? ' rubik' : ' inter'}`}
             >
               {title}
             </Typography>
             <Typography
               variant="body1"
               sx={{ color: 'white' }}
-              className={`randomComponentCardTextComponentDescription ${language === 'fa' ? 'zain' : ' inter'}`}
+              className={`randomComponentCardTextComponentDescription mobdescription ${language === 'fa' ? 'zain' : ' inter'}`}
             >
               {description}
             </Typography>

@@ -86,6 +86,7 @@
 .MuiOutlinedInput-root .MuiInputBase-input {
   color: #FFF;
   text-align: left;
+  direction: ltr !important;
 }
 .get-start-credit {
   font-size: 16px;
