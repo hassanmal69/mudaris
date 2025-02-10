@@ -13,12 +13,17 @@ import mudaris from '../../../../assets/Images/mudaris.png';
 import undplogo from '../../../../assets/Images/undplogo.png';
 import onelogo from '../../../../assets/Images/onelogo.png';
 import { useTranslation } from 'react-i18next';
-
+import { GetStartedButton } from '../getStartedButton';
+import { priceCardsRef } from '../../index';
 const logos = [sciencespo, tolonews, tv, mudaris, undplogo, onelogo];
 
 const GettoKnow = () => {
   const { t, i18n } = useTranslation('home');
-
+  const scrollToPriceCards = () => {
+    if (priceCardsRef.current) {
+      priceCardsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   const isMobile = useMediaQuery('(max-width: 600px)'); // Detect mobile screen
   const language = i18n.language;
   // const getData = data.gettoknow;
@@ -48,13 +53,11 @@ const GettoKnow = () => {
           <img src={Drimg} alt="Drimg" />
 
           <Box className={`GetToknowTextContent ${fontClass}`}>
-            <h1 className={fontClass}>{t('gettoknow.title')}</h1>
+            <h1 className={`mobHeading ${fontClass}`}>{t('gettoknow.title')}</h1>
             <Box className="paraDivGettoKnow">
               <p className="zain">{t('gettoknow.description')}</p>
             </Box>
-            <Button className={`dm-sans ${fontClass}`}>
-              {t('gettoknow.buttonlabel')}
-            </Button>
+            <GetStartedButton onButtonClick={scrollToPriceCards} />
           </Box>
         </Box>
 

@@ -409,7 +409,7 @@
   .ContainerText::before {
     position: absolute;
     width: 100%;
-    height: 320px;
+    height: 305px;
     /* top: 0px; */
     border-radius: 61%;
   }
@@ -422,15 +422,6 @@
     top: 220px;
     opacity: 0.6;
     left: 190px;
-  }
-}
-@media screen and (width: 375px) {
-  .ContainerText::before {
-    position: absolute;
-    width: 100%;
-    height: 150px;
-    top: 80px;
-    border-radius: 61%;
   }
 }
 @media screen and (width: 344px) {

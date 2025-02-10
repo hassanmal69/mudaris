@@ -36,7 +36,7 @@
 }
 .DigitalEducationComponent {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 50px;
 }
 .slick-dots li.slick-active button:before {

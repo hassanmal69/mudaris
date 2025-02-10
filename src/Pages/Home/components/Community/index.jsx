@@ -12,10 +12,18 @@ import { useTranslation } from 'react-i18next';
 import 'slick-carousel/slick/slick.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
+import { GetStartedButton } from '../getStartedButton';
+import { priceCardsRef } from '../../index';
 
 const Community = () => {
   const { t, i18n } = useTranslation('home');
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+
+  const scrollToPriceCards = () => {
+    if (priceCardsRef.current) {
+      priceCardsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,29 +53,42 @@ const Community = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,         // Enable autoplay
-    autoplaySpeed: 3000,    // Slide every 3 seconds
-    pauseOnHover: true,     // Pause on hover
-    pauseOnFocus: true,     // Pause on focus (click)
-    draggable: false,       // Prevent manual dragging from stopping autoplay
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    pauseOnFocus: true,
+    draggable: false,
   };
-  
 
   return (
     <section className="community-section">
-      <Typography variant="h2" className={`clr-white community-title ${headingClass}`}>
+      <Typography
+        variant="h2"
+        className={`clr-white mobHeading community-title ${headingClass}`}
+      >
         {t('studentvideoreviews.title')}
       </Typography>
-      <div className={`community-header column ${language === 'fa' ? 'alignItems-right' : 'alignItems-left'}`}>
-        <Typography variant="h3" className={`clr-white commmunity-smallHeading ${fontClass}`}>
+
+      {/* Updated community-header with center alignment on mobile */}
+      <div
+        className={`community-header column ${
+          language === 'fa' ? 'alignItems-right' : 'alignItems-left'
+        } ${isMobile ? 'center flex-center' : ''}`}
+      >
+        <Typography
+          variant="h3"
+          className={`clr-white commmunity-smallHeading ${fontClass}`}
+        >
           {t('studentvideoreviews.heading')}
         </Typography>
-        <Typography variant="body1" className={`clr-white description community-description ${fontClass}`}>
+        <Typography
+          variant="body1"
+          className={`clr-white community-description ${fontClass}`}
+        >
           {t('studentvideoreviews.description')}
         </Typography>
-        <Button variant="contained" className={`community-btn inter ${fontClass}`}>
-          {t('studentvideoreviews.button')}
-        </Button>
+
+        <GetStartedButton onButtonClick={scrollToPriceCards} />
       </div>
 
       {/* Mobile View - Slider */}
@@ -76,7 +97,10 @@ const Community = () => {
           {images.map((imageGroup, index) =>
             Object.keys(imageGroup).map((column, i) =>
               imageGroup[column].map((img, idx) => (
-                <div key={`${index}-${i}-${idx}`} className="community-video-container">
+                <div
+                  key={`${index}-${i}-${idx}`}
+                  className="community-video-container"
+                >
                   <span className="community-overlay-play">
                     <img src={Play} alt="play-icon" />
                   </span>
@@ -98,7 +122,11 @@ const Community = () => {
                       <span className="community-overlay-play">
                         <img src={Play} alt="play-icon" />
                       </span>
-                      <img src={img} alt={`image-${idx}`} className="video-img" />
+                      <img
+                        src={img}
+                        alt={`image-${idx}`}
+                        className="video-img"
+                      />
                     </div>
                   ))}
                 </div>

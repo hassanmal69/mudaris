@@ -184,6 +184,10 @@ li {
   .width-90 {
     width: 100% !important;
   }
+  /* only available on mobile */
+  .mobHeading {
+    font-size: 22px !important;
+}
 }
 @media only screen and (min-width: 600px) {
   .width-90 {
