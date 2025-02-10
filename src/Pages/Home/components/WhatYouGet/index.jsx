@@ -46,7 +46,8 @@ const WhatYouGet = () => {
   };
 
   const whatYouGetData = t('whatyouget', { returnObjects: true });
-  if (!Array.isArray(whatYouGetData) || whatYouGetData.length === 0) return null;
+  if (!Array.isArray(whatYouGetData) || whatYouGetData.length === 0)
+    return null;
 
   const heading = whatYouGetData[0]?.Heading || '';
   const contentData = whatYouGetData.slice(1);
@@ -65,7 +66,9 @@ const WhatYouGet = () => {
   return (
     <section className={`whatyouget-container ${fontClass}`}>
       <Box className="whatyouget-containerMainText">
-        <h1 className={`whatyouget-containerMainHeading mobHeading ${fontClass}`}>
+        <h1
+          className={`whatyouget-containerMainHeading mobHeading ${fontClass}`}
+        >
           {heading}
         </h1>
       </Box>
@@ -73,11 +76,26 @@ const WhatYouGet = () => {
         // 🛑 Use React Slick for Mobile
         <Slider {...sliderSettings}>
           {contentData.map((item, index) => (
-            <div key={index} className={`whatyouget-card clr-white ${fontClass}`}>
+            <div
+              key={index}
+              className={`whatyouget-card clr-white ${fontClass}`}
+            >
               <div className="whatyouget-card-text">
-                {item.title && <h2 className={`${fontClass} mobsecondheading`}>{item.title}</h2>}
-                {item.description && <p className={`${fontClass} mobdescription`}>{item.description}</p>}
-                {item.description2 && <p className={`${fontClass} mobdescription`}>{item.description2}</p>}
+                {item.title && (
+                  <h2 className={`${fontClass} mobsecondheading`}>
+                    {item.title}
+                  </h2>
+                )}
+                {item.description && (
+                  <p className={`${fontClass} mobdescription`}>
+                    {item.description}
+                  </p>
+                )}
+                {item.description2 && (
+                  <p className={`${fontClass} mobdescription`}>
+                    {item.description2}
+                  </p>
+                )}
               </div>
               <div className="whatyouget-card-imagecontainer">
                 <iframe
@@ -105,11 +123,26 @@ const WhatYouGet = () => {
         // 🛑 Standard Layout for Desktop
         <Box className="whatyouget-cards">
           {contentData.map((item, index) => (
-            <div key={index} className={`whatyouget-card clr-white ${fontClass}`}>
+            <div
+              key={index}
+              className={`whatyouget-card clr-white ${fontClass}`}
+            >
               <div className="whatyouget-card-text">
-                {item.title && <h2 className={`${fontClass} mobsecondheading`}>{item.title}</h2>}
-                {item.description && <p className={`${fontClass} mobdescription`}>{item.description}</p>}
-                {item.description2 && <p className={`${fontClass} mobdescription`}>{item.description2}</p>}
+                {item.title && (
+                  <h2 className={`${fontClass} mobsecondheading`}>
+                    {item.title}
+                  </h2>
+                )}
+                {item.description && (
+                  <p className={`${fontClass} mobdescription`}>
+                    {item.description}
+                  </p>
+                )}
+                {item.description2 && (
+                  <p className={`${fontClass} mobdescription`}>
+                    {item.description2}
+                  </p>
+                )}
               </div>
               <div className="whatyouget-card-imagecontainer">
                 <iframe
