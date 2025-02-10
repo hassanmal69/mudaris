@@ -63,6 +63,7 @@
 @media screen and (max-width: 600px) {
   .participateCardContainerMainTitle {
     margin-bottom: 40px;
+    font-size: 22px !important;
   }
   .randomComponentCard {
     width: 90% !important;

@@ -12,7 +12,6 @@ import Symbol4 from '../../../../../public/assets/Icons/moneyicon.png';
 import Symbol5 from '../../../../../public/assets/Icons/currciculumicon.png';
 import Symbol6 from '../../../../../public/assets/Icons/networkbrighticon.png';
 import Symbol7 from '../../../../../public/assets/Icons/unilevelicon.png';
-import Community from '../Community';
 
 const LineCards = () => {
   const { t, i18n } = useTranslation('home');
@@ -33,7 +32,10 @@ const LineCards = () => {
   return (
     <>
       <Box className="importanttoread">
-        <Typography variant="h1" className="LineCardContainerMainTitle rubik mobHeading">
+        <Typography
+          variant="h1"
+          className="LineCardContainerMainTitle rubik mobHeading"
+        >
           {parentArray[0].title}
         </Typography>
         <Box className="LineCardContainerMain">
@@ -41,7 +43,7 @@ const LineCards = () => {
             <img src={LineImg} className="importanttoreadLinePic" alt="Line" />
             <Box className="importanttoreadCardnumberDivParent">
               {parentArray.slice(1).map((item, index) => (
-                <Box key={index+1} className={`importanttoreadCardnumberDiv`}>
+                <Box key={index + 1} className={`importanttoreadCardnumberDiv`}>
                   <Typography
                     variant="h6"
                     className="importanttoreadCardnumber rubik"
@@ -83,8 +85,6 @@ const LineCards = () => {
           </Box>
         </Box>
       </Box>
-
-      {/* })} */}
     </>
   );
 };
