@@ -11,6 +11,7 @@
 }
 .GetToknowContent {
   display: flex !important;
+  flex-direction: row-reverse;
   justify-content: center !important;
   align-items: center !important;
   gap: 80px !important;

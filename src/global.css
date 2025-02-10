@@ -168,7 +168,7 @@ li {
 
 /* responsive code */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 670px) {
   .title {
     font-size: 44px;
   }
@@ -195,21 +195,21 @@ li {
     font-size: 12px !important;
   }
 }
-@media only screen and (min-width: 667px) {
+@media only screen and (max-width: 850px) {
   .width-90 {
     width: 100%; /* kindly check this block in resonsiveness and code accordingly */
   }
   .mobHeading {
-    font-size: 25px !important;
+    font-size: 24px !important;
   }
   .mobsecondheading{
-    font-size: 19px !important;
+    font-size: 18px !important;
   }
   .mobdescription{
     font-size: 16px !important;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 992px) {
   .width-90 {
     width: 90%; /* kindly check this block in resonsiveness and code accordingly */
   }
