@@ -17,23 +17,40 @@ import { priceCardsRef } from '../../index';
 
 const Community = () => {
   const { t, i18n } = useTranslation('home');
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
-
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  // const [slidesToShow, setSlidesToShow] = useState(
+  //   window.innerWidth <= 600 ? 1 : window.innerWidth <= 1024 ? 2 : 3
+  // );
+  const [slidesToShow, setSlidesToShow] = useState(window.innerWidth <= 600);
   const scrollToPriceCards = () => {
     if (priceCardsRef.current) {
       priceCardsRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (window.innerWidth <= 600) {
+  //       setSlidesToShow(1); // Mobile View (≤600px)
+  //     }
+  //     // else if (window.innerWidth <= 1024) {
+  //     //   setSlidesToShow(2); // Tablet View (601px - 1024px)
+  //     // } else {
+  //     //   setSlidesToShow(3); // Default for larger screens
+  //     // }
+  //   };
+
+  //   window.addEventListener('resize', handleResize);
+  //   return () => window.removeEventListener('resize', handleResize);
+  // }, []);
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 600);
+      setSlidesToShow(window.innerWidth <= 600 && 768);
     };
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
   const language = i18n.language;
   const fontClass = language === 'fa' ? 'zain' : '';
   const headingClass = 'rubik';
@@ -57,7 +74,7 @@ const Community = () => {
     autoplaySpeed: 3000,
     pauseOnHover: true,
     pauseOnFocus: true,
-    draggable: false,
+    draggable: true,
   };
 
   return (
@@ -68,12 +85,11 @@ const Community = () => {
       >
         {t('studentvideoreviews.title')}
       </Typography>
-
       {/* Updated community-header with center alignment on mobile */}
       <div
         className={`community-header column ${
           language === 'fa' ? 'alignItems-right' : 'alignItems-left'
-        } ${isMobile ? 'center flex-center' : ''}`}
+        } ${window.innerWidth > 600 ? 'center flex-center' : ''}`}
       >
         <Typography
           variant="h3"
@@ -90,9 +106,8 @@ const Community = () => {
 
         <GetStartedButton onButtonClick={scrollToPriceCards} />
       </div>
-
       {/* Mobile View - Slider */}
-      {isMobile ? (
+      {slidesToShow ? ( // Show Slider in Mobile & Tablet
         <Slider {...sliderSettings} className="community-slider">
           {images.map((imageGroup, index) =>
             Object.keys(imageGroup).map((column, i) =>
@@ -135,6 +150,7 @@ const Community = () => {
           ))}
         </section>
       )}
+      );
     </section>
   );
 };

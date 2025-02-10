@@ -27,7 +27,6 @@
 .persianHeading {
   font-size: 82px !important;
   display: flex;
-  /* width: 700px; */
   background: linear-gradient(180deg, #fff 54.17%, #b372cf 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -239,7 +238,7 @@
 @media only screen and (max-width: 1030px) {
   .mainHeading {
     width: 90%;
-    font-size: 80px !important;
+    font-size: 32px !important;
   }
   .mainDescription {
     font-size: 28px !important;
@@ -269,26 +268,58 @@
     height: 450px;
   }
 }
-
-@media only screen and (width: 1024px) {
+@media only screen and (max-width: 1400px) {
+  .persianHeading {
+    font-size: 64px !important;
+  }
+  .persianDescription {
+    font-size: 32px !important;
+    width: 85% !important;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .persianHeading {
+    font-size: 40px !important;
+  }
+  .persianDescription {
+    font-size: 28px !important;
+  }
+}
+@media only screen and (max-width: 1024px) {
   .mainHeading {
     width: 70% !important;
+    font-size: 32px !important;
+  }
+  .persianHeading {
+    font-size: 32px !important;
+  }
+  .mainDescription {
+    font-size: 24px !important;
+    width: 90%;
   }
 }
 @media screen and (max-width: 766px) {
-  .mainHeading {
-    width: 100%;
-  }
   .mainDescription {
-    font-size: 25px !important;
+    font-size: 24px !important;
     width: 90%;
+  }
+  .persianHeading {
+    width: calc(100% - 10%);
+    font-size: 32px !important;
   }
 }
 @media only screen and (max-width: 670px) {
-  .mainHeading,
   .persianHeading {
-    width: 90%;
-    font-size: 65px !important;
+    width: calc(100% - 10%);
+    background-color: #fff !important;
+    font-size: 32px !important;
+  }
+  .persianDescription {
+    font-size: 16px !important;
+    width: 85% !important;
+  }
+  .HeroComponentButtonDiv {
+    width: 220px;
   }
   .hero-bg-lines::before {
     display: none;
@@ -316,7 +347,7 @@
     width: 70%;
   }
   .persianHeading {
-    font-size: 28px !important;
+    font-size: 18px !important;
     width: 100% !important;
   }
   .mainDescription,
