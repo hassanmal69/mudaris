@@ -48,7 +48,7 @@ const GettoKnow = () => {
     <section className="GetToknowMainSection">
       <Box className="GetToknowMainContainer">
         <Box
-          className={`GetToknowContent  ${language === 'fa' ? 'rev-flex' : ''}`}
+          className={`GetToknowContent`}
         >
           <img src={Drimg} alt="Drimg" />
 
