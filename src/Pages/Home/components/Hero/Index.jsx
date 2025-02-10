@@ -52,7 +52,6 @@ const Hero = () => {
             {t('Introduction.description')}
           </Typography>
           <div className="HeroComponentButtonDiv">
-            {/* <button className='hero-section-button zain clr-white'>به جمع میلیونر‌های جوان بپیوندید</button> */}
             <GetStartedButton onButtonClick={scrollToPriceCards} />
           </div>
           <span className="hero-bg-lines">

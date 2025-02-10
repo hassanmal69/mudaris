@@ -36,9 +36,9 @@ export default function DigitalEducation() {
     infinite: true,
     arrows: false,
     speed: 3000,
-    slidesToShow: 6,
+    slidesToShow: 8,
     slidesToScroll: 1,
-    autoplay: !isPaused, // Autoplay is paused when mouse is hovered
+    // autoplay: !isPaused, // Autoplay is paused when mouse is hovered
     autoplaySpeed: 1,
     cssEase: 'linear',
     pauseOnHover: true, // We handle pausing manually
@@ -123,7 +123,6 @@ export default function DigitalEducation() {
                 >
                   {title}
                 </Typography>
-                {/* {hoveredIndex === index && description && ( */}
                 <Typography
                   variant="body2"
                   className={`DigitalEducationCardDescription clr-white 
@@ -132,7 +131,6 @@ export default function DigitalEducation() {
                 >
                   {description}
                 </Typography>
-                {/* )} */}
               </Box>
             </Box>
           );
