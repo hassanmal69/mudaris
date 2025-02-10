@@ -42,8 +42,10 @@
   width: 53%;
   align-items: center;
 }
-.css-10hy3qm-MuiFormControl-root-MuiTextField-root .MuiOutlinedInput-root .MuiInputBase-input {
-  color: #FFF;
+.css-10hy3qm-MuiFormControl-root-MuiTextField-root
+  .MuiOutlinedInput-root
+  .MuiInputBase-input {
+  color: #fff;
   position: relative !important;
   z-index: 0 !important;
   pointer-events: none !important;
@@ -59,17 +61,18 @@
   font-weight: 500;
   line-height: 31px;
   letter-spacing: -0.0101em;
-
 }
-.my-with{
+.my-with {
   position: relative;
   z-index: 2;
   cursor: pointer;
 }
-.css-10hy3qm-MuiFormControl-root-MuiTextField-root .MuiOutlinedInput-root.Mui-focused fieldset{
+.css-10hy3qm-MuiFormControl-root-MuiTextField-root
+  .MuiOutlinedInput-root.Mui-focused
+  fieldset {
   pointer-events: none !important;
-    position: absolute !important;
-    z-index: 0 !important;
+  position: absolute !important;
+  z-index: 0 !important;
 }
 .my-with {
   background-color: #fff;
@@ -84,7 +87,7 @@
   letter-spacing: -0.0101em;
 }
 .MuiOutlinedInput-root .MuiInputBase-input {
-  color: #FFF;
+  color: #fff;
   text-align: left;
   direction: ltr !important;
 }
@@ -111,9 +114,9 @@
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) and (max-width: 992px) {
   .get-start-heading {
-    width: 54%;
+    width: 80%;
   }
 
   .get-email-field {
@@ -121,9 +124,9 @@
   }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
   .get-start-heading {
-    width: 40%;
+    width: 50%;
   }
   .get-email-field {
     width: 38%;
