@@ -9,11 +9,11 @@ import { useTranslation } from 'react-i18next';
 
 export const PriceCards = () => {
   const { t, i18n } = useTranslation('home');
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1030);
   const language = i18n.language;
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 600);
+      setIsMobile(window.innerWidth <= 1030);
     };
 
     window.addEventListener('resize', handleResize);
@@ -29,14 +29,32 @@ export const PriceCards = () => {
   // Slick Slider Settings
   const sliderSettings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     arrows: false,
-    speed: 500, // Faster transition (reduce this value)
+    speed: 500,
     autoplay: true,
-    autoplaySpeed: 1000, // Slide changes every 1 second (reduce for faster speed)
-    slidesToShow: 1,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    pauseOnFocus: true,
+    draggable: true,
+    slidesToShow: 1, // Default for mobile
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 600, // Small screens
+        settings: { slidesToShow: 1, slidesToScroll: 1 },
+      },
+      {
+        breakpoint: 844, // Show 2 cards at 844px
+        settings: { slidesToShow: 2, slidesToScroll: 1 },
+      },
+      {
+        breakpoint: 1024, // Show 2 cards at 1024px
+        settings: { slidesToShow: 3, slidesToScroll: 1 },
+      }
+    ],
   };
+  
   
   return (
     <section className="price-container">
@@ -75,7 +93,7 @@ export const PriceCards = () => {
                   )}
                   <ul className="plan-perks">
                     {plan.features?.map((feature, i) => (
-                      <li className="zain" key={i}>
+                      <li className="zain mobdescription" key={i}>
                         {feature}
                       </li>
                     ))}
