@@ -121,10 +121,10 @@
 .logodiv {
   position: absolute;
   mix-blend-mode: lighten;
-  top: 35%;
+  top: 29%;
   left: 35%;
-  width: 484px;
-  height: 484px;
+  width: 400px;
+  height: 400px;
 }
 .getajob-vid {
   background: radial-gradient(
@@ -143,30 +143,36 @@
 }
 
 .arrow-2 svg {
-  color: #8C45FF; /* Purple color */
+  color: #8c45ff; /* Purple color */
   animation: arrowGlow 1.5s infinite alternate ease-in-out;
 }
 
 .arrow-1 {
   width: 8px;
   height: 50px;
-  background: #8C45FF66; /* Transparent purple */
+  background: #8c45ff66; /* Transparent purple */
   margin: 0 auto;
   border-radius: 5px;
   animation: arrowGlow 1.5s infinite alternate ease-in-out;
-  box-shadow: 0 0 20px #8C45FF99, 0 0 40px #8C45FFDD; /* Brighter glow */
+  box-shadow:
+    0 0 20px #8c45ff99,
+    0 0 40px #8c45ffdd; /* Brighter glow */
 }
 
 @keyframes arrowGlow {
   0% {
     opacity: 0.6;
     transform: translateY(0);
-    box-shadow: 0 0 15px #8C45FF99, 0 0 30px #8C45FFCC;
+    box-shadow:
+      0 0 15px #8c45ff99,
+      0 0 30px #8c45ffcc;
   }
   100% {
     opacity: 1;
     transform: translateY(10px);
-    box-shadow: 0 0 25px #8C45FFFF, 0 0 50px #8C45FFFF;
+    box-shadow:
+      0 0 25px #8c45ffff,
+      0 0 50px #8c45ffff;
   }
 }
 
@@ -250,21 +256,38 @@
     width: 100%;
   }
 }
-@media only screen and (min-width: 600px) and (max-width: 992px) {
+@media only screen and (min-width: 600px) and (max-width: 768px) {
   .getajob-circle {
     display: none;
   }
   .logodiv {
     display: none;
   }
-  .arrow-container {
-    display: block;
+  .getajobParaforbg {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 30px;
   }
+  .getajob-container {
+    width: 100%;
+    gap: 20px;
+  }
+  .arrow-container {
+    display: none;
+  }
+  .getajob-heading h1 {
+    font-size: 32px !important;
+    width: 85%;
+  }
+  /* .arrow-container {
+    display: block;
+  } */
   .getajob-heading h2 {
-    font-size: 29px;
+    font-size: 28px;
   }
   .getajob-paragraphs {
-    width: 95%;
+    width: 100%;
     justify-content: center;
     gap: 20px;
   }
@@ -273,7 +296,7 @@
     width: 95%;
   }
   .getajob-paragraphs p {
-    font-size: 17px;
+    font-size: 14px;
   }
 
   .getajob-infobox {
@@ -284,8 +307,22 @@
     width: 95%;
   }
 }
-
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .getajob-heading h1 {
+    font-size: 32px;
+    width: 85%;
+  }
+  .getajobParaforbg {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    padding: 30px;
+  }
+  .getajob-paragraphs p {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
   .getajob-circle {
     display: block;
   }
