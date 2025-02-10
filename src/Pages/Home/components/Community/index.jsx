@@ -17,40 +17,23 @@ import { priceCardsRef } from '../../index';
 
 const Community = () => {
   const { t, i18n } = useTranslation('home');
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  // const [slidesToShow, setSlidesToShow] = useState(
-  //   window.innerWidth <= 600 ? 1 : window.innerWidth <= 1024 ? 2 : 3
-  // );
-  const [slidesToShow, setSlidesToShow] = useState(window.innerWidth <= 600);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 790);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 790); // Adjusted breakpoint to 786px
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const scrollToPriceCards = () => {
     if (priceCardsRef.current) {
       priceCardsRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     if (window.innerWidth <= 600) {
-  //       setSlidesToShow(1); // Mobile View (≤600px)
-  //     }
-  //     // else if (window.innerWidth <= 1024) {
-  //     //   setSlidesToShow(2); // Tablet View (601px - 1024px)
-  //     // } else {
-  //     //   setSlidesToShow(3); // Default for larger screens
-  //     // }
-  //   };
-
-  //   window.addEventListener('resize', handleResize);
-  //   return () => window.removeEventListener('resize', handleResize);
-  // }, []);
-  useEffect(() => {
-    const handleResize = () => {
-      setSlidesToShow(window.innerWidth <= 600 && 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
   const language = i18n.language;
   const fontClass = language === 'fa' ? 'zain' : '';
   const headingClass = 'rubik';
@@ -68,13 +51,23 @@ const Community = () => {
     infinite: true,
     arrows: false,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
     pauseOnFocus: true,
     draggable: true,
+    slidesToShow: 1, // Default for mobile
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 600, // Small screens
+        settings: { slidesToShow: 1, slidesToScroll: 1 },
+      },
+      {
+        breakpoint: 786, // Tablets
+        settings: { slidesToShow: 2, slidesToScroll: 1 },
+      },
+    ],
   };
 
   return (
@@ -85,11 +78,11 @@ const Community = () => {
       >
         {t('studentvideoreviews.title')}
       </Typography>
-      {/* Updated community-header with center alignment on mobile */}
+
       <div
         className={`community-header column ${
           language === 'fa' ? 'alignItems-right' : 'alignItems-left'
-        } ${window.innerWidth > 600 ? 'center flex-center' : ''}`}
+        } ${isMobile ? 'center flex-center' : ''}`}
       >
         <Typography
           variant="h3"
@@ -106,8 +99,9 @@ const Community = () => {
 
         <GetStartedButton onButtonClick={scrollToPriceCards} />
       </div>
+
       {/* Mobile View - Slider */}
-      {slidesToShow ? ( // Show Slider in Mobile & Tablet
+      {isMobile ? (
         <Slider {...sliderSettings} className="community-slider">
           {images.map((imageGroup, index) =>
             Object.keys(imageGroup).map((column, i) =>
@@ -150,7 +144,6 @@ const Community = () => {
           ))}
         </section>
       )}
-      );
     </section>
   );
 };

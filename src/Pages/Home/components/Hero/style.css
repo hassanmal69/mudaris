@@ -332,6 +332,26 @@
     top: -70px;
   }
 }
+@media only screen and (max-width: 670px) {
+  .ContainerText::before {
+    display: none;
+  }
+  .hero-bg-lines::after {
+    top: -45px;
+    left: -170px;
+    width: 550px;
+    border-radius: 50%;
+    height: 375px;
+  }
+  .LandingPageVideo {
+    width: 90%;
+    height: 315px;
+    border: 2px solid black;
+    box-shadow: -1px -41px 55px 3px rgba(98, 42, 154, 0.69);
+    overflow: hidden;
+    background: transparent !important;
+  }
+}
 @media only screen and (max-width: 600px) {
   .HeroPagecontainer {
     justify-content: flex-start;
