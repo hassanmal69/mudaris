@@ -68,13 +68,13 @@ const LineCards = () => {
                   <Box className="importanttoreadCardContentText">
                     <Typography
                       variant="h6"
-                      className="importanttoreadCardtitle rubik mobsecondheading"
+                      className="importanttoreadCardtitle rubik "
                     >
                       {item.cardTitle}
                     </Typography>
                     <Typography
                       variant="body1"
-                      className="importanttoreadCarddescription rubik mobdescription"
+                      className="importanttoreadCarddescription rubik "
                     >
                       {item.description}
                     </Typography>

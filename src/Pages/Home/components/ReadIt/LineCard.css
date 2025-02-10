@@ -220,7 +220,7 @@
     bottom: 530px;
   }
 }
-@media screen and (max-width: 932px) {
+@media screen and (max-width: 912px) {
   .importanttoreadCard {
     padding: 30px;
     gap: 20px;
@@ -343,7 +343,25 @@
     bottom: -45px;
   }
 }
-
+@media screen and (max-width: 700px) {
+  .importanttoreadLinePic {
+    left: -354px;
+    height: 90%;
+    margin-bottom: 35px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(1) {
+    right: 295px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(2) {
+    right: 305px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(3) {
+    right: 280px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(4) {
+    right: 290px;
+  }
+}
 @media screen and (max-width: 768px) {
   .LineCardContainerMainTitleDesc {
     margin-bottom: 10px;
@@ -357,10 +375,8 @@
   }
   .importanttoreadLinePic {
     left: 25px;
-    height: 89%;
+    height: 82%;
     margin-bottom: 50px;
-  }
-  .importanttoreadLinePic {
     left: -236px;
   }
 
@@ -399,25 +415,46 @@
 
   .importanttoreadLinePic {
     left: -431px;
-    height: 85%;
-    margin-bottom: 125px;
+    height: 100%;
+    margin-bottom: 30px;
   }
   .importanttoreadCardnumberDiv:nth-child(1) {
-    right: 183px;
+    right: 380px;
+    top: -60px;
   }
   .importanttoreadCardnumberDiv:nth-child(3) {
     bottom: 300px;
-    right: 160px;
+    right: 345px;
   }
   .importanttoreadCardnumberDiv:nth-child(2) {
-    top: 350px;
-    right: 180px;
+    top: 380px;
+    right: 390px;
   }
   .importanttoreadCardnumberDiv:nth-child(4) {
-    right: 180px;
+    right: 370px;
     bottom: 30px;
   }
 }
+@media screen and (max-width: 700px) {
+  .importanttoreadLinePic {
+    left: -354px;
+    height: 100;
+    margin-bottom: 35px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(1) {
+    right: 295px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(2) {
+    right: 320px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(3) {
+    right: 280px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(4) {
+    right: 290px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .LineCardContainerMainTitleDesc {
     margin-bottom: 10px;
@@ -433,7 +470,7 @@
   }
   .LineCardContainerMainTitle {
     font-size: 22px !important;
-    line-height: 28px !important;
+    line-height: 50px !important;
   }
   .importanttoreadcardContainer {
     gap: 20px;
@@ -472,7 +509,7 @@
   }
   .importanttoreadLinePic {
     left: 30px;
-    height: 90%;
+    height: 100%;
     margin-bottom: 45px;
   }
   .LineCardContainerMainPic {
@@ -488,7 +525,7 @@
   }
   .importanttoreadCardnumberDiv:nth-child(3) {
     bottom: 300px;
-    right: -80px;
+    right: -95px;
   }
   .importanttoreadCardnumberDiv:nth-child(2) {
     top: 350px;
