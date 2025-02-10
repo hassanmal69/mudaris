@@ -46,7 +46,7 @@ const Home = () => {
         i18n.language === 'fa' ? 'rtl' : 'ltr'
       }`}
     >
- <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
+      <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
         <Hero />
       </motion.div>
 
@@ -57,9 +57,9 @@ const Home = () => {
         variants={fadeInUp}
       >
         <Community />
-      </motion.div> 
+      </motion.div>
 
-       <motion.div
+      <motion.div
         initial="hidden"
         whileInView="visible"
         variants={fadeInUp}
@@ -67,7 +67,7 @@ const Home = () => {
       >
         <GetaJob />
       </motion.div>
-      
+
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -156,8 +156,8 @@ const Home = () => {
         viewport={{ once: true }}
       >
         <GetStart />
-      </motion.div> 
-    </section> 
+      </motion.div>
+    </section>
   );
 };
 

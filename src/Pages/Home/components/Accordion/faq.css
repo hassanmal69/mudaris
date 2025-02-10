@@ -109,8 +109,12 @@
     font-size: 16px !important;
     text-align: center;
   }
+  .faq-answer {
+    width: 100%;
+    margin-right: 70px !important;
+  }
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) and (max-width: 768px) {
   .faq-container {
     height: 100%;
   }
@@ -130,10 +134,14 @@
   }
   .faq-answer-wrapper {
     width: 85%;
-    margin: -40px 0 0 83px;
+    margin: -40px 0 0 0;
+  }
+  .faq-answer {
+    width: 100%;
+    margin-right: 77px !important;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 992px) {
   .faq-title {
     font-size: 54px !important;
   }
@@ -141,11 +149,16 @@
     text-align: center;
     font-size: 20px !important;
   }
-}
-@media only screen and (min-width: 992px) {
-  .faq-container {
-    height: 630px;
+  .faq-answer-wrapper {
+    width: 100%;
+    margin: -40px 0 0 0;
   }
+  .faq-answer {
+    width: 80%;
+    margin-right: 77px !important;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1050px) {
   .faq-wrapper {
     width: 50%;
   }
@@ -153,14 +166,68 @@
     width: 100%;
     margin: -30px 70px 0 75px;
   }
+  .faq-answer {
+    width: 84%;
+    margin-right: 0px !important;
+    font-size: 12px !important;
+  }
+  .faq-container {
+    height: 747px;
+  }
+  .faq-question {
+    font-size: 16px !important;
+  }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1050px) and (max-width: 1200px) {
+  .faq-wrapper {
+    width: 50%;
+  }
+  .faq-answer-wrapper {
+    width: 85%;
+    margin: -25px -16px 0 57px;
+  }
+  .faq-answer {
+    width: 100%;
+    margin-right: 0px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  .faq-wrapper {
+    width: 50%;
+  }
   .faq-title-container {
     padding: 125px 100px 40px 100px;
+  }
+  .faq-answer {
+    width: 100%;
+    margin-right: 95px !important;
+  }
+  .faq-answer-wrapper {
+    width: 85%;
+    margin: -25px -16px 0 57px;
+  }
+  .faq-answer-wrapper {
+    width: 85%;
+    margin: -25px -16px 0 0;
   }
 }
 @media only screen and (min-width: 1400) {
   .faq-title-container {
     padding: 125px 250px 40px 250px;
+  }
+  .faq-wrapper {
+    width: 50%;
+  }
+  .faq-answer-wrapper {
+    width: 80%;
+    margin: -30px 0 0 75px;
+  }
+  .faq-answer {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 24px;
+    text-align: right;
+    width: 85%;
+    margin-right: 100px !important;
   }
 }
