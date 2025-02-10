@@ -195,14 +195,32 @@ li {
     font-size: 12px !important;
   }
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 667px) {
   .width-90 {
     width: 100%; /* kindly check this block in resonsiveness and code accordingly */
+  }
+  .mobHeading {
+    font-size: 25px !important;
+  }
+  .mobsecondheading{
+    font-size: 19px !important;
+  }
+  .mobdescription{
+    font-size: 16px !important;
   }
 }
 @media only screen and (min-width: 768px) {
   .width-90 {
     width: 90%; /* kindly check this block in resonsiveness and code accordingly */
+  }
+  .mobdescription{
+    font-size: 18px !important;
+  }
+  .mobsecondheading{
+    font-size: 28px !important;
+  }
+  .mobHeading {
+    font-size: 32px !important;
   }
 }
 @media only screen and (min-width: 1200px) {

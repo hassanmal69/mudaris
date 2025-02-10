@@ -46,28 +46,29 @@ const Home = () => {
         i18n.language === 'fa' ? 'rtl' : 'ltr'
       }`}
     >
-      {/* <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
+ <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
         <Hero />
-      </motion.div> */}
+      </motion.div>
 
-      {/* <motion.div
+      <motion.div
         initial="hidden"
         animate="visible"
         id="community"
         variants={fadeInUp}
       >
         <Community />
-      </motion.div> */}
+      </motion.div> 
 
-      {/* <motion.div
+       <motion.div
         initial="hidden"
         whileInView="visible"
         variants={fadeInUp}
         viewport={{ once: true }}
       >
         <GetaJob />
-      </motion.div> */}
-      {/* <motion.div
+      </motion.div>
+      
+      <motion.div
         initial="hidden"
         whileInView="visible"
         variants={fadeInUp}
@@ -75,9 +76,9 @@ const Home = () => {
         id="slider"
       >
         <DigitalEducation />
-      </motion.div> */}
+      </motion.div>
 
-      {/* <motion.div
+      <motion.div
         initial="hidden"
         whileInView="visible"
         variants={fadeInUp}
@@ -85,9 +86,9 @@ const Home = () => {
         id="whatyouget"
       >
         <WhatYouGet />
-      </motion.div> */}
+      </motion.div>
 
-      {/* <div className="priceCarddiv" ref={priceCardsRef}>
+      <div className="priceCarddiv" ref={priceCardsRef}>
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -98,16 +99,16 @@ const Home = () => {
         >
           <PriceCards />
         </motion.div>
-      </div> */}
+      </div>
 
-      {/* <motion.div
+      <motion.div
         initial="hidden"
         whileInView="visible"
         variants={fadeInUp}
         viewport={{ once: true }}
       >
         <LineCards />
-      </motion.div> */}
+      </motion.div>
 
       <motion.div
         initial="hidden"
@@ -117,7 +118,6 @@ const Home = () => {
       >
         <Timeline />
       </motion.div>
-      {/* 
 
       <motion.div
         initial="hidden"
@@ -156,8 +156,8 @@ const Home = () => {
         viewport={{ once: true }}
       >
         <GetStart />
-      </motion.div> */}
-    </section>
+      </motion.div> 
+    </section> 
   );
 };
 
