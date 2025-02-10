@@ -201,12 +201,51 @@
     padding: 30px;
     gap: 30px;
   }
+  .importanttoreadCardnumberDiv:nth-child(2) {
+    top: 764px;
+    right: 10px;
+  }
+  .importanttoreadCardtitle {
+    font-size: 24px !important;
+  }
+  .importanttoreadCarddescription {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+  }
+  .importanttoreadcardContainer {
+    width: 100%;
+    gap: 0px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(3) {
+    bottom: 530px;
+  }
 }
 @media screen and (max-width: 932px) {
   .importanttoreadCard {
     padding: 30px;
     gap: 20px;
     width: 350.062px;
+  }
+  .importanttoreadcardContainer {
+    width: 100%;
+    gap: 0px;
+  }
+  .importanttoreadCardtitle {
+    font-size: 22px !important;
+  }
+  .importanttoreadCarddescription {
+    font-size: 16px !important;
+  }
+  .importanttoreadCardnumberDiv:nth-child(2) {
+    top: 550px;
+    right: 10px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(3) {
+    bottom: 515px;
+  }
+  .LineCardContainerMainTitle {
+    font-size: 44px !important;
+    margin-bottom: 40px !important;
   }
 }
 @media screen and (max-width: 830px) {
@@ -216,15 +255,11 @@
     flex-direction: column;
     gap: 150px;
   }
-  .importanttoreadcardContainer {
-    gap: 20px;
-    width: 100%;
-    align-items: flex-end;
-  }
   .importanttoreadCard {
     gap: 10px;
     width: 360px;
   }
+
   .LineCardContainerMainPic {
     position: absolute;
     height: 83%;
@@ -236,8 +271,8 @@
     padding: 15px;
   }
   .uaatest {
-    justify-content: center !important;
-    width: 75%;
+    justify-content: fle !important;
+    width: calc(100% - 10px);
   }
   .importanttoreadCardPicDiv img {
     width: 30px;
@@ -264,6 +299,7 @@
   }
   .importanttoreadCardnumberDiv:nth-child(3) {
     left: 150px;
+    right: -96px;
   }
 
   .importanttoreadCardnumberDiv:nth-child(2) {
@@ -319,6 +355,15 @@
     height: 40px;
     width: 40px;
   }
+  .importanttoreadLinePic {
+    left: 25px;
+    height: 89%;
+    margin-bottom: 50px;
+  }
+  .importanttoreadLinePic {
+    left: -236px;
+  }
+
   .LineCardContainerMainDesc {
     font-size: 18px !important;
   }
@@ -351,27 +396,25 @@
   .uaatest {
     width: calc(100% - 20px);
   }
-  .LineCardContainerMainPic {
-    position: absolute;
-    right: 110px;
-    height: 83%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+
+  .importanttoreadLinePic {
+    left: -431px;
+    height: 85%;
+    margin-bottom: 125px;
   }
   .importanttoreadCardnumberDiv:nth-child(1) {
-    right: -80px;
+    right: 183px;
   }
   .importanttoreadCardnumberDiv:nth-child(3) {
     bottom: 300px;
-    right: -80px;
+    right: 160px;
   }
   .importanttoreadCardnumberDiv:nth-child(2) {
     top: 350px;
-    right: -60px;
+    right: 180px;
   }
   .importanttoreadCardnumberDiv:nth-child(4) {
-    right: -70px;
+    right: 180px;
     bottom: 30px;
   }
 }

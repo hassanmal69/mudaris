@@ -286,6 +286,7 @@
   .getajob-heading h2 {
     font-size: 28px;
   }
+
   .getajob-paragraphs {
     width: 100%;
     justify-content: center;
@@ -307,10 +308,14 @@
     width: 95%;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 992px) {
+@media only screen and (min-width: 768px) and (max-width: 912px) {
   .getajob-heading h1 {
     font-size: 32px;
     width: 85%;
+  }
+  .getajob-paragraphs {
+    width: 100% !important;
+    gap: 30px;
   }
   .getajobParaforbg {
     display: flex;
@@ -321,6 +326,41 @@
   .getajob-paragraphs p {
     font-size: 14px;
   }
+  .logodiv {
+    display: none;
+  }
+  .getajob-container {
+    display: flex;
+    gap: 20px;
+  }
+}
+@media only screen and (min-width: 912px) and (max-width: 1050px) {
+  .getajob-heading h1 {
+    font-size: 32px;
+    width: 85%;
+  }
+  .getajob-paragraphs {
+    width: 100% !important;
+    gap: 30px;
+  }
+  .getajobParaforbg {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    padding: 30px;
+  }
+  .getajob-paragraphs p {
+    font-size: 14px;
+  }
+  .logodiv {
+    top: 23%;
+    left: 26%;
+  }
+  .getajob-container {
+    display: flex;
+    gap: 20px;
+    width: calc(100% - 20px);
+  }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .getajob-circle {
@@ -328,40 +368,68 @@
   }
 
   .logodiv {
-    display: none;
-  }
-  .arrow-container {
     display: block;
   }
+  .arrow-container {
+    display: none;
+  }
   .getajob-paragraphs {
-    width: 50%;
+    width: 100%;
     justify-content: center;
   }
   .getajob-heading h2 {
-    font-size: 37px;
+    font-size: 36px;
   }
   .getajob-paragraphs p {
-    font-size: 21px;
+    font-size: 18px;
   }
   .getajobParaforbg {
-    width: 500px;
-    padding: 40px;
-    gap: 45px;
+    width: 350px;
+    padding: 30px;
+  }
+  .getajob-paragraphs {
+    width: 100% !important;
+    gap: 90px;
   }
   .getajob-infobox {
-    padding: 29px 29px;
+    padding: 20px 20px;
   }
   .getajob-info {
     font-size: 26px;
   }
+  .logodiv {
+    top: 28%;
+    left: 29%;
+  }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  .getajobParaforbg {
+    width: 500px;
+    padding: 35px;
+  }
+  .getajob-paragraphs {
+    gap: 50px;
+  }
+  .getajob-container {
+    width: calc(100% - 10%);
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    margin: auto;
+  }
   .getajob-paragraphs {
     width: 100%;
   }
   .logodiv {
     display: block;
+    left: 31%;
+    top: 27%;
+  }
+  .getajob-heading h1 {
+    font-size: 44px;
+    font-weight: 900;
+    width: 85%;
   }
   .arrow-container {
     display: none;
@@ -374,7 +442,7 @@
   }
 
   .getajob-paragraphs p {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .getajob-infobox {
@@ -384,6 +452,13 @@
   .getajob-info {
     font-size: 32px;
     width: 95%;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .logodiv {
+    height: 550px;
+    width: 550px;
+    left: 31%;
   }
 }
 @keyframes upDownAnimation {

@@ -36,9 +36,9 @@ export default function DigitalEducation() {
     infinite: true,
     arrows: false,
     speed: 3000,
-    slidesToShow: 8,
+    slidesToShow: 6.7,
     slidesToScroll: 1,
-    // autoplay: !isPaused, // Autoplay is paused when mouse is hovered
+    autoplay: !isPaused, // Autoplay is paused when mouse is hovered
     autoplaySpeed: 1,
     cssEase: 'linear',
     pauseOnHover: true, // We handle pausing manually
@@ -49,17 +49,17 @@ export default function DigitalEducation() {
       },
       {
         breakpoint: 1044,
-        settings: { slidesToShow: 4, slidesToScroll: 3, dots: true },
+        settings: { slidesToShow: 4.2, slidesToScroll: 3, dots: true },
       },
       {
         breakpoint: 960,
-        settings: { slidesToShow: 3, slidesToScroll: 2, dots: false },
+        settings: { slidesToShow: 3.8, slidesToScroll: 2, dots: false },
       },
       {
         breakpoint: 768,
-        settings: { slidesToShow: 3, slidesToScroll: 2, dots: false },
+        settings: { slidesToShow: 4, slidesToScroll: 2, dots: false },
       },
-      { breakpoint: 670, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+      { breakpoint: 670, settings: { slidesToShow: 3.5, slidesToScroll: 2 } },
       {
         breakpoint: 480,
         settings: { slidesToShow: 2.3, slidesToScroll: 1, dots: false },
