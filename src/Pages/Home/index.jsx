@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect,useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import E_Learn from './components/E_Learn';
 import Hero from './components/Hero/Index';
@@ -18,7 +18,9 @@ export const priceCardsRef = React.createRef();
 
 const Home = () => {
   const { t, i18n } = useTranslation('home');
-
+  const cursorRef = useRef(null);
+  const containerRef = useRef(null);
+  const arrowRef = useRef(null);
   const scrollToPriceCards = () => {
     if (priceCardsRef.current) {
       priceCardsRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -39,13 +41,42 @@ const Home = () => {
       transition: { duration: 0.8, ease: 'easeOut' },
     },
   };
+  const [isCursorVisible, setCursorVisible] = useState(false);
+  const [isArrowVisible, setArrowVisible] = useState(false);
+
+  const handleMouseMove = (e) => {
+    if (cursorRef.current) {
+      cursorRef.current.style.left = `${e.clientX}px`;
+      cursorRef.current.style.top = `${e.clientY}px`;
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (arrowRef.current) {
+        const rect = arrowRef.current.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+          setArrowVisible(true);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
 
   return (
     <section
       className={`home-page column primary-bg ${
-        i18n.language === 'fa' ? 'rtl' : 'ltr'
+        i18n.language === 'fa' ? 'rtl' : 'ltr' 
       }`}
+      ref={containerRef}
+      onMouseEnter={() => setCursorVisible(true)}
+      onMouseLeave={() => setCursorVisible(false)}
+      onMouseMove={handleMouseMove}
     >
+      {isCursorVisible && <div className="customCursor" ref={cursorRef}></div>}
       <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
         <Hero />
       </motion.div>
@@ -99,18 +130,18 @@ const Home = () => {
         >
           <PriceCards />
         </motion.div>
-      </div>
+      </div> 
 
-      <motion.div
+       <motion.div
         initial="hidden"
         whileInView="visible"
         variants={fadeInUp}
         viewport={{ once: true }}
       >
         <LineCards />
-      </motion.div>
+      </motion.div> 
 
-      <motion.div
+       <motion.div
         initial="hidden"
         whileInView="visible"
         variants={fadeInUp}
@@ -156,7 +187,7 @@ const Home = () => {
         viewport={{ once: true }}
       >
         <GetStart />
-      </motion.div>
+      </motion.div> 
     </section>
   );
 };

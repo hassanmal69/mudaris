@@ -167,6 +167,34 @@ li {
 }
 
 /* responsive code */
+@media only screen and (max-width: 992px) {
+  .width-90 {
+    width: 90%; /* kindly check this block in resonsiveness and code accordingly */
+  }
+  .mobdescription{
+    font-size: 18px !important;
+  }
+  .mobsecondheading{
+    font-size: 28px !important;
+  }
+  .mobHeading {
+    font-size: 32px !important;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .width-90 {
+    width: 100%; /* kindly check this block in resonsiveness and code accordingly */
+  }
+  .mobHeading {
+    font-size: 24px !important;
+  }
+  .mobsecondheading{
+    font-size: 18px !important;
+  }
+  .mobdescription{
+    font-size: 16px !important;
+  }
+}
 
 @media only screen and (max-width: 670px) {
   .title {
@@ -188,78 +216,10 @@ li {
   .mobHeading {
     font-size: 22px !important;
   }
-  .mobsecondheading {
+  .mobsecondheading{
     font-size: 16px !important;
   }
-  .mobdescription {
+  .mobdescription{
     font-size: 12px !important;
   }
 }
-@media only screen and (max-width: 850px) {
-  .width-90 {
-    width: 100%; /* kindly check this block in resonsiveness and code accordingly */
-  }
-  .mobHeading {
-    font-size: 24px !important;
-  }
-  .mobsecondheading {
-    font-size: 18px !important;
-  }
-  .mobdescription {
-    font-size: 16px !important;
-  }
-}
-@media only screen and (max-width: 992px) {
-  .width-90 {
-    width: 90%; /* kindly check this block in resonsiveness and code accordingly */
-  }
-  .mobdescription {
-    font-size: 18px !important;
-  }
-  .mobsecondheading {
-    font-size: 28px !important;
-  }
-  .mobHeading {
-    font-size: 32px !important;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  /* .row {
-    flex-direction: row;
-  } */
-  .width-90 {
-    width: 85%; /* kindly check this block in resonsiveness and code accordingly */
-  }
-}
-
-/* @media only screen and (min-width: 600px) {
-    .title {
-      font-size: 44px;
-    }
-  
-    .h2 {
-      font-size: 44px !important;
-    }
-    .description {
-      font-size: 16px;
-    }
-    p {
-      width: 100% !important;
-    }
-  }
-  @media only screen and (min-width: 768px) {
-  .description{
-    font-size: 18px;
-  }
-  }
-  @media only screen and (min-width: 992px) {
-    .title {
-      font-size: 44px;
-    }
-    .h2 {
-      font-size: 32px !important;
-    }
-    .description {
-      font-size: 20px;
-    }
-  } */
