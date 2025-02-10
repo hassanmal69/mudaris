@@ -4,8 +4,8 @@ import './getstartedButton.css';
 export const GetStartedButton = ({ onButtonClick }) => {
   return (
     <div className="GetStartedButtonDiv">
-      <Button className="GetStartedButton" onClick={onButtonClick}>
-      به جمع میلیونر‌های جوان بپیوندید
+      <Button className="GetStartedButton zain" onClick={onButtonClick}>
+        به جمع میلیونر‌های جوان بپیوندید
       </Button>
     </div>
   );

@@ -225,9 +225,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 240px;
+  width: 280px;
   height: 58px;
-  padding: 6px;
 }
 
 .w-full {

@@ -24,6 +24,8 @@
 .GetStartedButtonDiv {
   display: flex;
   justify-content: center;
+  width: fit-content !important;
+  min-width: 280px !important;
 }
 @media screen and (max-width: 600px) {
   .GetStartedButton {
