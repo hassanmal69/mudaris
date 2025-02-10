@@ -213,7 +213,7 @@
     flex-direction: column !important;
   }
   .GetToknowContent img {
-    width: 95%;
+    width: 85%;
   }
   .GetToknowTextContent {
     gap: 20px !important;
@@ -230,15 +230,22 @@
     width: 100%;
   }
   .GetToknowTextContentbelowMainText h4 {
-    font-size: 24px;
-    font-weight: 500;
+    font-weight: 800;
     line-height: 130%;
-    letter-spacing: -0.48px;
   }
   .GetToknowTextContentbelow {
     width: 100%;
   }
+  .GetToknowTextContentbelow {
+    width: 90%;
+    padding: 25px 0;
+  }
   .GetToknowTextContentbelowMainText p {
-    font-size: 18px;
+    line-height: 140%;
+  }
+  .GetToknowTextContentbelowMainText {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 }

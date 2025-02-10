@@ -55,7 +55,7 @@
 }
 
 .whatyouget-card {
-  display: flex;
+  display: flex !important;
   flex-direction: row-reverse;
   gap: 30px;
   border-radius: 20px;
@@ -87,7 +87,7 @@
 }
 
 .whatyouget-cards {
-  display: flex;
+  display: flex ;
   flex-direction: column;
   gap: 30px;
   align-items: center;
@@ -142,33 +142,36 @@
 }
 @media only screen and (max-width: 600px) {
   .whatyouget-card-imagecontainer {
-    display: none;
+    display: block;
   }
   .wyg-para1 {
     font-size: 15px;
   }
 
   .wyg-head1 {
-    font-size: 21px;
     width: 90%;
     text-align: justify;
   }
-
-  .wyg-para2 {
-    font-size: 15px;
-  }
-
   .whatyouget-card {
-    width: 80%;
-  }
+    width: 90% !important;
+    margin: auto;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-around;
+    height: 575px;
+}
   .whatyouget-card-text {
-    width: 90%;
+    width: 95%;
+    align-items: center;
   }
   .whatyouget-card-text h2 {
     font-size: 20px;
   }
   .whatyouget-card-text p {
-    font-size: 13px;
+    line-height: 120%;
+  }
+  .whatyouget-container {
+    gap: 50px;
   }
 }
 @media only screen and (min-width: 600px) {
@@ -192,7 +195,7 @@
     width: 80%;
   }
   .whatyouget-card-text {
-    width: 90%;
+    width: 95%;
   }
 
   .whatyouget-card-text h2 {
