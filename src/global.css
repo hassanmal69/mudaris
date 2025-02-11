@@ -169,11 +169,11 @@ li {
 /* responsive code */
 
 @media only screen and (max-width: 1030px) {
-  .mobdescription{
-    font-size: 22px !important;
+  .mobdescription {
+    font-size: 20px !important;
   }
-  .mobsecondheading{
-    font-size: 32px !important;
+  .mobsecondheading {
+    font-size: 28px !important;
   }
   .mobHeading {
     font-size: 36px !important;
@@ -183,11 +183,11 @@ li {
   .width-90 {
     width: 90%; /* kindly check this block in resonsiveness and code accordingly */
   }
-  .mobdescription{
+  .mobdescription {
     font-size: 18px !important;
   }
-  .mobsecondheading{
-    font-size: 28px !important;
+  .mobsecondheading {
+    font-size: 26px !important;
   }
   .mobHeading {
     font-size: 32px !important;
@@ -200,10 +200,10 @@ li {
   .mobHeading {
     font-size: 24px !important;
   }
-  .mobsecondheading{
+  .mobsecondheading {
     font-size: 18px !important;
   }
-  .mobdescription{
+  .mobdescription {
     font-size: 16px !important;
   }
 }
@@ -228,10 +228,10 @@ li {
   .mobHeading {
     font-size: 22px !important;
   }
-  .mobsecondheading{
+  .mobsecondheading {
     font-size: 16px !important;
   }
-  .mobdescription{
+  .mobdescription {
     font-size: 12px !important;
   }
 }

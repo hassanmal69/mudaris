@@ -35,12 +35,12 @@
   color: #cfcaca !important;
   letter-spacing: -0.015em !important;
 }
-.titleandSVG{
+.titleandSVG {
   display: flex;
   gap: 15px;
   justify-content: space-between;
 }
-.titleandSVG img{
+.titleandSVG img {
   width: 40px;
   height: 40px;
   filter: hue-rotate(210deg);
@@ -308,9 +308,11 @@
   }
   .plan-description {
     width: 100% !important;
+    font-size: 18px !important;
   }
   .text-container {
     margin-bottom: 60px;
+    gap: 20px;
   }
   .plan-card {
     width: 90% !important;

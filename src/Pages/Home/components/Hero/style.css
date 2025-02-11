@@ -235,6 +235,39 @@
   width: 66% !important;
 }
 
+@media only screen and (max-width: 1030px) {
+  .mainHeading {
+    width: 90%;
+    font-size: 32px !important;
+  }
+  .mainDescription {
+    font-size: 28px !important;
+    width: 80%;
+  }
+  button {
+    font-weight: 600;
+  }
+  .hero-bg-lines::before {
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    top: -131px;
+    left: -196px;
+    border-radius: 50%;
+  }
+  .ContainerText::before {
+    width: 95%;
+    height: 650px;
+    top: 95px;
+    border-radius: 50%;
+  }
+  .hero-bg-lines::after {
+    top: -45px;
+    left: -170px;
+    border-radius: 50%;
+    height: 450px;
+  }
+}
 @media only screen and (max-width: 1400px) {
   .persianHeading {
     font-size: 64px !important;
@@ -258,16 +291,12 @@
     font-size: 32px !important;
   }
   .persianHeading {
-    font-size: 50px !important;
-    width: 90%;
+    font-size: 32px !important;
   }
   .mainDescription {
     font-size: 24px !important;
     width: 90%;
   }
-  .persianDescription {
-    font-size: 24px !important;
-}
 }
 @media screen and (max-width: 766px) {
   .mainDescription {
@@ -438,7 +467,7 @@
   .mainHeading::before {
     position: absolute;
     content: '';
-    background-image: url(../../../../assets/Icons//circle.svg);
+    background-image: url(../../../../assets/Icons/circle.svg);
     width: 21.911px;
     height: 21.911px;
     top: 220px;
