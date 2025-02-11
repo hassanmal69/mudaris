@@ -4,7 +4,8 @@ import Slider from 'react-slick'; // Import React Slick
 import './PriceCard.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Line from '@assets/icons/line.svg';
+import Line from '@assets/Icons/line.svg';
+import Bitcoin from '@assets/Icons/bitcoin-svg.svg';
 import { useTranslation } from 'react-i18next';
 
 export const PriceCards = () => {
@@ -76,9 +77,16 @@ export const PriceCards = () => {
             >
               <CardContent>
                 <Box className="plan-header">
-                  <Typography variant="h5" className="plan-heading">
-                    {plan.title}
-                  </Typography>
+                  <div className="titleandSVG">
+                    <Typography variant="h5" className="plan-heading rubik">
+                      {plan.title}
+                    </Typography>
+                    {index === 2 || index === 3 ? (
+                      <img src={Bitcoin} className="bitCoinLogo" />
+                    ) : (
+                      ''
+                    )}
+                  </div>
                   <Typography variant="h6" className="plan-price zain">
                     {plan.price}
                   </Typography>
@@ -100,7 +108,9 @@ export const PriceCards = () => {
                 </div>
               </CardContent>
               <Box className="ButtonDiv">
-                <Button className="subscribe-button">Pay Now</Button>
+                <Button className="subscribe-button" onClick={handleSubscribe}>
+                  Pay Now
+                </Button>
               </Box>
             </Card>
           ))}
@@ -114,9 +124,16 @@ export const PriceCards = () => {
             >
               <CardContent>
                 <Box className="plan-header">
-                  <Typography variant="h5" className="plan-heading rubik">
-                    {plan.title}
-                  </Typography>
+                  <div className="titleandSVG">
+                    <Typography variant="h5" className="plan-heading rubik">
+                      {plan.title}
+                    </Typography>
+                    {index === 2 || index === 3 ? (
+                      <img src={Bitcoin} className="bitCoinLogo" />
+                    ) : (
+                      ''
+                    )}
+                  </div>
                   <Typography variant="h6" className="plan-price zain">
                     {plan.price}
                   </Typography>
