@@ -291,11 +291,12 @@
     font-size: 32px !important;
   }
   .persianHeading {
-    font-size: 32px !important;
+    font-size: 38px !important;
+    width: 75%;
   }
-  .mainDescription {
-    font-size: 24px !important;
-    width: 90%;
+  .persianDescription {
+    width: 70% !important;
+    font-size: 20px !important;
   }
 }
 @media screen and (max-width: 766px) {
@@ -367,7 +368,7 @@
     width: 70%;
   }
   .persianHeading {
-    font-size: 18px !important;
+    font-size: 22px !important;
     width: 100% !important;
   }
   .mainDescription,
