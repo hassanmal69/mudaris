@@ -1,17 +1,17 @@
-import React, { useRef, useEffect,useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import E_Learn from './components/E_Learn';
-import Hero from './components/Hero/Index';
-import FAQ from './components/Accordion';
-import GetStart from './components/GetStarted';
-import PriceCards from './components/PriceCards';
-import GettoKnow from './components/GettoKnow/Index';
-import DigitalEducation from './components/digitalEducationSlider';
-import Community from './components/Community';
-import WhatYouGet from './components/WhatYouGet';
+import E_Learn from './components/E_Learn/index.jsx';
+import Hero from './components/Hero/index.jsx';
+import FAQ from './components/Accordion/index.jsx';
+import GetStart from './components/GetStarted/index.jsx';
+import PriceCards from './components/PriceCards/index.jsx';
+import GettoKnow from './components/GettoKnow/Index.jsx';
+import DigitalEducation from './components/digitalEducationSlider/index.jsx';
+import Community from './components/Community/index.jsx';
+import WhatYouGet from './components/WhatYouGet/index.jsx';
 import './home.css';
-import GetaJob from './components/GetaJob';
-import LineCards from './components/ReadIt';
+import GetaJob from './components/GetaJob/index.jsx';
+import LineCards from './components/ReadIt/index.jsx';
 import { useTranslation } from 'react-i18next';
 import Timeline from './components/newLine/index.jsx';
 export const priceCardsRef = React.createRef();
@@ -65,11 +65,10 @@ const Home = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
   return (
     <section
       className={`home-page column primary-bg ${
-        i18n.language === 'fa' ? 'rtl' : 'ltr' 
+        i18n.language === 'fa' ? 'rtl' : 'ltr'
       }`}
       ref={containerRef}
       onMouseEnter={() => setCursorVisible(true)}
@@ -79,6 +78,7 @@ const Home = () => {
       {isCursorVisible && <div className="customCursor" ref={cursorRef}></div>}
       <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
         <Hero />
+        {/* done svg */}
       </motion.div>
 
       <motion.div
@@ -87,6 +87,8 @@ const Home = () => {
         id="community"
         variants={fadeInUp}
       >
+        {/* done svg */}
+
         <Community />
       </motion.div>
 
@@ -96,19 +98,10 @@ const Home = () => {
         variants={fadeInUp}
         viewport={{ once: true }}
       >
+        {/* done svg */}
+
         <GetaJob />
       </motion.div>
-
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={fadeInUp}
-        viewport={{ once: true }}
-        id="slider"
-      >
-        <DigitalEducation />
-      </motion.div>
-
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -117,6 +110,16 @@ const Home = () => {
         id="whatyouget"
       >
         <WhatYouGet />
+        {/* done svg */}
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeInUp}
+        viewport={{ once: true }}
+        id="slider"
+      >
+        <DigitalEducation />
       </motion.div>
 
       <div className="priceCarddiv" ref={priceCardsRef}>
@@ -130,35 +133,24 @@ const Home = () => {
         >
           <PriceCards />
         </motion.div>
-      </div> 
+      </div>
 
-       <motion.div
+      <motion.div
         initial="hidden"
         whileInView="visible"
         variants={fadeInUp}
         viewport={{ once: true }}
       >
         <LineCards />
-      </motion.div> 
-
-       <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={fadeInUp}
-        viewport={{ once: true }}
-      >
-        <Timeline />
       </motion.div>
 
       <motion.div
         initial="hidden"
         whileInView="visible"
         variants={fadeInUp}
-        className="GetToknowMainSection"
         viewport={{ once: true }}
-        id="gettoknow"
       >
-        <GettoKnow />
+        <Timeline />
       </motion.div>
 
       <motion.div
@@ -187,7 +179,7 @@ const Home = () => {
         viewport={{ once: true }}
       >
         <GetStart />
-      </motion.div> 
+      </motion.div>
     </section>
   );
 };

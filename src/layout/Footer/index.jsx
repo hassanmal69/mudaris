@@ -1,7 +1,5 @@
 import React from 'react';
 import { Box, Button, Divider, Typography } from '@mui/material';
-import LanguageIcon from '@mui/icons-material/Language';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import './footer.css';
 import FaceBook from '@assets/Icons/FaceBook.svg';
 import Instagram from '@assets/Icons/Instagram.svg';

@@ -10,7 +10,7 @@ import Crypto from '@assets/Images/crypto.svg';
 import Camera from '@assets/Images/camera.svg';
 import Business from '@assets/Images/business.svg';
 import Inovation from '@assets/Images/inovation.svg';
-import Technology from '@assets/Images/Technologyimg.png';
+import Technology from '@assets/Images/Technologyimg.svg';
 import Mudaris from '@assets/Images/mudaris.svg';
 import Trading from '@assets/Images/trading.svg';
 const educationImages = [

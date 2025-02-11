@@ -230,7 +230,7 @@
     width: 85% !important;
   }
 }
-@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+@media only screen and (min-width: 1400px) and (max-width: 1500px) {
   .community-header {
     width: 60%;
     align-items: flex-start;

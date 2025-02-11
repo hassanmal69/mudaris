@@ -3,7 +3,7 @@ import Slider from 'react-slick'; // Import React Slick
 import './whatyouget.css';
 import { Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import playbuttonimg from '../../../../assets/icons/playbuttonimg.png';
+import playbuttonimg from '@assets/icons/play.svg';
 import 'slick-carousel/slick/slick.css'; // Import Slick styles
 import 'slick-carousel/slick/slick-theme.css';
 
