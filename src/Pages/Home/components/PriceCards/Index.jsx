@@ -100,7 +100,7 @@ export const PriceCards = () => {
                   )}
                   <ul className="plan-perks">
                     {plan.features?.map((feature, i) => (
-                      <li className="zain mobdescription" key={i}>
+                      <li className="zain" key={i}>
                         {feature}
                       </li>
                     ))}
