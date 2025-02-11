@@ -202,7 +202,7 @@
     gap: 30px;
   }
   .importanttoreadCardnumberDiv:nth-child(2) {
-    top: 764px;
+    top: 600px;
     right: 10px;
   }
   .importanttoreadCardtitle {
@@ -217,7 +217,8 @@
     gap: 0px;
   }
   .importanttoreadCardnumberDiv:nth-child(3) {
-    bottom: 530px;
+    bottom: 465px;
+    right: -30px;
   }
 }
 @media screen and (max-width: 912px) {
@@ -248,7 +249,7 @@
     margin-bottom: 40px !important;
   }
 }
-@media screen and (max-width: 830px) {
+@media screen and (width: 820px) {
   .importanttoreadcardContainer {
     display: flex;
     width: 100%;
@@ -281,85 +282,22 @@
     align-items: flex-start;
   }
   .importanttoreadLinePic {
-    left: 170px;
-    height: 85%;
-    margin-bottom: 125px;
-  }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(1) {
-    top: 20px;
-    left: 25px;
-  }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(2) {
-    left: 25px;
-    top: 350px;
-  }
-  .importanttoreadCardnumberDiv:nth-child(1) {
-    top: 50px;
-    left: 170px;
-  }
-  .importanttoreadCardnumberDiv:nth-child(3) {
-    left: 150px;
-    right: -96px;
-  }
-
-  .importanttoreadCardnumberDiv:nth-child(2) {
-    top: 330px;
-    left: 180px;
-  }
-  .importanttoreadCardnumberDiv {
     position: absolute;
-    right: -220px;
+    right: 330px;
+    z-index: 0;
+    height: 100%;
+  }
+  .importanttoreadCardnumberDivParent {
+    position: absolute;
+    right: 365px;
+    height: 100%;
   }
   .importanttoreadCardnumberDiv:nth-child(4) {
-    left: 175px;
-    bottom: 85px;
-  }
-  .importanttoread:nth-child(2) .LineCardContainerMain {
-    flex-direction: row-reverse !important;
-  }
-  .importanttoread:nth-child(2) .importanttoreadcardContainer {
-    align-items: flex-start;
-  }
-  .importanttoread:nth-child(2) .importanttoreadLinePic {
-    left: 100px;
-    height: 90%;
-    margin-top: 50px;
-    margin-bottom: 0;
-  }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(1) {
-    top: 55px;
-    left: 96px;
-  }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(2) {
-    left: 80px;
-    top: 420px;
-  }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(3) {
-    bottom: 280px;
-    left: 100px;
-  }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(4) {
-    left: 100px;
-    bottom: -45px;
-  }
-}
-@media screen and (max-width: 700px) {
-  .importanttoreadLinePic {
-    left: -354px;
-    height: 90%;
-    margin-bottom: 35px;
+    bottom: 0px;
   }
   .importanttoreadCardnumberDiv:nth-child(1) {
-    right: 295px;
-  }
-  .importanttoreadCardnumberDiv:nth-child(2) {
-    right: 305px;
-  }
-  .importanttoreadCardnumberDiv:nth-child(3) {
-    right: 280px;
-  }
-  .importanttoreadCardnumberDiv:nth-child(4) {
-    right: 290px;
+    top: 0px;
+    right: -20px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -373,13 +311,6 @@
     height: 40px;
     width: 40px;
   }
-  .importanttoreadLinePic {
-    left: 25px;
-    height: 82%;
-    margin-bottom: 50px;
-    left: -236px;
-  }
-
   .LineCardContainerMainDesc {
     font-size: 18px !important;
   }
@@ -414,44 +345,47 @@
   }
 
   .importanttoreadLinePic {
-    left: -431px;
+    left: -25px;
     height: 100%;
     margin-bottom: 30px;
   }
   .importanttoreadCardnumberDiv:nth-child(1) {
-    right: 380px;
-    top: -60px;
+    right: -30px;
+    top: -40px;
   }
   .importanttoreadCardnumberDiv:nth-child(3) {
-    bottom: 300px;
-    right: 345px;
+    bottom: 375px;
+    right: -45px;
   }
   .importanttoreadCardnumberDiv:nth-child(2) {
-    top: 380px;
-    right: 390px;
+    top: 440px;
+    right: -10px;
   }
   .importanttoreadCardnumberDiv:nth-child(4) {
-    right: 370px;
+    right: -40px;
     bottom: 30px;
   }
 }
 @media screen and (max-width: 700px) {
   .importanttoreadLinePic {
-    left: -354px;
-    height: 100;
+    left: -50px;
+    height: 100%;
     margin-bottom: 35px;
   }
   .importanttoreadCardnumberDiv:nth-child(1) {
-    right: 295px;
+    right: -7px;
   }
   .importanttoreadCardnumberDiv:nth-child(2) {
-    right: 320px;
+    right: 25px;
+    top: 456px;
   }
   .importanttoreadCardnumberDiv:nth-child(3) {
-    right: 280px;
+    right: -30px;
+    bottom: 350px;
   }
   .importanttoreadCardnumberDiv:nth-child(4) {
-    right: 290px;
+    right: -10px;
+    bottom: 15px;
   }
 }
 
@@ -521,18 +455,19 @@
     align-items: flex-end;
   }
   .importanttoreadCardnumberDiv:nth-child(1) {
-    right: -80px;
-  }
+    right: -85px;
+    top: -50px;
+}
   .importanttoreadCardnumberDiv:nth-child(3) {
-    bottom: 300px;
+    bottom: 315px;
     right: -95px;
   }
   .importanttoreadCardnumberDiv:nth-child(2) {
-    top: 350px;
+    top: 380px;
     right: -60px;
   }
   .importanttoreadCardnumberDiv:nth-child(4) {
-    right: -70px;
+    right: -90px;
     bottom: 30px;
   }
 }

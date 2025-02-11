@@ -274,7 +274,6 @@
   }
   .plan-card {
     width: 90% !important;
-    height: 620px !important;
     display: flex !important;
     flex-direction: column;
     align-items: center;
