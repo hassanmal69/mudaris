@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import './getajob.css';
 import { Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import MudarisVideo from '@assets/Images/AgencyNavigatorMale.mp4';
+import MudarisVideo from '@assets/images/AgencyNavigatorMale.mp4';
 import { KeyboardArrowDown } from '@mui/icons-material';
 
 const GetaJob = () => {
@@ -47,7 +47,9 @@ const GetaJob = () => {
       {isCursorVisible && <div className="customCursor" ref={cursorRef}></div>}
 
       <Box className="getajob-heading">
-        <h1 className={`clr-white mobHeading ${language === 'fa' ? 'rubik' : 'inter'}`}>
+        <h1
+          className={`clr-white mobHeading ${language === 'fa' ? 'rubik' : 'inter'}`}
+        >
           {t('getajob.headtitle')}
         </h1>
       </Box>

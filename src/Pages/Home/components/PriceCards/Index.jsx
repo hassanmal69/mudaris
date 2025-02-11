@@ -4,7 +4,7 @@ import Slider from 'react-slick'; // Import React Slick
 import './PriceCard.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Line from '@assets/Icons/line.png';
+import Line from '@assets/icons/line.svg';
 import { useTranslation } from 'react-i18next';
 
 export const PriceCards = () => {
@@ -51,11 +51,10 @@ export const PriceCards = () => {
       {
         breakpoint: 1024, // Show 2 cards at 1024px
         settings: { slidesToShow: 3, slidesToScroll: 1 },
-      }
+      },
     ],
   };
-  
-  
+
   return (
     <section className="price-container">
       <Box className="text-container">

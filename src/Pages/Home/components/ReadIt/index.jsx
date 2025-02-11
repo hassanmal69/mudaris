@@ -3,15 +3,15 @@ import { Box, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import './LineCard.css';
 
-import LineImg from '../../../../assets/Images/linewo.png';
-import Symbol from '../../../../../public/assets/Icons/Symbol.png';
-import Symbol1 from '../../../../../public/assets/Icons/Symbol (1).png';
-import Symbol2 from '../../../../../public/assets/Icons/Symbol (2).png';
-import Symbol3 from '../../../../../public/assets/Icons/Symbol (3).png';
-import Symbol4 from '../../../../../public/assets/Icons/moneyicon.png';
-import Symbol5 from '../../../../../public/assets/Icons/currciculumicon.png';
-import Symbol6 from '../../../../../public/assets/Icons/networkbrighticon.png';
-import Symbol7 from '../../../../../public/assets/Icons/unilevelicon.png';
+import LineImg from '@assets/images/linewo.svg';
+import Symbol from '@assets/icons/execution.svg';
+import Symbol1 from '@assets/icons/doller.svg';
+import Symbol2 from '@assets/icons/grad.svg';
+import Symbol3 from '@assets/icons/hands.svg';
+import Symbol4 from '@assets/icons/card.svg';
+import Symbol5 from '@assets/icons/uni.svg';
+import Symbol6 from '@assets/Icons/dimond.svg';
+import Symbol7 from '@assets/icons/person.svg';
 
 const LineCards = () => {
   const { t, i18n } = useTranslation('home');
@@ -19,14 +19,14 @@ const LineCards = () => {
   const language = i18n.language;
   console.log(parentArray);
   const symbolArray = [
-    Symbol,
-    Symbol1,
-    Symbol2,
-    Symbol3,
     Symbol4,
     Symbol5,
     Symbol6,
     Symbol7,
+    Symbol,
+    Symbol1,
+    Symbol2,
+    Symbol3,
   ];
 
   return (
