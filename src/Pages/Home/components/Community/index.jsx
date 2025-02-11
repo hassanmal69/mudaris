@@ -56,7 +56,7 @@ const Community = () => {
     pauseOnHover: true,
     pauseOnFocus: true,
     draggable: true,
-    slidesToShow: 1, // Default for mobile
+    slidesToShow: 2, // Default for mobile
     slidesToScroll: 1,
     responsive: [
       {
@@ -64,7 +64,7 @@ const Community = () => {
         settings: { slidesToShow: 1, slidesToScroll: 1 },
       },
       {
-        breakpoint: 786, // Tablets
+        breakpoint: 768, // Tablets
         settings: { slidesToShow: 2, slidesToScroll: 1 },
       },
     ],

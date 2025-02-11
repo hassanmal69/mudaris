@@ -282,6 +282,9 @@
   .plan-description {
     width: 80% !important;
   }
+  .plan-card:hover {
+    transform: scale(1.01);
+  }
   .plan-card {
     width: 90% !important;
     display: flex !important;
