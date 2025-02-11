@@ -37,7 +37,7 @@ export const PriceCards = () => {
     pauseOnHover: true,
     pauseOnFocus: true,
     draggable: true,
-    slidesToShow: 1, // Default for mobile
+    slidesToShow: 3, // Default for mobile
     slidesToScroll: 1,
     responsive: [
       {
