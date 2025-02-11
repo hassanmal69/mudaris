@@ -17,7 +17,7 @@ import Timeline from './components/newLine/index.jsx';
 export const priceCardsRef = React.createRef();
 
 const Home = () => {
-  const { t, i18n } = useTranslation('home');
+  const { i18n } = useTranslation('home');
   const cursorRef = useRef(null);
   const containerRef = useRef(null);
   const arrowRef = useRef(null);
@@ -87,8 +87,6 @@ const Home = () => {
         id="community"
         variants={fadeInUp}
       >
-        {/* done svg */}
-
         <Community />
       </motion.div>
 
@@ -98,8 +96,6 @@ const Home = () => {
         variants={fadeInUp}
         viewport={{ once: true }}
       >
-        {/* done svg */}
-
         <GetaJob />
       </motion.div>
       <motion.div
@@ -110,7 +106,6 @@ const Home = () => {
         id="whatyouget"
       >
         <WhatYouGet />
-        {/* done svg */}
       </motion.div>
       <motion.div
         initial="hidden"
