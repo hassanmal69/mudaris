@@ -253,6 +253,28 @@
     justify-content: center !important;
   }
 }
+@media screen and (max-width: 600px) {
+  .DigitalEducationSlideTitleandPicBox {
+    height: 270px;
+  }
+  .PicBgDigitalEducationSlide {
+    width: 154px !important;
+    height: 240px !important;
+  }
+  .DigitalEducationCardTitle {
+    font-size: 14px !important;
+  }
+  .DigitalEducationCardDescription {
+    font-size: 12px !important;
+  }
+  .hight-visible {
+    height: 18%;
+  }
+  .DigitalEducationSlideTitleandPicBoxwith-description {
+    height: 100%;
+  }
+}
+
 @media screen and (min-width: 667px) and (max-width: 768px) {
   .PicBgDigitalEducationSlide {
     width: 160px !important;
