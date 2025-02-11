@@ -167,6 +167,18 @@ li {
 }
 
 /* responsive code */
+
+@media only screen and (max-width: 1030px) {
+  .mobdescription{
+    font-size: 22px !important;
+  }
+  .mobsecondheading{
+    font-size: 32px !important;
+  }
+  .mobHeading {
+    font-size: 36px !important;
+  }
+}
 @media only screen and (max-width: 992px) {
   .width-90 {
     width: 90%; /* kindly check this block in resonsiveness and code accordingly */
