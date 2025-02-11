@@ -17,7 +17,6 @@ const LineCards = () => {
   const { t, i18n } = useTranslation('home');
   const parentArray = t('Important', { returnObjects: true });
   const language = i18n.language;
-  console.log(parentArray);
   const symbolArray = [
     Symbol,
     Symbol1,

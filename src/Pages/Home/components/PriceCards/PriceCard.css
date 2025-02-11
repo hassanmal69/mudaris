@@ -35,6 +35,16 @@
   color: #cfcaca !important;
   letter-spacing: -0.015em !important;
 }
+.titleandSVG{
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+.titleandSVG img{
+  width: 40px;
+  height: 40px;
+  filter: hue-rotate(210deg);
+}
 .plan-description {
   font-weight: 800 !important;
   font-size: 26px !important;
