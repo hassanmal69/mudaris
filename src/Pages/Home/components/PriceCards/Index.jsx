@@ -5,7 +5,7 @@ import './PriceCard.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Line from '@assets/Icons/line.svg';
-import Bitcoin from '@assets/Icons/bitcoin-svg.svg';
+import Bitcoin from '@assets/icons/bitcoin-svg.svg';
 import { useTranslation } from 'react-i18next';
 
 export const PriceCards = () => {
@@ -59,7 +59,7 @@ export const PriceCards = () => {
   return (
     <section className="price-container">
       <Box className="text-container">
-        <Typography variant="h1" className="plan-title rubik">
+        <Typography variant="h1" className="plan-title mobHeading rubik">
           {t('paymentHeading.title')}
         </Typography>
         <Typography variant="body1" className="plan-description zain">
@@ -78,7 +78,7 @@ export const PriceCards = () => {
               <CardContent>
                 <Box className="plan-header">
                   <div className="titleandSVG">
-                    <Typography variant="h5" className="plan-heading rubik">
+                    <Typography variant="h5" className="plan-heading  rubik">
                       {plan.title}
                     </Typography>
                     {index === 2 || index === 3 ? (

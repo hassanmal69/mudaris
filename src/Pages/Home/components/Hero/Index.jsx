@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Box, Button, Container, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import './style.css';
 import BlurGlow from '@assets/Images/Blur2.svg';
 import { useTranslation } from 'react-i18next';
