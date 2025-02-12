@@ -1,17 +1,17 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import E_Learn from './components/E_Learn/index.jsx';
-import Hero from './components/Hero/index.jsx';
-import FAQ from './components/Accordion/index.jsx';
-import GetStart from './components/GetStarted/index.jsx';
-import PriceCards from './components/PriceCards/index.jsx';
+import E_Learn from './components/e_Learn/index.jsx';
+import Hero from './components/hero/Index.jsx';
+import FAQ from './components/accordion/index.jsx';
+import GetStart from './components/getStarted/index.jsx';
+import PriceCards from './components/priceCards/Index.jsx';
 import GettoKnow from './components/GettoKnow/Index.jsx';
 import DigitalEducation from './components/digitalEducationSlider/index.jsx';
-import Community from './components/Community/index.jsx';
-import WhatYouGet from './components/WhatYouGet/index.jsx';
+import Community from './components/community/index.jsx';
+import WhatYouGet from './components/whatYouGet/index.jsx';
 import './home.css';
-import GetaJob from './components/GetaJob/index.jsx';
-import LineCards from './components/ReadIt/index.jsx';
+import GetaJob from './components/getaJob/index.jsx';
+import LineCards from './components/readIt/index.jsx';
 import { useTranslation } from 'react-i18next';
 import Timeline from './components/newLine/index.jsx';
 export const priceCardsRef = React.createRef();
@@ -98,15 +98,7 @@ const Home = () => {
       >
         <GetaJob />
       </motion.div>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={fadeInUp}
-        viewport={{ once: true }}
-        id="whatyouget"
-      >
-        <WhatYouGet />
-      </motion.div>
+    
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -116,7 +108,15 @@ const Home = () => {
       >
         <DigitalEducation />
       </motion.div>
-
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeInUp}
+        viewport={{ once: true }}
+        id="whatyouget"
+      >
+        <WhatYouGet />
+      </motion.div>
       <div className="priceCarddiv" ref={priceCardsRef}>
         <motion.div
           initial="hidden"
@@ -147,7 +147,14 @@ const Home = () => {
       >
         <Timeline />
       </motion.div>
-
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeInUp}
+        viewport={{ once: true }}
+      >
+        <GettoKnow />
+      </motion.div>
       <motion.div
         initial="hidden"
         whileInView="visible"
