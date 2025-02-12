@@ -13,7 +13,7 @@ import mudaris from '../../../../assets/Images/mudaris.png';
 import undplogo from '../../../../assets/Images/undplogo.png';
 import onelogo from '../../../../assets/Images/onelogo.png';
 import { useTranslation } from 'react-i18next';
-import { GetStartedButton } from '../getStartedButton';
+import { GetStartedButton } from '../GetStartedButton/index.jsx';
 import { priceCardsRef } from '../../index';
 const logos = [sciencespo, tolonews, tv, mudaris, undplogo, onelogo];
 
