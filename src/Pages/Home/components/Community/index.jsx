@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 import 'slick-carousel/slick/slick.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
-import { GetStartedButton } from '../getStartedButton';
+import { GetStartedButton } from '../GetStartedButton/index.jsx';
 import { priceCardsRef } from '../../index';
 
 const Community = () => {
