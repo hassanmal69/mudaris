@@ -1,97 +1,172 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import Slider from 'react-slick'; // Import React Slick
 import './whatyouget.css';
 import { Box } from '@mui/material';
-import { useLanguage } from '../../../../globalContext/GlobalProvider';
-import blueverifiedbadge from '../../../../assets/Icons/blueverifiedbadge.png';
-import AgencyNavigatorMale from '../../../../assets/LandingPageVideo.mp4';
-import AgencyNavigatorFemale from '../../../../assets/LandingPageVideo.mp4';
-import SixFigureSalesRep from '../../../../assets/LandingPageVideo.mp4';
-import playbuttonimg from '../../../../assets/Images/playbuttonimg.png';
-
-const wygImages = [
-  AgencyNavigatorMale,
-  AgencyNavigatorFemale,
-  SixFigureSalesRep,
-  AgencyNavigatorMale,
-  AgencyNavigatorFemale,
-];
+import { useTranslation } from 'react-i18next';
+import playbuttonimg from '@assets/icons/play.svg';
+import 'slick-carousel/slick/slick.css'; // Import Slick styles
+import 'slick-carousel/slick/slick-theme.css';
 
 const WhatYouGet = () => {
-  const { language, data } = useLanguage();
-  if (!data) return <div>data is loading.....</div>;
+  const { t, i18n } = useTranslation('home');
+  const videoRefs = useRef([]);
+  const playButtonRefs = useRef([]);
+  const language = i18n.language;
 
-  const videoRefs = useRef([]); // To store video elements
-  const playButtonRefs = useRef([]); // To store play button elements
+  // State to track screen size
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1030);
 
+  // Update on resize
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 1030);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // 🎬 Video Play/Pause Logic
   const videoPlay = (index) => {
     const currentVideo = videoRefs.current[index];
     const currentPlayButton = playButtonRefs.current[index];
 
+    if (!currentVideo || !currentPlayButton) return;
     if (currentVideo.paused) {
-      // Play the current video and hide its play button
       currentVideo.play();
       currentPlayButton.classList.add('hidden');
     } else {
-      // Pause the current video and show its play button
       currentVideo.pause();
       currentPlayButton.classList.remove('hidden');
     }
 
-    // Pause all other videos
     videoRefs.current.forEach((video, idx) => {
       if (idx !== index && video) {
         video.pause();
-        playButtonRefs.current[idx].classList.remove('hidden');
+        playButtonRefs.current[idx]?.classList.remove('hidden');
       }
     });
   };
 
-  const pickData = data.whatyouget;
+  const whatYouGetData = t('whatyouget', { returnObjects: true });
+  if (!Array.isArray(whatYouGetData) || whatYouGetData.length === 0)
+    return null;
 
-  // Dynamically choose the font based on the language
-  const fontClass = language === 'persian' ? 'rubik' : 'inter'; // Use your default font class
+  const heading = whatYouGetData[0]?.Heading || '';
+  const contentData = whatYouGetData.slice(1);
+  const fontClass = language === 'fa' ? 'rubik' : 'inter';
+
+  // 🔥 Slick Slider Settings for Mobile
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
 
   return (
     <section className={`whatyouget-container ${fontClass}`}>
-      <Box className="whatyouget-headings">
-        <p className={` wyg-para1 ${fontClass}`}>{pickData[0].headtitle1}</p>
-        <h2 className={` wyg-head1 ${fontClass}`}>{pickData[0].headtitle2}</h2>
-        <p className={` wyg-para2 ${fontClass}`}>{pickData[0].headtitle3}</p>
+      <Box className="whatyouget-containerMainText">
+        <h1
+          className={`whatyouget-containerMainHeading mobHeading ${fontClass}`}
+        >
+          {heading}
+        </h1>
       </Box>
-      <Box className="whatyouget-cards">
-        {pickData.slice(1).map((item, index) => (
-          <div key={index} className={`whatyouget-card ${fontClass}`}>
-            <div className="whatyouget-card-text">
-              <div className="badgeandrole">
-                <h2 className={` ${fontClass}`}>{item.role}</h2>
+      {isMobile ? (
+        // 🛑 Use React Slick for Mobile
+        <Slider {...sliderSettings}>
+          {contentData.map((item, index) => (
+            <div
+              key={index}
+              className={`whatyouget-card clr-white ${fontClass}`}
+            >
+              <div className="whatyouget-card-text">
+                {item.title && (
+                  <h2 className={`${fontClass} mobsecondheading`}>
+                    {item.title}
+                  </h2>
+                )}
+                {item.description && (
+                  <p className={`${fontClass} mobdescription`}>
+                    {item.description}
+                  </p>
+                )}
+                {item.description2 && (
+                  <p className={`${fontClass} mobdescription`}>
+                    {item.description2}
+                  </p>
+                )}
+              </div>
+              <div className="whatyouget-card-imagecontainer">
+                <iframe
+                  width="280"
+                  height="207"
+                  src="https://www.youtube.com/embed/WqWMdzkiVN8?si=TDOQOSeUMvpYstRX"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
                 <img
-                  src={blueverifiedbadge}
-                  alt="Verified badge"
-                  className="whatyouget-verified-badge"
+                  src={playbuttonimg}
+                  alt="Play button"
+                  className="whatyouget-playbutton"
+                  onClick={() => videoPlay(index)}
+                  ref={(el) => (playButtonRefs.current[index] = el)}
                 />
               </div>
-              <p className={` ${fontClass}`}>{item.description}</p>
             </div>
-            <div className="whatyouget-card-imagecontainer">
-              <video
-                src={wygImages[index]}
-                ref={(el) => (videoRefs.current[index] = el)}
-                className="whatyouget-video"
-              ></video>
-              <img
-                src={playbuttonimg}
-                alt="Play button"
-                className="whatyouget-playbutton"
-                onClick={() => videoPlay(index)}
-                ref={(el) => (playButtonRefs.current[index] = el)}
-              />
-              <p className={`purple-box-text public-sans ${fontClass}`}>
-                {item.purpleboxtext}
-              </p>
+          ))}
+        </Slider>
+      ) : (
+        // 🛑 Standard Layout for Desktop
+        <Box className="whatyouget-cards">
+          {contentData.map((item, index) => (
+            <div
+              key={index}
+              className={`whatyouget-card clr-white ${fontClass}`}
+            >
+              <div className="whatyouget-card-text">
+                {item.title && (
+                  <h2 className={`${fontClass} mobsecondheading`}>
+                    {item.title}
+                  </h2>
+                )}
+                {item.description && (
+                  <p className={`${fontClass} mobdescription`}>
+                    {item.description}
+                  </p>
+                )}
+                {item.description2 && (
+                  <p className={`${fontClass} mobdescription`}>
+                    {item.description2}
+                  </p>
+                )}
+              </div>
+              <div className="whatyouget-card-imagecontainer">
+                <iframe
+                  width="280"
+                  height="207"
+                  src="https://www.youtube.com/embed/WqWMdzkiVN8?si=TDOQOSeUMvpYstRX"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
+                <img
+                  src={playbuttonimg}
+                  alt="Play button"
+                  className="whatyouget-playbutton"
+                  onClick={() => videoPlay(index)}
+                  ref={(el) => (playButtonRefs.current[index] = el)}
+                />
+              </div>
             </div>
-          </div>
-        ))}
-      </Box>
+          ))}
+        </Box>
+      )}
     </section>
   );
 };

@@ -49,11 +49,11 @@
 
 .why-card-content {
   color: #d8d8d8;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 36px;
-  letter-spacing: -0.006em;
-  text-align: left;
+  text-align: right;
+  font-size: 25px !important;
+  font-weight: 800 !important;
+  line-height: 37.5px !important;
+  letter-spacing: -0.006em !important;
 }
 .why-img-wrapper {
   width: 100px;
@@ -72,7 +72,7 @@
   display: flex;
 }
 .why-title {
-  font-weight: 600;
+  font-weight: 800 !important;
   line-height: 52px;
   letter-spacing: -0.015em;
   text-align: left;
@@ -140,7 +140,9 @@
   .why-cards-container {
     margin: auto !important;
   }
-
+  .mobsecondheading {
+    font-size: 20px !important;
+  }
   .vertical,
   .horizontal-line {
     display: none;

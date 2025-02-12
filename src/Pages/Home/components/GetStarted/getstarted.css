@@ -1,5 +1,5 @@
 .get-start-container {
-  background: url('../../../../assets/Images/boxpattern.png'),
+  background: url('../../../../assets/images/boxpattern.png'),
     radial-gradient(
       circle farthest-corner at top center,
       #000000 0%,
@@ -18,32 +18,43 @@
   gap: 25px;
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
   align-items: center;
-  margin-bottom: 70px !important;
+  margin: 70px auto !important;
 }
 .get-start-container h1 span {
   color: #d4a1ff !important;
 }
 
 .get-start-heading {
-  font-size: 56px;
-  width: 34%;
-  text-align: center;
-  font-weight: 500;
+  font-size: 47px;
+  font-weight: 700;
   line-height: 65px;
   letter-spacing: -0.015em;
+  text-align: center;
+  background: linear-gradient(180deg, #fff 54.17%, #9855ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .get-email-field {
   display: flex;
-  width: 33%;
+  flex-direction: row-reverse;
+  width: 53%;
   align-items: center;
 }
-
+.css-10hy3qm-MuiFormControl-root-MuiTextField-root
+  .MuiOutlinedInput-root
+  .MuiInputBase-input {
+  color: #fff;
+  position: relative !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
 .get-start-button {
   background-color: #fff;
   border-radius: 8px;
   text-align: center;
-  margin-left: -33%;
+  /* margin-left: -33%; */
   width: 33%;
   height: 47px;
   font-size: 15px;
@@ -52,16 +63,33 @@
   letter-spacing: -0.0101em;
 }
 .my-with {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+.css-10hy3qm-MuiFormControl-root-MuiTextField-root
+  .MuiOutlinedInput-root.Mui-focused
+  fieldset {
+  pointer-events: none !important;
+  position: absolute !important;
+  z-index: 0 !important;
+}
+.my-with {
   background-color: #fff;
   border-radius: 8px;
   text-align: center;
-  margin-left: -50%;
-  width: 50%;
+  margin-left: -27%;
+  width: 25%;
   height: 47px;
   font-size: 15px;
   font-weight: 500;
   line-height: 31px;
   letter-spacing: -0.0101em;
+}
+.MuiOutlinedInput-root .MuiInputBase-input {
+  color: #fff;
+  text-align: left;
+  direction: ltr !important;
 }
 .get-start-credit {
   font-size: 16px;
@@ -74,8 +102,8 @@
 }
 @media only screen and (max-width: 600px) {
   .get-start-heading {
-    width: 90%;
-    font-size: 44px;
+    width: 100%;
+    line-height: 125%;
   }
 
   .get-email-field {
@@ -86,9 +114,9 @@
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) and (max-width: 992px) {
   .get-start-heading {
-    width: 54%;
+    width: 80%;
   }
 
   .get-email-field {
@@ -96,9 +124,9 @@
   }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
   .get-start-heading {
-    width: 40%;
+    width: 50%;
   }
   .get-email-field {
     width: 38%;
@@ -110,11 +138,11 @@
 
 @media only screen and (min-width: 1200px) {
   .get-start-heading {
-    font-size: 56px;
-    width: 34%;
+    /* font-size: 56px; */
+    width: 75%;
   }
   .get-email-field {
-    width: 32%;
+    width: 35%;
   }
 
   .get-start-button {

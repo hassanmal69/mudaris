@@ -8,62 +8,31 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import Logo from '../../assets/Icons/Nav/Frame 1.png';
-import { useLanguage } from '../../globalContext/GlobalProvider';
+import Logo from '../../assets/icons/Nav/Frame 1.png';
 import './nav.css';
-import Signup from '../../Pages/Signup';
-import Signin from '../../Pages/Login';
+import { useTranslation } from 'react-i18next';
 
 function ResponsiveAppBar() {
-  const [openLogin, setOpenLogin] = useState(false);
-  const [openSignUp, setOpenSignUp] = useState(false);
-  const { data, toggleLanguage, language } = useLanguage();
+  const { t, i18n } = useTranslation('home');
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [currentForm, setCurrentForm] = useState('SignIn');
 
-  if (!data) return <div>Loading...</div>;
-
-  const pages = data.pagesnav;
-  const RightBtns = data.navRightBtns;
+  const pages = t('pagesnav', { returnObjects: true });
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-  };
-
-  const handleClickOpen = (formType) => {
-    setCurrentForm(formType);
-    if (formType === 'SignIn') {
-      setOpenLogin(true);
-      setOpenSignUp(false);
-    } else {
-      setOpenLogin(false);
-      setOpenSignUp(true);
-    }
-  };
-
-  const handleToggleDialogs = () => {
-    if (currentForm === 'SignIn') {
-      setCurrentForm('Signup');
-      setOpenLogin(false);
-      setOpenSignUp(true);
-    } else if (currentForm === 'Signup') {
-      setCurrentForm('SignIn');
-      setOpenLogin(true);
-      setOpenSignUp(false);
-    }
-  };
-
-  const handleClose = () => {
-    setOpenLogin(false);
-    setOpenSignUp(false);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const fontClass = language === 'persian' ? 'rubik' : 'inter';
+  const handleScrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    handleCloseNavMenu();
+  };
 
   return (
     <AppBar
@@ -76,6 +45,7 @@ function ResponsiveAppBar() {
         sx={{ borderBottom: '1px solid #aaa', background: 'transparent' }}
       >
         <Toolbar disableGutters>
+          {/* Logo */}
           <Typography variant="h6" noWrap component="a">
             <img src={Logo} alt="LOGO" />
           </Typography>
@@ -84,7 +54,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
-              aria-label="account of current user"
+              aria-label="menu"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
@@ -106,39 +76,17 @@ function ResponsiveAppBar() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: {
-                  xs: 'block',
-                  md: 'none',
-                },
-              }}
+              sx={{ display: { xs: 'block', md: 'none' } }}
             >
-              {RightBtns.map((btn, index) => (
-                <>
-                  {index === 2 ? ( // 'Get Started' button
-                    <Button
-                      onClick={() => handleClickOpen('Signup')}
-                      sx={{ my: 2, color: 'white', display: 'none' }}
-                    >
-                      {btn}
-                    </Button>
-                  ) : index === 1 ? ( // 'Sign In' button
-                    <Button
-                      onClick={() => handleClickOpen('SignIn')}
-                      sx={{ my: 2, color: 'white', display: 'none' }}
-                    >
-                      {btn}
-                    </Button>
-                  ) : (
-                    <Button
-                      sx={{ my: 2, color: 'white', display: 'block' }}
-                      onClick={toggleLanguage} // Toggle language button
-                      className={fontClass}
-                    >
-                      {btn}
-                    </Button>
-                  )}
-                </>
+              {pages.map((page, i) => (
+                <Button
+                  key={i}
+                  onClick={() => handleScrollToSection(page.id)}
+                  className="nav-menu-btn"
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  {page.label}
+                </Button>
               ))}
             </Menu>
           </Box>
@@ -150,68 +98,16 @@ function ResponsiveAppBar() {
                 {pages.map((page, i) => (
                   <Button
                     key={i}
-                    onClick={handleCloseNavMenu}
-                    className="nav-menu-btn"
+                    onClick={() => handleScrollToSection(page.id)}
+                    className="nav-menu-btn rubik"
                     sx={{ my: 2, color: 'white', display: 'block' }}
                   >
-                    {page === 'Explore' ? (
-                      <>
-                        Explore <ArrowDropDownIcon key={i} />
-                      </>
-                    ) : (
-                      page
-                    )}
+                    {page.label}
                   </Button>
                 ))}
               </div>
-
-              <Box component="div" className="navBarBtns2 BorderDiv">
-                {RightBtns.map((btn, index) => (
-                  <div className={`rightbtn ${fontClass}`} key={index}>
-                    {/* Use consistent keys (index) for SignIn and Signup */}
-                    {index === 2 ? ( // 'Get Started' button
-                      <Button
-                        onClick={() => handleClickOpen('Signup')}
-                        sx={{ my: 2, color: 'white', display: 'block' }}
-                      >
-                        {btn}
-                      </Button>
-                    ) : index === 1 ? ( // 'Sign In' button
-                      <Button
-                        onClick={() => handleClickOpen('SignIn')}
-                        sx={{ my: 2, color: 'white', display: 'block' }}
-                      >
-                        {btn}
-                      </Button>
-                    ) : (
-                      <Button
-                        sx={{ my: 2, color: 'white', display: 'block' }}
-                        onClick={toggleLanguage} // Toggle language button
-                        className={fontClass}
-                      >
-                        {btn}
-                      </Button>
-                    )}
-                  </div>
-                ))}
-              </Box>
             </div>
           </Box>
-          {/* SignIn/Signup Modals */}
-          {currentForm === 'SignIn' && (
-            <Signin
-              open={openLogin}
-              handleClose={handleClose}
-              toggle={handleToggleDialogs}
-            />
-          )}
-          {currentForm === 'Signup' && (
-            <Signup
-              open={openSignUp}
-              handleClose={handleClose}
-              toggle={handleToggleDialogs}
-            />
-          )}
         </Toolbar>
       </Container>
     </AppBar>

@@ -24,11 +24,15 @@
   margin-bottom: 100px;
 }
 .LineCardContainerMainTitle {
-  font-size: 56px !important;
-  font-weight: 500 !important;
-  line-height: 65px !important; /* 116.071% */
   letter-spacing: -0.84px !important;
+  font-size: 58px !important;
   text-align: center;
+  font-weight: 900 !important;
+  background: linear-gradient(348.44deg, #9855ff 8.04%, #ffffff 68.68%);
+  margin-bottom: 140px !important;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .importanttoreadcardContainer {
   display: flex;
@@ -69,13 +73,19 @@
 }
 
 .importanttoreadCard:hover {
-  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  transform: scale(1.003); /* Slightly enlarge the card on hover */
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  background: linear-gradient(180deg, #010002 0%, #361764 100%),
+    url(../../../../assets/Images/Pattern.png) !important;
+  background-size: cover !important;
+  background-blend-mode: screen;
+  box-shadow: 0px 0px 6px 3px rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(7px) !important;
 }
 .uaatest {
   display: flex;
   width: 100%;
-  /* justify-content: left; */
+  justify-content: left;
   /* align-items: center; */
 }
 .uaatest:nth-child(even) {
@@ -118,8 +128,8 @@
   color: transparent;
 }
 .importanttoreadCarddescription {
-  font-size: 22px !important;
-  font-weight: 400 !important;
+  font-size: 20px !important;
+  font-weight: 300 !important;
   line-height: 130% !important;
 }
 .importanttoreadCardContentText {
@@ -171,36 +181,16 @@
 }
 .importanttoreadCardnumberDiv:nth-child(1) {
   top: 0px;
-  left: -20px;
+  right: -35px;
 }
-/*
-forEnglishversion dont want english yet so iam hidding this and below is forpersian
- .importanttoreadCardnumber Eng:nth-child(2) {
-  top: 630px;
-  right: 3px;
-} */
 .importanttoreadCardnumberDiv:nth-child(2) {
-  top: 560px;
-  right: 3px;
+  top: 764px;
+  right: 10px;
 }
-/* .importanttoreadCardnumber Eng:nth-child(3) {
-  bottom: 635px;
-} */
 .importanttoreadCardnumberDiv:nth-child(3) {
-  bottom: 560px;
+  bottom: 730px;
 }
-.specialClassForSecondComponent:nth-child(3) {
-  bottom: 675px;
-}
-/* .specialClassForSecondComponent:nth-child(2) {
-  top: 675px;
-} */
-.specialClassForSecondComponent:nth-child(2) {
-  top: 590px;
-}
-.specialClassForSecondComponent:nth-child(3) {
-  bottom: 570px;
-}
+
 /* .importanttoreadCardnumberDiv */
 @media screen and (max-width: 1180px) {
   .uaatest {
@@ -211,33 +201,115 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
     padding: 30px;
     gap: 30px;
   }
+  .importanttoreadCardnumberDiv:nth-child(2) {
+    top: 600px;
+    right: 10px;
+  }
+  .importanttoreadCardtitle {
+    font-size: 24px !important;
+  }
+  .importanttoreadCarddescription {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+  }
+  .importanttoreadcardContainer {
+    width: 100%;
+    gap: 0px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(3) {
+    bottom: 465px;
+    right: -30px;
+  }
 }
-@media screen and (max-width: 932px) {
+@media screen and (max-width: 912px) {
   .importanttoreadCard {
     padding: 30px;
     gap: 20px;
     width: 350.062px;
   }
-  .specialClassForSecondComponent:nth-child(3) {
-    bottom: 705px;
+  .importanttoreadcardContainer {
+    width: 100%;
+    gap: 0px;
+  }
+  .importanttoreadCardtitle {
+    font-size: 22px !important;
+  }
+  .importanttoreadCarddescription {
+    font-size: 16px !important;
+  }
+  .importanttoreadCardnumberDiv:nth-child(2) {
+    top: 550px;
+    right: 10px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(3) {
+    bottom: 515px;
+  }
+  .LineCardContainerMainTitle {
+    font-size: 44px !important;
+    margin-bottom: 40px !important;
   }
 }
-/* @media screen and (max-width: 830px) {
-  .uaatest {
-    justify-content: center !important;
-  }
+@media screen and (width: 820px) {
   .importanttoreadcardContainer {
-    gap: 100px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 150px;
   }
-  .LineCardContainerMainTitleDesc {
-    margin-bottom: 30px;
+  .importanttoreadCard {
+    gap: 10px;
+    width: 360px;
   }
-} */
 
-/*  */
+  .LineCardContainerMainPic {
+    position: absolute;
+    height: 83%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .importanttoreadCardPicDiv {
+    padding: 15px;
+  }
+  .uaatest {
+    justify-content: fle !important;
+    width: calc(100% - 10px);
+  }
+  .importanttoreadCardPicDiv img {
+    width: 30px;
+  }
+  .LineCardContainerMain {
+    align-items: flex-start;
+  }
+  .importanttoreadLinePic {
+    position: absolute;
+    right: 330px;
+    z-index: 0;
+    height: 100%;
+  }
+  .importanttoreadCardnumberDivParent {
+    position: absolute;
+    right: 365px;
+    height: 100%;
+  }
+  .importanttoreadCardnumberDiv:nth-child(4) {
+    bottom: 0px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(1) {
+    top: 0px;
+    right: -20px;
+  }
+}
 @media screen and (max-width: 768px) {
   .LineCardContainerMainTitleDesc {
     margin-bottom: 10px;
+  }
+  .importanttoreadCardnumber {
+    font-size: 22px !important;
+  }
+  .importanttoreadCardnumberDiv {
+    height: 40px;
+    width: 40px;
   }
   .LineCardContainerMainDesc {
     font-size: 18px !important;
@@ -245,6 +317,7 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
   .LineCardContainerMainTitle {
     font-size: 20px !important;
     line-height: 40px !important;
+    margin-bottom: 40px !important;
   }
   .importanttoreadcardContainer {
     gap: 20px;
@@ -270,36 +343,68 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
   .uaatest {
     width: calc(100% - 20px);
   }
-  .importanttoreadCardPicDiv img {
-    width: 30px;
-  }
 
-  /* card Numbers */
-  .importanttoreadCardnumberDiv:nth-child(2) {
-    top: 225px;
-    right: -14px;
+  .importanttoreadLinePic {
+    left: -25px;
+    height: 100%;
+    margin-bottom: 30px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(1) {
+    right: -30px;
+    top: -40px;
   }
   .importanttoreadCardnumberDiv:nth-child(3) {
-    bottom: 280px;
+    bottom: 375px;
+    right: -45px;
   }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(3) {
-    bottom: 280px;
-    left: -30px;
+  .importanttoreadCardnumberDiv:nth-child(2) {
+    top: 440px;
+    right: -10px;
   }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(2) {
-    left: -25px;
+  .importanttoreadCardnumberDiv:nth-child(4) {
+    right: -40px;
+    bottom: 30px;
   }
 }
+@media screen and (max-width: 700px) {
+  .importanttoreadLinePic {
+    left: -50px;
+    height: 100%;
+    margin-bottom: 35px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(1) {
+    right: -7px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(2) {
+    right: 25px;
+    top: 456px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(3) {
+    right: -30px;
+    bottom: 350px;
+  }
+  .importanttoreadCardnumberDiv:nth-child(4) {
+    right: -10px;
+    bottom: 15px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .LineCardContainerMainTitleDesc {
     margin-bottom: 10px;
+    gap: 4px;
+  }
+  .importanttoreadCardContentText {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
   .LineCardContainerMainDesc {
-    font-size: 18px !important;
+    font-size: 14px !important;
   }
   .LineCardContainerMainTitle {
-    font-size: 20px !important;
-    line-height: 40px !important;
+    font-size: 22px !important;
+    line-height: 50px !important;
   }
   .importanttoreadcardContainer {
     gap: 20px;
@@ -307,18 +412,21 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
     align-items: flex-end;
   }
   .importanttoreadCard {
-    padding: 20px 3px 20px 20px;
+    padding: 15px 15px 10px 10px;
     gap: 10px;
-    width: 230px;
+    width: 270px;
   }
   .importanttoreadCarddescription {
-    font-size: 14px !important;
+    font-size: 12px !important;
     letter-spacing: 0.8px !important;
     line-height: normal;
   }
   .importanttoreadCardtitle {
-    font-size: 20px !important;
-    line-height: 120% !important;
+    font-size: 18px !important;
+    line-height: 125% !important;
+  }
+  .importanttoreadCardContentText {
+    gap: 5px;
   }
   .importanttoreadCardPicDiv {
     padding: 15px;
@@ -335,64 +443,31 @@ forEnglishversion dont want english yet so iam hidding this and below is forpers
   }
   .importanttoreadLinePic {
     left: 30px;
-    height: 90%;
+    height: 100%;
     margin-bottom: 45px;
   }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(1) {
-    top: 20px;
-    left: 25px;
-  }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(2) {
-    left: 25px;
-    top: 350px;
+  .LineCardContainerMainPic {
+    position: absolute;
+    right: 110px;
+    height: 83%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
   }
   .importanttoreadCardnumberDiv:nth-child(1) {
-    top: 0px;
-    left: 25px;
-  }
+    right: -85px;
+    top: -50px;
+}
   .importanttoreadCardnumberDiv:nth-child(3) {
-    bottom: 390px;
-    left: 10px;
+    bottom: 315px;
+    right: -95px;
   }
   .importanttoreadCardnumberDiv:nth-child(2) {
-    top: 240px;
-    left: 25px;
-  }
-  .importanttoreadCardnumberDiv {
-    position: absolute;
+    top: 380px;
     right: -60px;
   }
   .importanttoreadCardnumberDiv:nth-child(4) {
-    left: 25px;
-    bottom: 20px;
-  }
-  /* 2nd component */
-  .importanttoread:nth-child(2) .LineCardContainerMain {
-    flex-direction: row-reverse !important;
-  }
-  .importanttoread:nth-child(2) .importanttoreadcardContainer {
-    align-items: flex-start;
-  }
-  .importanttoread:nth-child(2) .importanttoreadLinePic {
-    left: 100px;
-    height: 90%;
-    margin-top: 50px;
-    margin-bottom: 0;
-  }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(1) {
-    top: 55px;
-    left: 96px;
-  }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(2) {
-    left: 80px;
-    top: 420px;
-  }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(3) {
-    bottom: 280px;
-    left: 100px;
-  }
-  .importanttoread:nth-child(2) .importanttoreadCardnumberDiv:nth-child(4) {
-    left: 100px;
-    bottom: -45px;
+    right: -90px;
+    bottom: 30px;
   }
 }

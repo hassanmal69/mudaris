@@ -10,6 +10,30 @@
   display: flex;
   flex-direction: row;
 }
+
+.customCursor {
+  height: 20px;
+  width: 20px;
+  background: radial-gradient(
+    circle,
+    #c020ff 20%,
+    /* Brighter neon purple */ rgba(155, 0, 255, 0.6) 50%,
+    /* Stronger inner glow */ rgba(200, 100, 255, 0.3) 100%
+      /* Smooth outer blend */
+  );
+  border-radius: 50%;
+  position: fixed;
+  z-index: 99;
+  filter: blur(20px); /* Increased blur for a stronger glow */
+  transition: all linear 0.1s;
+  box-shadow:
+    0 0 120px rgba(155, 0, 255, 0.9),
+    /* Stronger purple glow */ 0 0 60px rgba(200, 100, 255, 0.8),
+    /* Soft outer glow */ 0 0 40px rgba(255, 255, 255, 0.5); /* White highlight for brightness */
+  mix-blend-mode: difference; /* Enhances contrast with backgrounds */
+  pointer-events: none; /* Ensures it doesn't interfere with clicks */
+}
+
 .getajob-paragraphs {
   display: flex;
   flex-direction: row;
@@ -20,7 +44,9 @@
   gap: 150px;
   position: relative;
 }
-
+.getajob-qa {
+  animation: upDownAnimation 2s ease-in-out infinite;
+}
 .getajob-para {
   width: 70%;
 }
@@ -30,11 +56,16 @@
 }
 
 .getajob-heading h1 {
-  font-weight: 600;
+  font-size: 60px;
+  font-weight: 900;
   letter-spacing: -0.015em;
-  color: rgba(224, 224, 224, 1);
-  font-size: 56px;
   text-align: center;
+  width: 75%;
+  margin: auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(348.44deg, #9855ff 8.04%, #ffffff 68.68%);
+  background-clip: text;
 }
 
 .getajob-infobox {
@@ -74,13 +105,11 @@
   padding: 56px;
 }
 .getajob-paragraphs p {
-  font-size: 24px;
-  font-style: normal;
   width: 100%;
-  font-weight: 400;
-  line-height: 130%; /* 31.2px */
-  letter-spacing: -0.12px;
   color: white;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
 }
 .getajobparacontentonly {
   display: flex;
@@ -92,10 +121,10 @@
 .logodiv {
   position: absolute;
   mix-blend-mode: lighten;
-  top: 35%;
+  top: 29%;
   left: 35%;
-  width: 484px;
-  height: 484px;
+  width: 400px;
+  height: 400px;
 }
 .getajob-vid {
   background: radial-gradient(
@@ -105,9 +134,90 @@
   );
   border-radius: 500px;
 }
+.arrow-container {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+  display: none;
+}
+
+.arrow-2 svg {
+  color: #8c45ff; /* Purple color */
+  animation: arrowGlow 1.5s infinite alternate ease-in-out;
+}
+
+.arrow-1 {
+  width: 8px;
+  height: 50px;
+  background: #8c45ff66; /* Transparent purple */
+  margin: 0 auto;
+  border-radius: 5px;
+  animation: arrowGlow 1.5s infinite alternate ease-in-out;
+  box-shadow:
+    0 0 20px #8c45ff99,
+    0 0 40px #8c45ffdd; /* Brighter glow */
+}
+
+@keyframes arrowGlow {
+  0% {
+    opacity: 0.6;
+    transform: translateY(0);
+    box-shadow:
+      0 0 15px #8c45ff99,
+      0 0 30px #8c45ffcc;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(10px);
+    box-shadow:
+      0 0 25px #8c45ffff,
+      0 0 50px #8c45ffff;
+  }
+}
+
+.animated {
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+    /* box-shadow: 0 0 1px #8C45FF88; */
+  }
+  50% {
+    opacity: 0.5;
+    /* box-shadow: 0 0 2px #8C45FFCC; */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    /* box-shadow: 0 0 3px #8C45FFFF; */
+  }
+}
+
+.zoomIn {
+  animation-name: zoomIn;
+}
+
 @media only screen and (max-width: 600px) {
   .getajob-circle {
     display: none;
+  }
+  .getajobParaforbg {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+    background: var(
+      --LBG1,
+      linear-gradient(107deg, #190d2e 0.54%, #020103 99.46%)
+    );
+    padding: 25px;
   }
   .getajob-paragraphs {
     gap: 20px;
@@ -115,7 +225,8 @@
     width: 100%;
   }
   .getajob-heading h1 {
-    font-size: 44px;
+    font-size: 24px;
+    width: 100%;
   }
   .logodiv {
     display: none;
@@ -123,14 +234,20 @@
   .getajob-heading h2 {
     font-size: 22px;
   }
-
+  .getajob-container {
+    gap: 50px;
+  }
   .getajob-para {
     width: 98%;
   }
   .getajob-paragraphs p {
-    font-size: 14px;
+    font-size: 12px;
+    width: 100%;
   }
-
+  .arrow-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
   .getajob-infobox {
     padding: 25px 25px;
   }
@@ -139,18 +256,39 @@
     width: 100%;
   }
 }
-@media only screen and (min-width: 600px) and (max-width: 992px) {
+@media only screen and (min-width: 600px) and (max-width: 768px) {
   .getajob-circle {
     display: none;
   }
   .logodiv {
     display: none;
   }
-  .getajob-heading h2 {
-    font-size: 29px;
+  .getajobParaforbg {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 30px;
   }
+  .getajob-container {
+    width: 100%;
+    gap: 20px;
+  }
+  .arrow-container {
+    display: none;
+  }
+  .getajob-heading h1 {
+    font-size: 32px !important;
+    width: 85%;
+  }
+  /* .arrow-container {
+    display: block;
+  } */
+  .getajob-heading h2 {
+    font-size: 28px;
+  }
+
   .getajob-paragraphs {
-    width: 95%;
+    width: 100%;
     justify-content: center;
     gap: 20px;
   }
@@ -159,7 +297,7 @@
     width: 95%;
   }
   .getajob-paragraphs p {
-    font-size: 17px;
+    font-size: 14px;
   }
 
   .getajob-infobox {
@@ -170,39 +308,131 @@
     width: 95%;
   }
 }
-
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) and (max-width: 912px) {
+  .getajob-heading h1 {
+    font-size: 32px;
+    width: 85%;
+  }
+  .getajob-paragraphs {
+    width: 100% !important;
+    gap: 30px;
+  }
+  .getajobParaforbg {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    padding: 30px;
+  }
+  .getajob-paragraphs p {
+    font-size: 14px;
+  }
+  .logodiv {
+    display: none;
+  }
+  .getajob-container {
+    display: flex;
+    gap: 20px;
+  }
+}
+@media only screen and (min-width: 912px) and (max-width: 1050px) {
+  .getajob-heading h1 {
+    font-size: 32px;
+    width: 85%;
+  }
+  .getajob-paragraphs {
+    width: 100% !important;
+    gap: 30px;
+  }
+  .getajobParaforbg {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    padding: 30px;
+  }
+  .getajob-paragraphs p {
+    font-size: 14px;
+  }
+  .logodiv {
+    top: 23%;
+    left: 26%;
+  }
+  .getajob-container {
+    display: flex;
+    gap: 20px;
+    width: calc(100% - 20px);
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
   .getajob-circle {
     display: block;
   }
 
   .logodiv {
+    display: block;
+  }
+  .arrow-container {
     display: none;
   }
   .getajob-paragraphs {
-    width: 50%;
+    width: 100%;
+    justify-content: center;
   }
   .getajob-heading h2 {
-    font-size: 37px;
+    font-size: 36px;
   }
   .getajob-paragraphs p {
-    font-size: 21px;
+    font-size: 18px;
   }
-
+  .getajobParaforbg {
+    width: 350px;
+    padding: 30px;
+  }
+  .getajob-paragraphs {
+    width: 100% !important;
+    gap: 90px;
+  }
   .getajob-infobox {
-    padding: 29px 29px;
+    padding: 20px 20px;
   }
   .getajob-info {
     font-size: 26px;
   }
+  .logodiv {
+    top: 28%;
+    left: 29%;
+  }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  .getajobParaforbg {
+    width: 500px;
+    padding: 35px;
+  }
+  .getajob-paragraphs {
+    gap: 50px;
+  }
+  .getajob-container {
+    width: calc(100% - 10%);
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    margin: auto;
+  }
   .getajob-paragraphs {
     width: 100%;
   }
   .logodiv {
     display: block;
+    left: 31%;
+    top: 27%;
+  }
+  .getajob-heading h1 {
+    font-size: 44px;
+    font-weight: 900;
+    width: 85%;
+  }
+  .arrow-container {
+    display: none;
   }
   .getajob-para {
     width: 70%;
@@ -212,7 +442,7 @@
   }
 
   .getajob-paragraphs p {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .getajob-infobox {
@@ -222,5 +452,23 @@
   .getajob-info {
     font-size: 32px;
     width: 95%;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .logodiv {
+    height: 550px;
+    width: 550px;
+    left: 31%;
+  }
+}
+@keyframes upDownAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

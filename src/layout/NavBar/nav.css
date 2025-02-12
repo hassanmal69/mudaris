@@ -9,6 +9,11 @@
   display: flex;
   gap: 100px;
   border-radius: 60px;
+  direction:ltr;
+}
+.css-10h82pl-MuiPaper-root-MuiAppBar-root{
+margin: auto !important;
+width: 90% !important;
 }
 .css-1jmxzwo-MuiToolbar-root {
   gap: 40px;
@@ -42,11 +47,11 @@
   color: rgba(255, 255, 255, 0.6);
   font-family: Inter;
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.001px;
   text-transform: capitalize;
 }
-.btnContainer Button:nth-child(3) {
+/* .btnContainer Button:nth-child(3) {
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #9855ff;
@@ -55,7 +60,7 @@
   width: fit-content !important;
   height: 30px !important;
   margin-left: -50px;
-}
+} */
 .btnContainer Button:nth-child(1) {
   display: flex;
 }
@@ -178,6 +183,7 @@
 @media only screen and (min-width: 1163px) {
   .css-1jmxzwo-MuiToolbar-root {
     height: 100px !important;
+  direction: ltr;
   }
 }
 @media only screen and (min-width: 1200px) {

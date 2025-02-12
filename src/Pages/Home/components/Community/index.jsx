@@ -1,75 +1,151 @@
 import { Button, Typography } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './community.css';
-import { useLanguage } from '../../../../globalContext/GlobalProvider';
-import Person from '../../../../assets/Images/communityPerson.png';
-import Picture from '../../../../assets/Images/nigga.png';
-import Meeting from '../../../../assets/Images/meeting.png';
-import Podcast from '../../../../assets/Images/podcast.png';
-import Meet from '../../../../assets/Images/meet.png';
-import Play from '../../../../assets/Icons/play.svg';
-import Conversation from '../../../../assets/Images/conversation.png';
+import Person from '@assets/Images/communityPerson.svg';
+import Picture from '@assets/Images/nigga.svg';
+import Meeting from '@assets/Images/meeting.svg';
+import Podcast from '@assets/Images/podcast.svg';
+import Meet from '@assets/Images/meet.svg';
+import Play from '@assets/Icons/play.svg';
+import Conversation from '@assets/Images/conversation.svg';
+import { useTranslation } from 'react-i18next';
+import 'slick-carousel/slick/slick.css';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick-theme.css';
+import { GetStartedButton } from '../getStartedButton';
+import { priceCardsRef } from '../../index';
 
 const Community = () => {
-  const { language, data, status, error } = useLanguage();
+  const { t, i18n } = useTranslation('home');
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 790);
 
-  if (!data) {
-    return <div className="clr-white">Data is not available</div>;
-  }
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 790); // Adjusted breakpoint to 786px
+    };
 
-  // Define the font class: 'rubik' for Persian, no changes for others
-  const fontClass = language === 'persian' ? 'rubik' : '';
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const scrollToPriceCards = () => {
+    if (priceCardsRef.current) {
+      priceCardsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const language = i18n.language;
+  const fontClass = language === 'fa' ? 'zain' : '';
+  const headingClass = 'rubik';
+
+  let images = [
+    {
+      column1: [Conversation, Meet, Picture],
+      column2: [Meet, Picture, Meeting],
+      column3: [Person, Podcast, Conversation, Person],
+    },
+  ];
+
+  const sliderSettings = {
+    dots: false,
+    infinite: true,
+    arrows: false,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    pauseOnFocus: true,
+    draggable: true,
+    slidesToShow: 2, // Default for mobile
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 600, // Small screens
+        settings: { slidesToShow: 1, slidesToScroll: 1 },
+      },
+      {
+        breakpoint: 768, // Tablets
+        settings: { slidesToShow: 2, slidesToScroll: 1 },
+      },
+    ],
+  };
 
   return (
     <section className="community-section">
-      <div className="community-header column">
+      <Typography
+        variant="h2"
+        className={`clr-white mobHeading community-title ${headingClass}`}
+      >
+        {t('studentvideoreviews.title')}
+      </Typography>
+
+      <div
+        className={`community-header column ${
+          language === 'fa' ? 'alignItems-right' : 'alignItems-left'
+        } ${isMobile ? 'center flex-center' : ''}`}
+      >
         <Typography
           variant="h3"
-          className={`clr-white inter community-title ${fontClass}`}
+          className={`clr-white commmunity-smallHeading ${fontClass}`}
         >
-          {data.studentvideoreviews.title}
+          {t('studentvideoreviews.heading')}
         </Typography>
         <Typography
-          variant="h3"
-          className={`clr-white inter description ${fontClass}`}
+          variant="body1"
+          className={`clr-white community-description ${fontClass}`}
         >
-          {data.studentvideoreviews.para}
+          {t('studentvideoreviews.description')}
         </Typography>
-        <Button
-          variant="contained"
-          className={`community-btn inter ${fontClass}`}
-        >
-          {data.studentvideoreviews.button}
-        </Button>
+
+        <GetStartedButton onButtonClick={scrollToPriceCards} />
       </div>
-      <section className="community-stories flex">
-        {images.map((imageGroup, index) => (
-          <div key={index} className="community-stories-section">
-            {Object.keys(imageGroup).map((column, i) => (
-              <div key={i} className="column stories-wrapper">
-                {imageGroup[column].map((img, idx) => (
-                  <div className="community-video-container" key={idx}>
-                    <span className="community-overlay-play">
-                      <img src={Play} alt="play-icon" />
-                    </span>
-                    <img src={img} alt={`image-${idx}`} className="video-img" />
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-        ))}
-      </section>
+
+      {/* Mobile View - Slider */}
+      {isMobile ? (
+        <Slider {...sliderSettings} className="community-slider">
+          {images.map((imageGroup, index) =>
+            Object.keys(imageGroup).map((column, i) =>
+              imageGroup[column].map((img, idx) => (
+                <div
+                  key={`${index}-${i}-${idx}`}
+                  className="community-video-container"
+                >
+                  <span className="community-overlay-play">
+                    <img src={Play} alt="play-icon" />
+                  </span>
+                  <img src={img} alt={`image-${idx}`} className="video-img" />
+                </div>
+              ))
+            )
+          )}
+        </Slider>
+      ) : (
+        // Desktop View - Grid
+        <section className="community-stories flex">
+          {images.map((imageGroup, index) => (
+            <div key={index} className="community-stories-section">
+              {Object.keys(imageGroup).map((column, i) => (
+                <div key={i} className="column stories-wrapper">
+                  {imageGroup[column].map((img, idx) => (
+                    <div className="community-video-container" key={idx}>
+                      <span className="community-overlay-play">
+                        <img src={Play} alt="play-icon" />
+                      </span>
+                      <img
+                        src={img}
+                        alt={`image-${idx}`}
+                        className="video-img"
+                      />
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          ))}
+        </section>
+      )}
     </section>
   );
 };
 
 export default Community;
-
-let images = [
-  {
-    column1: [Conversation, Meet, Picture],
-    column2: [Meet, Picture, Meeting],
-    column3: [Person, Podcast, Conversation, Person],
-  },
-];

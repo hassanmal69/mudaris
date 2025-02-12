@@ -1,5 +1,10 @@
 .community-title {
-  font-weight: 500 !important;
+  font-size: 50px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.015em !important;
+  text-align: right;
+  width: 85%;
+  margin-bottom: 30px !important;
 }
 .community-btn {
   padding: 6px 15px !important;
@@ -15,15 +20,27 @@
   display: none;
 }
 .community-header {
-  gap: 30px;
-  width: 40%;
+  gap: 10px;
+  width: 29%;
   align-items: flex-start;
+}
+.community-description {
+  font-size: 20px !important;
+  width: 140%;
+  position: relative;
 }
 .community-section {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin: 100px 0;
+  width: 90%;
+  margin: auto;
+}
+.commmunity-smallHeading {
+  font-size: 33px !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.0001em !important;
 }
 .community-stories {
   align-items: start;
@@ -48,7 +65,7 @@
 }
 .community-video-container {
   position: relative;
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
 }
@@ -103,10 +120,26 @@
   .stories-wrapper:nth-child(2) {
     justify-content: flex-start;
   }
-  .community-header {
+  .community-video-container {
+    display: flex !important;
+  }
+  .community-description {
+    font-size: 12px !important;
+    width: 80%;
+    margin: auto;
+    text-align: center !important;
+    line-height: normal !important;
+  }
+  .community-title {
+    font-size: 22px !important;
     width: 100%;
     text-align: center;
-    align-items: center;
+  }
+  .community-header {
+    width: 100%;
+    text-align: center !important;
+    align-items: center !important;
+    margin-bottom: 20px;
   }
   .video-img {
     width: 100%;
@@ -120,43 +153,84 @@
     width: 30px;
     height: 30px;
   }
+  .commmunity-smallHeading {
+    font-size: 20px !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.0001em !important;
+  }
 }
 @media only screen and (min-width: 600px) and (max-width: 768px) {
   .community-header {
     width: 100%;
     text-align: center;
     align-items: center;
+    margin-bottom: 30px;
   }
-  .community-stories-section,
-  .community-section {
-    justify-content: center;
+  .community-title {
+    font-size: 24px !important;
+    margin-bottom: 16px !important;
     width: 100%;
   }
+  .slick-slider {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  .commmunity-smallHeading {
+    font-size: 18px !important;
+    font-weight: 900 !important;
+  }
+  .community-description {
+    font-size: 12px !important;
+    text-align: right;
+    width: 100%;
+    margin: auto !important;
+  }
+  .community-header {
+    gap: 20px;
+  }
   .video-img {
-    width: 320px;
-    height: 230px;
+    width: 277px;
+    height: 205px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 992px) {
   .community-header {
-    width: 80%;
-    align-items: flex-start;
+    width: 85%;
   }
   .community-section {
     width: calc(100% - 20px);
     margin: auto;
   }
+  .community-description {
+    width: 100%;
+  }
+}
+@media only screen and (width: 820px) {
+  .community-stories-section {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 32px;
+  }
+  .community-description {
+    font-size: 12px !important;
+    text-align: right;
+    width: 100%;
+    margin: auto !important;
+  }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .community-header {
-    width: 60%;
-    align-items: flex-start;
+    width: 85%;
   }
   .community-section {
     width: 100%;
   }
+  .community-description {
+    width: 85% !important;
+  }
 }
-@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+@media only screen and (min-width: 1400px) and (max-width: 1500px) {
   .community-header {
     width: 60%;
     align-items: flex-start;

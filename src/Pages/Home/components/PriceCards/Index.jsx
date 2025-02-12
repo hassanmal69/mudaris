@@ -1,105 +1,168 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Card, CardContent, Typography, Button } from '@mui/material';
-import { useLanguage } from '../../../../globalContext/GlobalProvider';
+import Slider from 'react-slick'; // Import React Slick
 import './PriceCard.css';
-import Line from '../../../../assets/Icons/line.png';
-import Tick from '../../../../assets/Icons/tick.png';
-import PaymentScreen from './PaymentScreen';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Line from '@assets/Icons/line.svg';
+import Bitcoin from '@assets/icons/bitcoin-svg.svg';
+import { useTranslation } from 'react-i18next';
 
 export const PriceCards = () => {
-  const { data, language } = useLanguage();
-  const [isPaymentScreenVisible, setIsPaymentScreenVisible] = useState(false); // New state to track payment screen visibility
-  const [selectedPlan, setSelectedPlan] = useState(null);
+  const { t, i18n } = useTranslation('home');
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1030);
+  const language = i18n.language;
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1030);
+    };
 
-  // Ensure data is correctly loaded
-  if (!data) {
-    return <div>Loading...</div>; // Handle loading state
-  }
-  if (isPaymentScreenVisible) {
-    return <PaymentScreen selectedPlan={selectedPlan} />;
-  }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-  const paymentPlans = data.paymentPlans; // Correct access to paymentPlans
-  const handleSubscribe = (plan, index) => {
-    setIsPaymentScreenVisible(true);
-    setSelectedPlan({
-      planTitle: plan[`plan${index + 1}`],
-      price: plan.price,
-      perks: [
-        plan.perk1,
-        plan.perk2,
-        plan.perk3,
-        plan.perk4,
-        plan.perk5,
-        plan.perk6,
-      ].filter(Boolean), // Remove any falsy values (e.g., null or undefined perks)
-    });
+  const paymentPlans = t('paymentPlans', { returnObjects: true }); // Fetching translated JSON from i18next
+
+  const handleSubscribe = () => {
+    window.location.href = paymentPlans[1].paymentGateway;
+  };
+
+  // Slick Slider Settings
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    arrows: false,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    pauseOnFocus: true,
+    draggable: true,
+    slidesToShow: 3, // Default for mobile
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 600, // Small screens
+        settings: { slidesToShow: 1, slidesToScroll: 1 },
+      },
+      {
+        breakpoint: 844, // Show 2 cards at 844px
+        settings: { slidesToShow: 2, slidesToScroll: 1 },
+      },
+      {
+        breakpoint: 1024, // Show 2 cards at 1024px
+        settings: { slidesToShow: 3, slidesToScroll: 1 },
+      },
+    ],
   };
 
   return (
     <section className="price-container">
       <Box className="text-container">
-        <Typography variant="h1" className="plan-title inter">
-          {paymentPlans[0].title}
+        <Typography variant="h1" className="plan-title mobHeading rubik">
+          {t('paymentHeading.title')}
         </Typography>
-        <Typography variant="body1" className="plan-description inter">
-          {paymentPlans[0].description}
+        <Typography variant="body1" className="plan-description zain">
+          {t('paymentHeading.description')}
         </Typography>
       </Box>
-      <Box className="card-wrapper">
-        {paymentPlans.slice(1, 5).map((plan, index) => (
-          <Card
-            key={index}
-            className={`plan-card ${
-              language === 'persian' ? `align-right` : `align-left`
-            }`}
-          >
-            <CardContent>
-              <Box className="plan-upper">
-                <Typography variant="h5" className="plan-heading inter">
-                  {plan[`plan${index + 1}`]}
-                </Typography>
-                <Typography variant="h6" className="plan-price inter">
-                  {plan.price}
-                </Typography>
-                <img src={Line} className="linePic" alt="line separator" />
+
+      {/* Conditionally Render Grid or Slider */}
+      {isMobile ? (
+        <Slider {...sliderSettings}>
+          {paymentPlans.map((plan, index) => (
+            <Card
+              key={index}
+              className={`plan-card ${language === 'fa' ? 'align-right' : 'align-left'}`}
+            >
+              <CardContent>
+                <Box className="plan-header">
+                  <div className="titleandSVG">
+                    <Typography variant="h5" className="plan-heading  rubik">
+                      {plan.title}
+                    </Typography>
+                    {index === 2 || index === 3 ? (
+                      <img src={Bitcoin} className="bitCoinLogo" />
+                    ) : (
+                      ''
+                    )}
+                  </div>
+                  <Typography variant="h6" className="plan-price zain">
+                    {plan.price}
+                  </Typography>
+                  <img src={Line} className="linePic" alt="line separator" />
+                </Box>
+                <div className="plan-body">
+                  {plan.feature_desc && (
+                    <Typography variant="body2" className="f-desc zain ">
+                      {plan.feature_desc}
+                    </Typography>
+                  )}
+                  <ul className="plan-perks">
+                    {plan.features?.map((feature, i) => (
+                      <li className="zain" key={i}>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </CardContent>
+              <Box className="ButtonDiv">
+                <Button className="subscribe-button" onClick={handleSubscribe}>
+                  Pay Now
+                </Button>
               </Box>
-              {/* Display paragraph if available */}
-              {plan.para && (
-                <Typography variant="body2" className="plan-para inter">
-                  {plan.para}
-                </Typography>
-              )}
-              {/* Display perks if available */}
-              <ul className="plan-perks">
-                {[
-                  plan.perk1,
-                  plan.perk2,
-                  plan.perk3,
-                  plan.perk4,
-                  plan.perk5,
-                  plan.perk6,
-                ]
-                  .filter(Boolean)
-                  .map((perk, perkIndex) => (
-                    <Box className="perk flex inter" key={perkIndex}>
-                      <img src={Tick} alt="Tick Icon" />
-                      <li>{perk}</li>
-                    </Box>
-                  ))}
-              </ul>
-            </CardContent>
-            <Box className="ButtonDiv">
-              <Button
-                className="subscribe-button"
-                onClick={() => handleSubscribe(plan, index)}
-              >
-                {paymentPlans[5].subscribe}
-              </Button>
-            </Box>
-          </Card>
-        ))}
-      </Box>
+            </Card>
+          ))}
+        </Slider>
+      ) : (
+        <Box className="card-wrapper rev-flex">
+          {paymentPlans.map((plan, index) => (
+            <Card
+              key={index}
+              className={`plan-card ${language === 'fa' ? 'align-right' : 'align-left'}`}
+            >
+              <CardContent>
+                <Box className="plan-header">
+                  <div className="titleandSVG">
+                    <Typography variant="h5" className="plan-heading rubik">
+                      {plan.title}
+                    </Typography>
+                    {index === 2 || index === 3 ? (
+                      <img src={Bitcoin} className="bitCoinLogo" />
+                    ) : (
+                      ''
+                    )}
+                  </div>
+                  <Typography variant="h6" className="plan-price zain">
+                    {plan.price}
+                  </Typography>
+                  <img src={Line} className="linePic" alt="line separator" />
+                </Box>
+                <div className="plan-body">
+                  {plan.feature_desc && (
+                    <Typography variant="body2" className="f-desc zain ">
+                      {plan.feature_desc}
+                    </Typography>
+                  )}
+                  <ul className="plan-perks">
+                    {plan.features?.map((feature, i) => (
+                      <li key={i} className="zain">
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </CardContent>
+              <Box className="ButtonDiv">
+                <Button className="subscribe-button" onClick={handleSubscribe}>
+                  Pay Now
+                </Button>
+              </Box>
+            </Card>
+          ))}
+        </Box>
+      )}
     </section>
   );
 };

@@ -26,26 +26,23 @@
 /* language exception handling */
 .persianHeading {
   font-size: 82px !important;
-  height: 200px;
   display: flex;
-  font-weight: 500 !important;
-  align-items: center;
-  width: 700px;
   background: linear-gradient(180deg, #fff 54.17%, #b372cf 100%);
   background-clip: text;
   -webkit-background-clip: text;
   letter-spacing: -4.149px;
   -webkit-text-fill-color: transparent;
+  font-weight: 900 !important;
+  letter-spacing: -0.0506em;
+  text-align: center;
 }
 .persianDescription {
-  text-align: center;
-  font-family: Rubik;
-  font-size: 20px !important;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 31px; /* 155% */
-  letter-spacing: -0.002px;
-  width: 500px !important;
+  font-size: 27px !important;
+  width: 75% !important;
+  font-weight: 400 !important;
+  line-height: 30px !important;
+  letter-spacing: -0.0001em !important;
+  text-align: center !important;
 }
 
 .cardText {
@@ -75,8 +72,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
-
+.video-container {
+  background: transparent !important;
+}
 .mainHeading {
   background: linear-gradient(180deg, #ffffff 54.17%, #b372cf 100%);
   -webkit-background-clip: text;
@@ -109,9 +109,11 @@
 
 .LandingPageVideo {
   width: 95%;
-  border: 10px solid black;
+  height: 615px;
+  border: 2px solid black;
   box-shadow: -1px -41px 55px 3px rgba(98, 42, 154, 0.69);
   overflow: hidden;
+  background: transparent !important;
 }
 
 .BlurGlow {
@@ -120,9 +122,11 @@
   border-radius: 50%;
   filter: blur(50px);
   margin-top: -200px;
+  pointer-events: none;
 }
 .video-container {
   position: relative;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,8 +135,9 @@
   content: '';
   position: absolute;
   width: 95%;
-  height: 80%;
-  bottom: 10px;
+  pointer-events: none;
+  height: 30%;
+  bottom: 0px;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 3.8%, #050208 86.04%);
 }
 .hero-play-wrapper {
@@ -164,19 +169,6 @@
 .hero-play-wrapper img:hover {
   cursor: pointer;
 }
-.hero-section-button {
-  padding: 5px 15px;
-  width: fit-content;
-  height: 45px;
-  background: #ffffff;
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 15px;
-  z-index: 5;
-  position: relative;
-  border: none;
-  cursor: pointer;
-}
 .hero-bg-lines {
   position: relative;
 }
@@ -194,7 +186,7 @@
 }
 .hero-bg-lines::before {
   width: 900px;
-  height: 799.745px;
+  height: 772px;
   flex-shrink: 0;
   position: absolute;
   content: '';
@@ -203,6 +195,7 @@
   border-radius: 799.745px;
   border: 1px dashed #fff;
   opacity: 0.1;
+  pointer-events: none;
 }
 .ContainerText::before {
   position: absolute;
@@ -226,13 +219,13 @@
   left: 190px;
 }
 .HeroComponentButtonDiv {
-  width: 137px;
-  height: 60px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 280px;
+  height: 58px;
 }
 
 .w-full {
@@ -245,7 +238,7 @@
 @media only screen and (max-width: 1030px) {
   .mainHeading {
     width: 90%;
-    font-size: 80px !important;
+    font-size: 32px !important;
   }
   .mainDescription {
     font-size: 28px !important;
@@ -275,57 +268,114 @@
     height: 450px;
   }
 }
-
-@media only screen and (width: 1024px) {
+@media only screen and (max-width: 1400px) {
+  .persianHeading {
+    font-size: 64px !important;
+  }
+  .persianDescription {
+    font-size: 32px !important;
+    width: 85% !important;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .persianHeading {
+    font-size: 40px !important;
+  }
+  .persianDescription {
+    font-size: 28px !important;
+  }
+}
+@media only screen and (max-width: 1024px) {
   .mainHeading {
     width: 70% !important;
+    font-size: 32px !important;
+  }
+  .persianHeading {
+    font-size: 38px !important;
+    width: 75%;
+  }
+  .persianDescription {
+    width: 70% !important;
+    font-size: 20px !important;
   }
 }
 @media screen and (max-width: 766px) {
-  .mainHeading {
-    width: 100%;
-  }
   .mainDescription {
-    font-size: 25px !important;
+    font-size: 24px !important;
     width: 90%;
+  }
+  .persianHeading {
+    width: calc(100% - 10%);
+    font-size: 32px !important;
   }
 }
 @media only screen and (max-width: 670px) {
-  .mainHeading,.persianHeading {
+  .persianHeading {
+    width: calc(100% - 10%);
+    background-color: #fff !important;
+    font-size: 32px !important;
+  }
+  .persianDescription {
+    font-size: 16px !important;
+    width: 85% !important;
+  }
+  .HeroComponentButtonDiv {
+    width: 220px;
+  }
+  .hero-bg-lines::before {
+    display: none;
+  }
+  .ContainerText::before {
+    width: 95%;
+    height: 540px;
+  }
+  .hero-bg-lines::after {
+    top: -70px;
+  }
+}
+@media only screen and (max-width: 670px) {
+  .ContainerText::before {
+    display: none;
+  }
+  .hero-bg-lines::after {
+    top: -45px;
+    left: -170px;
+    width: 550px;
+    border-radius: 50%;
+    height: 375px;
+  }
+  .LandingPageVideo {
     width: 90%;
-    font-size: 65px !important;
-}
-.hero-bg-lines::before {
-display: none;
-}
-.ContainerText::before {
-  width: 95%;
-  height: 540px;
-}
-.hero-bg-lines::after {
-  top: -70px;
-}
+    height: 315px;
+    border: 2px solid black;
+    box-shadow: -1px -41px 55px 3px rgba(98, 42, 154, 0.69);
+    overflow: hidden;
+    background: transparent !important;
+  }
 }
 @media only screen and (max-width: 600px) {
   .HeroPagecontainer {
     justify-content: flex-start;
   }
+  .ContainerText {
+    gap: 10px;
+  }
   .ContainerContent {
-    gap: 15px;
+    gap: 10px;
   }
   .mainHeading {
-    font-size: 40px !important;
-    width: 100%;
+    font-size: 28px !important;
+    width: 70%;
   }
   .persianHeading {
-    font-size: 40px !important;
-    height: fit-content;
-    width: 75% !important;
+    font-size: 22px !important;
+    width: 100% !important;
   }
   .mainDescription,
   .persianDescription {
-    font-size: 18px !important;
-    width: 100% !important;
+    font-size: 12px !important;
+    width: 80% !important;
+    line-height: normal !important;
   }
   .LandingPageVideo {
     width: 100%;
@@ -347,11 +397,16 @@ display: none;
   .video-container::before {
     content: '';
     position: absolute;
-    bottom: 10px;
+    bottom: 0px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 3.8%, #050208 86.04%);
   }
+  .LandingPageVideo {
+    width: 100%;
+    height: 195px;
+  }
   .hero-play-wrapper {
-    padding: 20px !important;
+    padding: 10px !important;
+    border-radius: 10px;
   }
 
   .video-fade-out {
@@ -363,15 +418,17 @@ display: none;
   .hero-play-wrapper img:hover {
     cursor: pointer;
   }
-
+  .hero-play-wrapper img {
+    width: 20px;
+    height: 20px;
+  }
   .hero-section-button {
     padding: 5px 15px;
     width: fit-content;
     height: 45px;
-    background: #ffffff;
     border-radius: 8px;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 10px;
     z-index: 5;
     position: relative;
     border: none;
@@ -379,6 +436,7 @@ display: none;
   }
   .hero-bg-lines {
     position: relative;
+    display: none;
   }
   .hero-bg-lines::after {
     width: 290px;
@@ -392,34 +450,30 @@ display: none;
     top: -30px;
     left: -42px;
   }
+  .HeroComponentButtonDiv {
+    width: 175px;
+    height: 60px;
+    padding: 0px;
+  }
   .hero-bg-lines::before {
     display: none;
   }
   .ContainerText::before {
     position: absolute;
     width: 100%;
-    height: 350px;
+    height: 305px;
     /* top: 0px; */
     border-radius: 61%;
   }
   .mainHeading::before {
     position: absolute;
     content: '';
-    background-image: url(../../../../assets/Icons//circle.svg);
+    background-image: url(../../../../assets/Icons/circle.svg);
     width: 21.911px;
     height: 21.911px;
     top: 220px;
     opacity: 0.6;
     left: 190px;
-  }
-}
-@media screen and (width: 375px) {
-  .ContainerText::before {
-    position: absolute;
-    width: 100%;
-    height: 350px;
-    top: 80px;
-    border-radius: 61%;
   }
 }
 @media screen and (width: 344px) {
