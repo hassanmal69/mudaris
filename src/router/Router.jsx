@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import React from 'react';
-import Home from '../pages/home/index.jsx';
+import Home from '../Pages/Home/index.jsx';
 import Footer from '../layout/footer/index.jsx';
 import ResponsiveAppBar from '../layout/navBar/Index.jsx';
 import NotFound404 from '../Pages/NotFound';
