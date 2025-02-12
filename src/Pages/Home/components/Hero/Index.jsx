@@ -3,7 +3,7 @@ import { Box, Container, Typography } from '@mui/material';
 import './style.css';
 import BlurGlow from '@assets/Images/Blur2.svg';
 import { useTranslation } from 'react-i18next';
-import { GetStartedButton } from '../getStartedButton';
+import { GetStartedButton } from '../GetStartedButton/index.jsx';
 import { priceCardsRef } from '../../index';
 const Hero = () => {
   const { t, i18n } = useTranslation('home');
