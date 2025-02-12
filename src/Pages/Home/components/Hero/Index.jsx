@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import './style.css';
-import BlurGlow from '@assets/Images/Blur2.svg';
+import BlurGlow from '@assets/Images/blur2.svg';
 import { useTranslation } from 'react-i18next';
 import { GetStartedButton } from '../GetStartedButton/index.jsx';
 import { priceCardsRef } from '../../index';
