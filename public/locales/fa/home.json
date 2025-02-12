@@ -9,8 +9,11 @@
     "playbtn": "پخش ویدیو"
   },
   "pagesnav": [
+    { "label": "آنچه خواهید آموخت", "id": "whatyouget" },
+    { "label": "نظرات دانشجویان", "id": "community" },
+    { "label": "سوالاتمتداول", "id": "faq" },
     { "label": "درباره ما", "id": "gettoknow" },
-    { "label": "ورود / ثبت‌نام", "id": "priceCard" },
+    { "label": " ثبت‌نام", "id": "priceCard" },
     { "label": "برنامه های آموزشی", "id": "slider" }
   ],
 

@@ -171,107 +171,42 @@
   padding: 16px;
   padding-bottom: 0px !important;
 }
-/* screen */
+.blue-btn {
+  background: #00bfff !important;
+  box-shadow: 0px 0px 15px rgba(0, 191, 255, 0.8) !important;
+}
 
-.payment-screen .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
-  border-color: #1e44cc !important ;
-  border-radius: 50px !important;
+.blue-btn:hover {
+  background: #0096c7 !important;
+  box-shadow: 0px 0px 25px rgba(0, 191, 255, 1) !important;
 }
-.payment-screen .css-1jk99ih-MuiInputBase-input-MuiOutlinedInput-input {
-  color: white !important;
-  background-color: #141415 !important;
-  border-radius: 50px !important;
-}
-.checkout-fields {
-  gap: 16px;
-  flex-wrap: wrap;
-  width: 100%;
-}
-/* there is difference between filed and fields... */
-.checkout-field {
-  flex: 1 1 calc(50% - 20px) !important;
-}
-.checkout-tab-container {
-  width: 80%;
-  justify-content: center;
-  align-items: center;
-}
-.checkout-btn {
-  border-radius: 20px !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  background: rgba(140, 69, 255, 0.4) !important;
-  box-shadow: 0px 0px 6px 3px rgba(255, 255, 255, 0.25) inset !important;
-  backdrop-filter: blur(7px) !important;
-  height: 64px;
-  width: 780px;
-  text-transform: inherit !important;
-}
-.debit-container {
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.payment-screen .fs-36 {
-  font-size: 36px !important;
-  letter-spacing: -0.36px !important;
-}
-.payment-screen .fs-16 {
-  font-size: 16px;
-}
-.payment-screen .fs-24-w-500 {
-  font-size: 24px;
-  font-weight: 500;
-}
-.payment-screen .checkout-section {
-  width: 70%;
-  gap: 30px;
-}
-.payment-screen .fs-18 {
-  font-size: 18px !important;
-}
-.payment-screen .checkout-subscribe-btn {
-  height: 50px !important;
-  font-size: 22px !important;
-}
-.payment-screen {
-  align-items: center;
-  width: 85%;
-  margin: auto;
-  justify-content: space-between;
-}
-.payment-screen .crypto-container {
-  width: 100% !important;
-}
-.payment-screen .g-20 {
-  gap: 20px;
-}
-.payment-screen .checkout-plan-card {
-  background: linear-gradient(180deg, #010002 0%, #361764 100%),
-    url(../../../../assets/Images/Pattern.png) !important;
+.green-btn {
+  background: #39ff14 !important;
+  box-shadow: 0px 0px 15px rgba(57, 255, 20, 0.8) !important;
 
-  background-size: cover !important;
-  background-blend-mode: screen;
-  overflow: hidden !important;
 }
-.payment-screen .g-10 {
-  gap: 10px;
+.green-btn:hover {
+  background: #2bb512 !important;
+  box-shadow: 0px 0px 25px rgba(57, 255, 20, 1) !important;
 }
-.payment-screen .css-10asit4-MuiTabs-root {
-  width: 100% !important;
+.pink-btn {
+  background: #ff1493 !important;
+  box-shadow: 0px 0px 15px rgba(255, 20, 147, 0.8) !important;
 }
-.payment-screen .css-11sinib-MuiButtonBase-root-MuiTab-root {
-  width: 100% !important;
-  align-items: flex-start;
-  color: #ffffff !important;
-  border-bottom: 3px solid gray !important;
+.pink-btn:hover {
+  background: #c11274 !important;
+  box-shadow: 0px 0px 25px rgba(255, 20, 147, 1) !important;
 }
-.payment-screen .css-10asit4-MuiTabs-root .MuiTabs-indicator {
-  width: 50% !important;
+.orange-btn {
+  background: #FF4500 !important;
+  box-shadow: 0px 0px 15px rgba(255, 69, 0, 0.8) !important;
+
 }
-/* card override css */
-.checkout-plan-card {
-  height: 600px;
-  width: 350px;
+.orange-btn:hover {
+  background: #c13b00 !important;
+  box-shadow: 0px 0px 25px rgba(255, 69, 0, 1) !important;
 }
+
 @media only screen and (max-width: 1030px) {
   .card-wrapper {
     flex-direction: row;

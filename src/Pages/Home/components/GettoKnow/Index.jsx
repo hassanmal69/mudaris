@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Button, useMediaQuery } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import './get.css';
 import 'slick-carousel/slick/slick.css';
@@ -47,15 +46,18 @@ const GettoKnow = () => {
   return (
     <section className="GetToknowMainSection">
       <Box className="GetToknowMainContainer">
-        <Box
-          className={`GetToknowContent`}
-        >
+        <Box className={`GetToknowContent`}>
+          <h1 className={`onlyDRPICUSEDFORMOBILE titleGETtoKnow clr-white ${fontClass}`}>{t('gettoknow.title')}</h1>
           <img src={Drimg} alt="Drimg" />
 
           <Box className={`GetToknowTextContent ${fontClass}`}>
-            <h1 className={`mobHeading ${fontClass}`}>{t('gettoknow.title')}</h1>
+            <h1 className={`mobHeading  titleGETtoKnow onlyDRPICUSEDFORLAPTOP ${fontClass}`}>
+              {t('gettoknow.title')}
+            </h1>
             <Box className="paraDivGettoKnow">
-              <p className="zain mobdescription">{t('gettoknow.description')}</p>
+              <p className="zain mobdescription">
+                {t('gettoknow.description')}
+              </p>
             </Box>
             <GetStartedButton onButtonClick={scrollToPriceCards} />
           </Box>
@@ -64,9 +66,15 @@ const GettoKnow = () => {
         <Box className="GetToknowContentbelowContainer">
           <Box className={`GetToknowTextContentbelow ${fontClass}`}>
             <Box className="GetToknowTextContentbelowMainText">
-              <h4 className={`${fontClass} mobsecondheading`}>{t('gettoknow.heading')}</h4>
-              <p className={`${fontClass} mobdescription`}>{t('gettoknow.transformdescription')}</p>
-              <h5 className="inter mobsecondheading">{t('gettoknow.featuredline')}</h5>
+              <h4 className={`${fontClass} mobsecondheading`}>
+                {t('gettoknow.heading')}
+              </h4>
+              <p className={`${fontClass} mobdescription`}>
+                {t('gettoknow.transformdescription')}
+              </p>
+              <h5 className="inter mobsecondheading">
+                {t('gettoknow.featuredline')}
+              </h5>
             </Box>
           </Box>
         </Box>

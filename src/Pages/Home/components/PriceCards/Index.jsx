@@ -108,8 +108,11 @@ export const PriceCards = () => {
                 </div>
               </CardContent>
               <Box className="ButtonDiv">
-                <Button className="subscribe-button" onClick={handleSubscribe}>
-                  Pay Now
+                <Button
+                  className={`subscribe-button ${index === 0 ? 'blue-btn' : index === 1 ? 'green-btn' : index === 2 ? 'pink-btn' : 'orange-btn'}`}
+                  onClick={handleSubscribe}
+                >
+                   Pay Now
                 </Button>
               </Box>
             </Card>
@@ -155,8 +158,11 @@ export const PriceCards = () => {
                 </div>
               </CardContent>
               <Box className="ButtonDiv">
-                <Button className="subscribe-button" onClick={handleSubscribe}>
-                  Pay Now
+              <Button
+                  className={`subscribe-button ${index === 0 ? 'blue-btn' : index === 1 ? 'green-btn' : index === 2 ? 'pink-btn' : 'orange-btn'}`}
+                  onClick={handleSubscribe}
+                >
+                   Pay Now
                 </Button>
               </Box>
             </Card>

@@ -409,7 +409,7 @@
   .importanttoreadcardContainer {
     gap: 20px;
     width: 100%;
-    align-items: flex-end;
+    /* align-items: flex-end; */
   }
   .importanttoreadCard {
     padding: 15px 15px 10px 10px;
@@ -448,7 +448,7 @@
   }
   .LineCardContainerMainPic {
     position: absolute;
-    right: 110px;
+    right: 410px;
     height: 83%;
     display: flex;
     justify-content: center;
@@ -457,7 +457,7 @@
   .importanttoreadCardnumberDiv:nth-child(1) {
     right: -85px;
     top: -50px;
-}
+  }
   .importanttoreadCardnumberDiv:nth-child(3) {
     bottom: 315px;
     right: -95px;

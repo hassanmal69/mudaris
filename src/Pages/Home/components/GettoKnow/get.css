@@ -9,6 +9,9 @@
   gap: 120px;
   margin-bottom: 40px;
 }
+.onlyDRPICUSEDFORMOBILE{
+  display: none;
+}
 .GetToknowContent {
   display: flex !important;
   flex-direction: row-reverse;
@@ -26,6 +29,12 @@
   gap: 70px !important;
   color: #fff;
   width: 100% !important;
+}
+.titleGETtoKnow{
+  background: linear-gradient(180deg, #fff 54.17%, #b372cf 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .GetToknowTextContent h1 {
   font-size: 56px;
@@ -46,25 +55,6 @@
 }
 .paraDivGettoKnow p {
   width: 91%;
-}
-.GetToknowTextContent Button {
-  display: flex !important;
-  height: 64px !important;
-  padding: 8px 32px !important;
-  justify-content: center !important;
-  align-items: center !important;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(140, 69, 255, 0.4);
-  box-shadow: 0px 0px 6px 3px rgba(255, 255, 255, 0.25) inset;
-  backdrop-filter: blur(7px);
-  color: #fff;
-  text-transform: initial !important;
-  transition: 0.4s ease-in-out !important;
-}
-.GetToknowTextContent Button:hover {
-  background: rgba(140, 69, 255, 0.6);
-  box-shadow: 0px 0px 12px 6px rgba(255, 255, 255, 0.3) inset;
 }
 .GetToknowContentbelowContainer {
   display: flex;
@@ -206,6 +196,17 @@
 @media screen and (max-width: 670px) {
   .GetToknowMainContainer {
     width: 90% !important;
+  }
+  .onlyDRPICUSEDFORMOBILE{
+    display: block;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 28px;
+    width: 70%;
+    margin: auto;
+  }
+  .onlyDRPICUSEDFORLAPTOP{
+    display: none;
   }
   .GetToknowContentbelowLogo {
     display: flex !important;
