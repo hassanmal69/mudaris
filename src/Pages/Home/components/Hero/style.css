@@ -344,6 +344,12 @@
     border-radius: 50%;
     height: 375px;
   }
+
+  .HeroComponentButtonDiv {
+    width: 165px;
+    height: 47px;
+    padding: 0px;
+  }
   .LandingPageVideo {
     width: 90%;
     height: 315px;
@@ -436,11 +442,11 @@
   }
   .hero-bg-lines {
     position: relative;
-    display: none;
+    /* display: none; */
   }
   .hero-bg-lines::after {
     width: 290px;
-    height: 264px;
+    height: 230px;
     position: absolute;
     content: '';
     flex-shrink: 0;
@@ -451,8 +457,8 @@
     left: -42px;
   }
   .HeroComponentButtonDiv {
-    width: 175px;
-    height: 60px;
+    width: 165px;
+    height: 47px;
     padding: 0px;
   }
   .hero-bg-lines::before {

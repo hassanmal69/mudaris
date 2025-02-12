@@ -1,4 +1,4 @@
-.GetStartedButton {
+/* .GetStartedButton {
   font-weight: 800 !important;
   font-size: 16px !important;
   color: rgb(255, 255, 255) !important;
@@ -27,13 +27,24 @@
   width: fit-content !important;
   min-width: 280px !important;
 }
-@media screen and (max-width: 600px) {
-  .GetStartedButton {
-    border-radius: 10px !important;
-    height: 30px !important;
-    padding: 10px 12px !important;
-    font-size: 10px !important;
-  }
+} */
+.GetStartedButton {
+  background: linear-gradient(135deg, #4f00c4, #c015ff);
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  padding: 12px 24px !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease-in-out !important;
+  text-transform: none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0px 0px 10px rgba(255, 0, 255, 0.5) !important;
+}
+
+.GetStartedButton:hover {
+  background: linear-gradient(135deg, #ff00ff, #5700b5);
+  box-shadow: 0px 0px 25px rgba(255, 0, 255, 0.9);
 }
 /* Do not touch it, this is for community component */
 @media screen and (min-width: 600px) and (max-width: 768px) {
@@ -51,5 +62,13 @@
   }
   .GetStartedButtonDiv {
     min-width: 0 !important;
+  }
+}
+@media screen and (max-width: 670px) {
+  .GetStartedButton {
+    border-radius: 10px !important;
+    height: 30px !important;
+    padding: 10px 12px !important;
+    font-size: 10px !important;
   }
 }

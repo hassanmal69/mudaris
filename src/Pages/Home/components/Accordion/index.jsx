@@ -22,7 +22,7 @@ export default function FAQ() {
       <Box component="div" className="faq-title-container column">
         <Typography
           variant="h6"
-          className={`${language === 'fa' ? 'clr-white faq-title rubik' : 'clr-white faq-title inter'}`}
+          className={`faq-titleHeading ${language === 'fa' ? 'clr-white faq-title rubik' : 'clr-white faq-title inter'}`}
         >
           {t('faqTitle.title')}
         </Typography>

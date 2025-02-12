@@ -1,5 +1,6 @@
 .home-page {
   gap: 150px;
+  overflow: hidden;
 }
 .ltr {
   direction: ltr;

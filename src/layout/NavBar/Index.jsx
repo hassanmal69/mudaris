@@ -8,7 +8,7 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import Logo from '../../assets/Icons/Nav/Frame 1.png';
+import Logo from '@assets/Images/mudarisLogo.png';
 import './nav.css';
 import { useTranslation } from 'react-i18next';
 
@@ -47,7 +47,7 @@ function ResponsiveAppBar() {
         <Toolbar disableGutters>
           {/* Logo */}
           <Typography variant="h6" noWrap component="a">
-            <img src={Logo} alt="LOGO" />
+            <img src={Logo} alt="LOGO" className='navBarLogo' />
           </Typography>
 
           {/* Mobile Menu */}

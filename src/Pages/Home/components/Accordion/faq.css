@@ -10,7 +10,12 @@
   background: linear-gradient(180deg, #242424 0%, #24242400 100%);
   overflow: hidden;
 }
-
+.faq-titleHeading {
+  background: linear-gradient(348.44deg, #9855ff 8.04%, #ffffff 68.68%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .faq-number-container::before {
   content: '';
   position: absolute;
@@ -111,6 +116,10 @@
   .faq-subtitle {
     font-size: 16px !important;
     text-align: center;
+  }
+  .faq-question {
+    font-size: 14px !important;
+    font-weight: 900 !important;
   }
   .faq-answer {
     width: 100%;
