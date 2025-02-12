@@ -171,37 +171,38 @@
   padding: 16px;
   padding-bottom: 0px !important;
 }
-.plan-card:nth-child(1) button {
+.blue-btn {
   background: #00bfff !important;
   box-shadow: 0px 0px 15px rgba(0, 191, 255, 0.8) !important;
 }
-.plan-card:nth-child(1) button:hover {
+
+.blue-btn:hover {
   background: #0096c7 !important;
   box-shadow: 0px 0px 25px rgba(0, 191, 255, 1) !important;
 }
-.plan-card:nth-child(2) button {
+.green-btn {
   background: #39ff14 !important;
   box-shadow: 0px 0px 15px rgba(57, 255, 20, 0.8) !important;
 
 }
-.plan-card:nth-child(2) button:hover {
+.green-btn:hover {
   background: #2bb512 !important;
   box-shadow: 0px 0px 25px rgba(57, 255, 20, 1) !important;
 }
-.plan-card:nth-child(3) button {
+.pink-btn {
   background: #ff1493 !important;
   box-shadow: 0px 0px 15px rgba(255, 20, 147, 0.8) !important;
 }
-.plan-card:nth-child(3) button:hover {
+.pink-btn:hover {
   background: #c11274 !important;
   box-shadow: 0px 0px 25px rgba(255, 20, 147, 1) !important;
 }
-.plan-card:nth-child(4) button {
+.orange-btn {
   background: #FF4500 !important;
   box-shadow: 0px 0px 15px rgba(255, 69, 0, 0.8) !important;
 
 }
-.plan-card:nth-child(4) button:hover {
+.orange-btn:hover {
   background: #c13b00 !important;
   box-shadow: 0px 0px 25px rgba(255, 69, 0, 1) !important;
 }
