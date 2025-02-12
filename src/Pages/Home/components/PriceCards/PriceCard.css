@@ -153,7 +153,7 @@
 }
 .plan-card:nth-child(2) {
   background: linear-gradient(180deg, #010002 0%, #361764 100%),
-    url(../../../../assets/images/Pattern.png) !important;
+    url(../../../../assets/Images/Pattern.png) !important;
 
   background-size: cover !important;
   background-blend-mode: screen;
@@ -161,7 +161,7 @@
 .plan-card:nth-child(4):hover,
 .plan-card:nth-child(odd):hover {
   background: linear-gradient(180deg, #010002 0%, #361764 100%),
-    url(../../../../assets/images/Pattern.png) !important;
+    url(../../../../assets/Images/Pattern.png) !important;
   background-size: cover !important;
   background-blend-mode: screen;
   overflow: hidden !important;
@@ -246,7 +246,7 @@
 }
 .payment-screen .checkout-plan-card {
   background: linear-gradient(180deg, #010002 0%, #361764 100%),
-    url(../../../../assets/images/Pattern.png) !important;
+    url(../../../../assets/Images/Pattern.png) !important;
 
   background-size: cover !important;
   background-blend-mode: screen;

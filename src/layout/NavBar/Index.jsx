@@ -8,7 +8,7 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import Logo from '../../assets/icons/Nav/Frame 1.png';
+import Logo from '../../assets/Icons/Nav/Frame 1.png';
 import './nav.css';
 import { useTranslation } from 'react-i18next';
 
