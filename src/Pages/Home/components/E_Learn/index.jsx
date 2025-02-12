@@ -1,12 +1,12 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 import './Elearn.css';
-import Home from '@assets/icons/Home.svg';
-import CaseStudy from '@assets/icons/caseStudy.svg';
-import Discussion from '@assets/icons/communication.svg';
-import Schedule from '@assets/icons/scheduel.svg';
-import Certificate from '@assets/icons/diploma.svg';
-import Upload from '@assets/icons/upload.svg';
+import Home from '@assets/Icons/Home.svg';
+import CaseStudy from '@assets/Icons/caseStudy.svg';
+import Discussion from '@assets/Icons/communication.svg';
+import Schedule from '@assets/Icons/scheduel.svg';
+import Certificate from '@assets/Icons/diploma.svg';
+import Upload from '@assets/Icons/upload.svg';
 import { useTranslation } from 'react-i18next';
 
 const E_Learn = () => {

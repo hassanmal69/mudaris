@@ -2,11 +2,11 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import './LineCard.css';
-import LineImg from '@assets/images/linewo.svg';
-import Symbol4 from '@assets/icons/card.svg';
-import Symbol5 from '@assets/icons/uni.svg';
+import LineImg from '@assets/Images/linewo.svg';
+import Symbol4 from '@assets/Icons/card.svg';
+import Symbol5 from '@assets/Icons/uni.svg';
 import Symbol6 from '@assets/Icons/dimond.svg';
-import Symbol7 from '@assets/icons/person.svg';
+import Symbol7 from '@assets/Icons/person.svg';
 const LineCards = () => {
   const { t } = useTranslation('home');
   const parentArray = t('Important', { returnObjects: true });
