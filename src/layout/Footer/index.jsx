@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Button, Divider, Typography } from '@mui/material';
 import './footer.css';
-import FaceBook from '@assets/Icons/FaceBook.svg';
+import FaceBook from '@assets/Icons/Facebook.svg';
 import Instagram from '@assets/Icons/Instagram.svg';
 import Youtube from '@assets/Icons/Lozenge.svg';
 import MudasrisLogo from '@assets/Images/mudarisLogo.png';
