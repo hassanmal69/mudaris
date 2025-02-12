@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import React from 'react';
-import Home from '../Pages/Home';
-import Footer from '../layout/Footer';
-import ResponsiveAppBar from '../layout/NavBar';
+import Home from '../pages/home/index.jsx';
+import Footer from '../layout/footer/index.jsx';
+import ResponsiveAppBar from '../layout/navBar/Index.jsx';
 import NotFound404 from '../Pages/NotFound';
 import { useLocation } from 'react-router-dom';
 const Router = () => {
