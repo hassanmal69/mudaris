@@ -78,9 +78,7 @@ export default function DigitalEducation() {
           const title = t(`digitaleducationcards.${index}.title`, {
             defaultValue: '',
           });
-          // const newLabel = t(`digitaleducationcards.${index}.new`, {
-          //   defaultValue: '',
-          // });
+
           const description = t(`digitaleducationcards.${index}.desc`, {
             defaultValue: '',
           });
@@ -97,17 +95,6 @@ export default function DigitalEducation() {
                 setHoveredIndex(null);
               }}
             >
-              <Box className="DigitalEducationSlideNewandPicBox">
-                <Box className="DigitalEducationSlideNewChildBox">
-                  <Typography
-                    variant="body"
-                    className={`${language === 'fa' ? 'DigitalEducationSlideNew clr-white rubik' : 'DigitalEducationSlideNew clr-white dm-sans'}`}
-                  >
-                    new
-                  </Typography>
-                </Box>
-              </Box>
-
               <Box
                 className={
                   hoveredIndex === index
@@ -117,7 +104,7 @@ export default function DigitalEducation() {
               >
                 <Typography
                   variant="h5"
-                  className={`${language === 'fa' ? 'DigitalEducationCardTitle clr-white zain' : 'DigitalEducationCardTitle clr-white inter'}
+                  className={`${language === 'fa' ? 'DigitalEducationCardTitle clr-white rubik' : 'DigitalEducationCardTitle clr-white inter'}
                       ${hoveredIndex === index ? 'hight-visible' : ''} 
                   `}
                 >

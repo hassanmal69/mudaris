@@ -12,7 +12,7 @@ import Logo from '@assets/Images/mudarisLogo.png';
 import './nav.css';
 import { useTranslation } from 'react-i18next';
 
-function ResponsiveAppBar() {
+function Navbar() {
   const { t, i18n } = useTranslation('home');
   const [anchorElNav, setAnchorElNav] = useState(null);
 
@@ -47,7 +47,7 @@ function ResponsiveAppBar() {
         <Toolbar disableGutters>
           {/* Logo */}
           <Typography variant="h6" noWrap component="a">
-            <img src={Logo} alt="LOGO" className='navBarLogo' />
+            <img src={Logo} alt="LOGO" className="navBarLogo" />
           </Typography>
 
           {/* Mobile Menu */}
@@ -114,4 +114,4 @@ function ResponsiveAppBar() {
   );
 }
 
-export default ResponsiveAppBar;
+export default Navbar;
