@@ -4,6 +4,10 @@
   letter-spacing: -0.015em !important;
   text-align: right;
   width: 85%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(348.44deg, #9855ff 8.04%, #ffffff 68.68%);
+  background-clip: text;
   margin-bottom: 30px !important;
 }
 .community-btn {

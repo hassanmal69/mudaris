@@ -1,33 +1,18 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import React from 'react';
-import Home from '../Pages/Home/index.jsx';
+import Home from '../pages/Home/index.jsx';
 import Footer from '../layout/Footer/index.jsx';
-import ResponsiveAppBar from '../layout/NavBar/Index.jsx';
-import NotFound404 from '../Pages/NotFound';
-import { useLocation } from 'react-router-dom';
+import Navbar from '../layout/Navbar/index.jsx';
 const Router = () => {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<WithNavbarAndFooter element={<Home />} />} />
+        <Route path="/" element={<Home />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
 
 export default Router;
-
-// Wrapper for Navbar and Footer
-const WithNavbarAndFooter = ({ element }) => {
-  const location = useLocation();
-  const shouldRenderNavbarAndFooter = location.pathname !== '/profile'; // Adjust the path
-  return shouldRenderNavbarAndFooter ? (
-    <>
-      <ResponsiveAppBar />
-      {element}
-      <Footer />
-    </>
-  ) : (
-    element
-  );
-};

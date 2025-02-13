@@ -4,13 +4,13 @@ import Slider from 'react-slick';
 import './get.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Drimg from '../../../../assets/Images/Drimg.png';
-import sciencespo from '../../../../assets/Images/sciencespo.png';
-import tolonews from '../../../../assets/Images/tolonews.png';
-import tv from '../../../../assets/Images/tv.png';
-import mudaris from '../../../../assets/Images/mudaris.png';
-import undplogo from '../../../../assets/Images/undplogo.png';
-import onelogo from '../../../../assets/Images/onelogo.png';
+import Drimg from '@assets/images/Drimg.png';
+import sciencespo from '@assets/images/sciencespo.png';
+import tolonews from '@assets/images/tolonews.png';
+import tv from '@assets/images/tv.png';
+import mudaris from '@assets/images/mudaris.png';
+import undplogo from '@assets/images/undplogo.png';
+import onelogo from '@assets/images/onelogo.png';
 import { useTranslation } from 'react-i18next';
 import { GetStartedButton } from '../GetStartedButton/index.jsx';
 import { priceCardsRef } from '../../index';
@@ -47,11 +47,17 @@ const GettoKnow = () => {
     <section className="GetToknowMainSection">
       <Box className="GetToknowMainContainer">
         <Box className={`GetToknowContent`}>
-          <h1 className={`onlyDRPICUSEDFORMOBILE titleGETtoKnow clr-white ${fontClass}`}>{t('gettoknow.title')}</h1>
+          <h1
+            className={`onlyDRPICUSEDFORMOBILE titleGETtoKnow clr-white ${fontClass}`}
+          >
+            {t('gettoknow.title')}
+          </h1>
           <img src={Drimg} alt="Drimg" />
 
           <Box className={`GetToknowTextContent ${fontClass}`}>
-            <h1 className={`mobHeading  titleGETtoKnow onlyDRPICUSEDFORLAPTOP ${fontClass}`}>
+            <h1
+              className={`mobHeading  titleGETtoKnow onlyDRPICUSEDFORLAPTOP ${fontClass}`}
+            >
               {t('gettoknow.title')}
             </h1>
             <Box className="paraDivGettoKnow">

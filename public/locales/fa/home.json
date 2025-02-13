@@ -9,18 +9,39 @@
     "playbtn": "پخش ویدیو"
   },
   "pagesnav": [
-    { "label": "آنچه خواهید آموخت", "id": "whatyouget" },
-    { "label": "نظرات دانشجویان", "id": "community" },
-    { "label": "سوالاتمتداول", "id": "faq" },
-    { "label": "درباره ما", "id": "gettoknow" },
-    { "label": " ثبت‌نام", "id": "priceCard" },
-    { "label": "برنامه های آموزشی", "id": "slider" }
+    {
+      "label": "آنچه خواهید آموخت",
+      "id": "whatyouget"
+    },
+    {
+      "label": "نظرات دانشجویان",
+      "id": "community"
+    },
+    {
+      "label": "سوالاتمتداول",
+      "id": "faq"
+    },
+    {
+      "label": "درباره ما",
+      "id": "gettoknow"
+    },
+    {
+      "label": " ثبت‌نام",
+      "id": "priceCard"
+    },
+    {
+      "label": "برنامه های آموزشی",
+      "id": "slider"
+    }
   ],
-
-  "navRightBtns": ["EN", "Sign In", "Get Started"],
+  "navRightBtns": [
+    "EN",
+    "Sign In",
+    "Get Started"
+  ],
   "studentvideoreviews": {
     "title": "تا حالا بیش از هزاران دانشجوی موفق را آموزش داده‌ایم که اکنون روزانه صدها و حتی هزاران دالر درآمد دارند.",
-    "heading": " نظرات برخی از آن‌ها را اینجا بشنوید! ",
+    "heading": " نظرات برخی از آن‌ها را اینجا بشنوید ",
     "description": "شما هم می‌توانید یکی از آن‌ها باشید! هر ساعتی را که بدون این مهارت‌ها می‌گذرانید، افرادی دقیقاً در موقعیت شما هستند که با یادگیری این مهارت‌ها، روزانه صدها و هزاران دالر عاید می‌کنند.",
     "button": "به جمع میلیونر‌های جوان بپیوندید"
   },
@@ -166,12 +187,30 @@
   "footerDescription": "E-Learn یک پلت فرم یادگیری آنلاین جهانی است که به هر کسی و در هر کجا دسترسی به دوره های آنلاین را ارائه می دهد.",
   "togglebutton": "فارسی",
   "footerContent": [
-    { "label": "آنچه خواهید آموخت", "id": "whatyouget" },
-    { "label": "نظرات دانشجویان", "id": "community" },
-    { "label": "سوالاتمتداول", "id": "faq" },
-    { "label": "درباره ما", "id": "gettoknow" },
-    { "label": "ورود / ثبت‌نام", "id": "priceCard" },
-    { "label": "برنامه های آموزشی", "id": "slider" }
+    {
+      "label": "آنچه خواهید آموخت",
+      "id": "whatyouget"
+    },
+    {
+      "label": "نظرات دانشجویان",
+      "id": "community"
+    },
+    {
+      "label": "سوالاتمتداول",
+      "id": "faq"
+    },
+    {
+      "label": "درباره ما",
+      "id": "gettoknow"
+    },
+    {
+      "label": "ثبت‌نام",
+      "id": "priceCard"
+    },
+    {
+      "label": "برنامه های آموزشی",
+      "id": "slider"
+    }
   ],
   "faqTitle": {
     "title": "پرسش‌های متداول",

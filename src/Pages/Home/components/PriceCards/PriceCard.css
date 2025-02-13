@@ -123,9 +123,9 @@
   margin: 20px 0;
 }
 .subscribe-button {
-  font-weight: 400 !important;
+  font-weight: 800 !important;
   text-align: center;
-  font-size: 14px !important;
+  font-size: 18px !important;
   color: rgb(255, 255, 255) !important;
   width: 90% !important;
   padding: 6px 15px !important;
@@ -172,39 +172,48 @@
   padding-bottom: 0px !important;
 }
 .blue-btn {
-  background: #00bfff !important;
-  box-shadow: 0px 0px 15px rgba(0, 191, 255, 0.8) !important;
+  background: #00ffff !important; /* Neon Cyan */
+  box-shadow:
+    0 0 10px #00ffff,
+    /* Neon Cyan Glow */ 0 0 20px #00ffff !important;
 }
 
 .blue-btn:hover {
-  background: #0096c7 !important;
-  box-shadow: 0px 0px 25px rgba(0, 191, 255, 1) !important;
+  background: #00ffff !important; /* Neon Cyan */
+  box-shadow: 0px 0px 25px hwb(180 1% 10%) !important; /* Bright Cyan Glow */
+}
+
+.pink-btn {
+  background: #ff00ff !important; /* Electric Magenta */
+  box-shadow:
+    0 0 10px #ff00ff,
+    /* Magenta Glow */ 0 0 20px #ff00ff !important;
+}
+
+.pink-btn:hover {
+  background: #c11274 !important; /* Dark Magenta */
+  box-shadow: 0px 0px 25px rgba(255, 20, 147, 1) !important; /* Deep Pink Glow */
 }
 .green-btn {
-  background: #39ff14 !important;
-  box-shadow: 0px 0px 15px rgba(57, 255, 20, 0.8) !important;
-
+  background: #39ff14 !important; /* Neon Green */
+  box-shadow:
+    0 0 10px #39ff14,
+    /* Neon Green Glow */ 0 0 20px #39ff14 !important;
 }
+
 .green-btn:hover {
-  background: #2bb512 !important;
-  box-shadow: 0px 0px 25px rgba(57, 255, 20, 1) !important;
+  background: #2bb512 !important; /* Neon Green */
+  box-shadow: 0px 0px 25px rgba(57, 255, 20, 1) !important; /* Bright Green Glow */
 }
-.pink-btn {
-  background: #ff1493 !important;
-  box-shadow: 0px 0px 15px rgba(255, 20, 147, 0.8) !important;
-}
-.pink-btn:hover {
-  background: #c11274 !important;
-  box-shadow: 0px 0px 25px rgba(255, 20, 147, 1) !important;
-}
-.orange-btn {
-  background: #FF4500 !important;
-  box-shadow: 0px 0px 15px rgba(255, 69, 0, 0.8) !important;
 
+.orange-btn {
+  background: #ff4500 !important; /* Neon Orange */
+  box-shadow: 0px 0px 15px rgba(255, 69, 0, 0.8) !important; /* Orange Glow */
 }
+
 .orange-btn:hover {
-  background: #c13b00 !important;
-  box-shadow: 0px 0px 25px rgba(255, 69, 0, 1) !important;
+  background: #c13b00 !important; /* Darker Neon Orange */
+  box-shadow: 0px 0px 25px rgba(255, 69, 0, 1) !important; /* Bright Orange Glow */
 }
 
 @media only screen and (max-width: 1030px) {
